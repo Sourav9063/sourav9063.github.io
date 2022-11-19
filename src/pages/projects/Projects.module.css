@@ -43,6 +43,7 @@
     opacity: 0;
     transition: opacity 800ms ease,
         transform 800ms ease;
+    pointer-events: none;
 }
 
 /* hall */
