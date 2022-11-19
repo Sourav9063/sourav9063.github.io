@@ -31,6 +31,7 @@ export default function Projects() {
 
     return (
         <div className={`${style.body}`} id="projects" >
+
             <div className={`${style.gallery}`} ref={gallery}
                 onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
                 onMouseMove={(event) => {
