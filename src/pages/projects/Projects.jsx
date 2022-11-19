@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import style from './Projects.module.css'
 import svg from './pattern.svg'
-
+import svg1 from './pattern1.svg'
+import svg2 from './pattern2.svg'
+import svg3 from './pattern3.svg'
 export default function Projects() {
 
     const gallery = useRef()
@@ -28,13 +30,21 @@ export default function Projects() {
         })
     }
 
+    let pattern = Math.random() * 4;
+    pattern = Math.floor(pattern);
+
+    // useEffect(() => {
+
+    // pa
+
+    // }, [])
 
 
     return (
         <div className={`${style.body}`} id="projects" >
 
             <div className={`${style.gallery}`} ref={gallery}
-                style={{ backgroundImage: `url(${svg})` }}
+                style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
                 onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
                 onMouseMove={(event) => {
                     onMouseMoveFunc(event);
