@@ -15,7 +15,7 @@ const Navbar = () => {
         <AnchorLink href="#about">About</AnchorLink>
         <AnchorLink href="#projects">Projects</AnchorLink>
         {/* <AnchorLink href="#gallery">Gallery</AnchorLink> */}
-        <Link to="/Cv">Cv</Link>
+        <Link to="/Cv">Resume</Link>
         {/* {user === "Student" && < >
           <Link to="/issue" state={{ forWhat: "Issue" }}>Issue</Link>
           <Link to="/issue" state={{ forWhat: "Payment" }}>Payment</Link>
