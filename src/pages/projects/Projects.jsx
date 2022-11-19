@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import style from './Projects.module.css'
+import svg from './pattern.svg'
 
 export default function Projects() {
 
@@ -33,6 +34,7 @@ export default function Projects() {
         <div className={`${style.body}`} id="projects" >
 
             <div className={`${style.gallery}`} ref={gallery}
+                style={{ backgroundImage: `url(${svg})` }}
                 onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
                 onMouseMove={(event) => {
                     onMouseMoveFunc(event);
