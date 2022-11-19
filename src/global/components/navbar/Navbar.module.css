@@ -15,25 +15,11 @@ nav {
   /* color: rgb(107, 107, 107); */
   color: white;
   height: 40px;
-  transition: transform 0.3s;
+  transition: all 0.3s;
   z-index: 100;
   padding: 5px 10px;
 }
 
-@media screen and (max-width: 750px) {
-  nav {
-    flex-direction: column;
-    height: auto;
-    margin-right: 5px;
-
-  }
-
-  nav a {
-    padding: 10px 0px;
-
-  }
-
-}
 
 
 nav:hover {
@@ -57,3 +43,34 @@ nav a {
   font-weight: 500;
   cursor: pointer;
 } */
+
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* make div pinter */
+.pointer {
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 750px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    margin-right: 5px;
+
+  }
+
+  nav a {
+    padding: 10px 0px;
+    display: none;
+
+  }
+
+}
