@@ -31,9 +31,11 @@ export default function Projects() {
 
     return (
         <div className={`${style.body}`} id="projects" >
-            <div className={`${style.gallery}`} ref={gallery} onMouseMove={(event) => {
-                onMouseMoveFunc(event);
-            }}>
+            <div className={`${style.gallery}`} ref={gallery}
+                onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
+                onMouseMove={(event) => {
+                    onMouseMoveFunc(event);
+                }}>
                 {/* Hall management */}
                 <div className={`${style.tile} ${style.hall1}`} onClick={() => {
                     window.open("https://sourav9063.github.io/hall_management_rf/", '_blank')

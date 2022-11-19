@@ -12,3 +12,15 @@
 
     color: rgba(255, 255, 255, 0.119);
 }
+
+@media screen and (max-width: 750px) {
+    .about_header {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about_header {
+        font-size: 50px;
+    }
+}
