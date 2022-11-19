@@ -6,7 +6,7 @@ export default function Projects() {
     const gallery = useRef()
 
     const onMouseMoveFunc = (e) => {
-        console.log(e.clientX, e.clientY)
+        // console.log(e.clientX, e.clientY)
         const mouseX = e.clientX,
             mouseY = e.clientY;
         const xDecimal = mouseX / window.innerWidth,
