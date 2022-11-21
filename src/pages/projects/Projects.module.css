@@ -48,7 +48,7 @@
 
 /* hall */
 .hall1 {
-    background-color: rgb(255, 238, 88);
+    background-color: #061333;
 
     height: 16%;
     width: 22%;
@@ -82,7 +82,7 @@
 /* uBook */
 .uBook2 {
     z-index: -1;
-    background-color: #f01b55;
+    background-color: #f31953;
     height: 24%;
     width: 10%;
     left: 53%;
@@ -170,7 +170,7 @@
 
 
 .blog {
-    background-color: rgb(209, 213, 237);
+    background-color: rgb(104, 107, 127);
     height: 16%;
     width: 21%;
     left: 50%;
@@ -222,4 +222,15 @@
     .name {
         font-size: 150px;
     }
+}
+
+
+.title {
+
+    position: absolute;
+    color: rgba(255, 255, 255, 0.556);
+    font-size: minmax(50px, 30px);
+    right: 2%;
+    bottom: 1%;
+    font-weight: bold;
 }

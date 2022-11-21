@@ -4,6 +4,7 @@ import Navbar from "./global/components/navbar/Navbar";
 import "./global/css/global.css";
 import About from "./pages/about/About";
 import Cv from "./pages/cv/Cv";
+import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects.jsx";
 
 function App() {
@@ -11,18 +12,13 @@ function App() {
     // <Routes>
     //   <Route path="/" element={<Projects />} />
     // </Routes>
-    < > <Navbar />
+    <div > <Navbar />
       <Routes>
-        <Route path="/" element={<div style={{
-          display: "flex", flexDirection: "column"
-        }}>
-          <Projects />
-          <About />
-        </div >} ></Route>
+        <Route path="/" element={<Home />} />
 
         < Route path="/Cv" element={<Cv />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

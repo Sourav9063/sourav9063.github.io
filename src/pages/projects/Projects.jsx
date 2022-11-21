@@ -41,7 +41,7 @@ export default function Projects() {
 
 
     return (
-        <div className={`${style.body}`} id="projects" >
+        <div className={`${style.body}`}>
 
             <div className={`${style.gallery}`} ref={gallery}
                 style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
@@ -53,18 +53,21 @@ export default function Projects() {
                 <div className={`${style.tile} ${style.hall1}`} onClick={() => {
                     window.open("https://sourav9063.github.io/hall_management_rf/", '_blank')
                 }} >
+                    <div className={style.title}>Hall Management</div>
                     <img src="https://user-images.githubusercontent.com/53114581/202853827-47a44716-f0b2-4c0c-b831-5b651e6c8688.jpg" />
                 </div>
                 {/* uBook */}
                 <div className={`${style.tile} ${style.uBook1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
                 }}>
+                    <div className={style.title} >uBookSharing</div>
                     <img src="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png" />
                 </div>
                 {/* obstacle */}
                 <div className={`${style.tile} ${style.obstacle1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
                 }}>
+                    <div className={style.title}>Obstacle Detection</div>
                     <img src="https://user-images.githubusercontent.com/53114581/201062121-35f042c7-a4e4-4fe6-9100-8a0ba1ec8b8f.jpg" />
                 </div>
                 <div className={style.tile}>
@@ -75,6 +78,7 @@ export default function Projects() {
                 <div className={`${style.tile} ${style.ftp}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
                 }}>
+                    <div className={style.title}>FTP Searcher</div>
                     <img src="https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg" />
 
                 </div>
@@ -82,18 +86,21 @@ export default function Projects() {
                 <div className={`${style.tile} ${style.hungry}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
                 }}>
+                    <div className={style.title}>Hungry Camper</div>
                     <img src="https://user-images.githubusercontent.com/53114581/148637656-447cdf3b-5267-4e43-99aa-7fb7237184b9.png" />
                 </div>
                 {/* blog */}
                 <div className={`${style.tile} ${style.blog}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
                 }}>
+                    <div className={style.title}>News Blog</div>
                     <img src="https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg" />
                 </div>
                 {/* ball */}
                 <div className={`${style.tile} ${style.touch}`} onClick={() => {
                     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
                 }}>
+                    <div className={style.title}>Touch The Ball</div>
                     <img src="https://user-images.githubusercontent.com/53114581/202858785-0711683e-262e-47ac-9822-f5383d9440de.jpg" />
                 </div>
                 <div className={style.tile}>
