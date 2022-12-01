@@ -21,7 +21,7 @@
 .tile {
     border-radius: 1vmax;
     position: absolute;
-    transition: all 800ms ease;
+    transition: transform 400ms ease, z-index 400ms ease;
 }
 
 .tile:hover {

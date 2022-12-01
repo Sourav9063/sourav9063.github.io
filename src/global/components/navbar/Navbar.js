@@ -19,9 +19,9 @@ const Navbar = () => {
     <div className={styles.nav_wrap}>
 
       <nav className={styles.main_nav}>
-        <div className={`${isActive ? styles.hide : styles.show} ${styles.menu}  ${styles.pointer}`}
+        <Link className={`${isActive ? styles.hide : styles.show} ${styles.menu}  ${styles.pointer}`}
           onClick={toggleClass}
-        >Menu</div>
+        >Menu</Link>
         <Link className={`${isActive ? styles.show : styles.hide}`} to="/">Home</Link>
         <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#about">About</AnchorLink>
         <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#projects">Projects</AnchorLink>
@@ -33,7 +33,7 @@ const Navbar = () => {
           </>}
           {user !== 'Student' && user !== "" && user != null && <Link to="/issue_list">Current Issues</Link>
           } */}
-        <div className={`${isActive ? styles.show : styles.hide}  ${styles.pointer}`} onClick={toggleClass} >X</div>
+        <Link className={`${isActive ? styles.show : styles.hide}  ${styles.pointer}`} onClick={toggleClass} >X</Link>
 
       </nav>
 
