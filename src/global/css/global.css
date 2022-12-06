@@ -1,11 +1,27 @@
+:root {
+    --dark: rgb(20, 20, 20);
+    --yellow: rgb(253, 216, 53);
+    --blue: rgb(98, 0, 234);
+
+    --c1: rgb(23, 27, 31);
+    --c2: rgb(178, 159, 103);
+
+    --left-color: var(--c1);
+    --right-color: var(--c2);
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
 }
+
 
 body {
     margin: 0;
@@ -14,6 +30,7 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {

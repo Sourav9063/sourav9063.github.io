@@ -2,8 +2,75 @@
 
     height: 99vh;
     background-color: #970000;
+    position: relative;
     /* background with dotted texture */
 
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+
+}
+
+.side {
+    display: grid;
+    height: 99vh;
+    overflow: hidden;
+    place-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+.side .title {
+    font-family: "Rubik", sans-serif;
+    font-size: 7vw;
+    margin: 0px 10vw;
+    width: 80vw;
+}
+
+.side .fancy {
+    font-family: "Lobster", cursive;
+    font-size: 1.3em;
+    line-height: 0.8em;
+}
+
+.left_side {
+    /* background: rgb(31, 40, 50);
+    background: linear-gradient(315deg, rgba(31, 40, 50, 1) 0%, rgba(57, 56, 55, 1) 35%, rgba(83, 79, 69, 1) 66%, rgba(15, 14, 12, 1) 100%); */
+    background: rgb(31, 40, 50);
+    background: linear-gradient(315deg, rgba(31, 40, 50, 1) 0%, rgba(57, 56, 55, 1) 16%, rgba(83, 79, 69, 1) 59%, rgba(15, 14, 12, 1) 100%);
+
+    /* background: rgb(15, 21, 27);
+    background: linear-gradient(315deg, rgba(15, 21, 27, 1) 0%, rgba(73, 63, 54, 1) 21%, rgba(83, 79, 69, 1) 59%, rgba(15, 14, 12, 1) 100%); */
+
+    width: 55%;
+    z-index: 2;
 
 
+}
+
+.left_side .title {
+    color: white;
+}
+
+.left_side .fancy {
+    color: var(--right-color);
+}
+
+
+.right_side {
+    background: rgb(97, 81, 57);
+    background: linear-gradient(315deg, rgba(97, 81, 57, 1) 0%, rgba(164, 147, 112, 1) 35%, rgba(253, 216, 134, 1) 66%, rgba(131, 111, 81, 1) 100%);
+}
+
+.right_side .title {
+    color: var(--dark);
+}
+
+.right_side .fancy {
+    color: white;
 }

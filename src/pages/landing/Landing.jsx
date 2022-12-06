@@ -4,31 +4,50 @@ import style from './Landing.module.css'
 
 export default function Landing(props) {
 
-    const body = useRef();
-
-    useEffect(() => {
+    const left = useRef();
 
 
-        console.log(body.current.getBoundingClientRect())
-        return () => {
+    const mouseMove = (e) => {
 
-        }
-    }, [])
+        console.log(e.clientX / window.innerWidth * 100);
+
+        let leftVal = `${e.clientX / window.innerWidth * 100}%`;
+        left.current.animate({
+            width: leftVal
+        }, {
+            duration: 1000,
+            fill: "forwards",
+            easing: "ease"
+        })
+
+    }
 
 
     return (
         <div className={`${style.body}`}
-            onScroll={(event) => {
 
-                console.log(body.current.getBoundingClientRect())
-            }
-            }
+            onMouseMove={mouseMove}
 
-            ref={body}
+            onTouchMove={(event) => mouseMove(event.touches[0])}
 
         >
 
-            <h1   >Hii</h1>
-        </div>
+            <div className={`${style.side} ${style.left_side}`} ref={left} style={{ backgroundSize: `${window.innerWidth}px` }}>
+
+                <h2 className={`${style.title}`}>
+                    <span className={`${style.fancy}`}>Design </span>
+                    is intelligence made visible.
+                </h2>
+            </div>
+            <div className={`${style.side} ${style.right_side}`}>
+                <h2 className={`${style.title}`}>
+                    <span className={`${style.fancy}`}>Design </span>
+                    is intelligence made visible.
+                </h2>
+            </div>
+
+
+
+        </div >
     )
 }

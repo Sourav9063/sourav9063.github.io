@@ -8,20 +8,23 @@ import style from './Home.module.css'
 export default function Home() {
 
     const projects = useRef();
+    const landing = useRef();
 
 
 
     return (
         <div className={style.container}
-        // onScroll={(event) => {
+            onScroll={(event) => {
 
-        //     // console.log(projects.current.getBoundingClientRect())
-        // }
-        // }
+                console.log(landing.current.getBoundingClientRect().top / (window.innerHeight * .99) * 100);
+
+            }
+            }
+
         >
-            {/* <section id='landing'>
+            <section id='landing' ref={landing}>
                 <Landing />
-            </section> */}
+            </section>
             <section id='projects' ref={projects}>
                 <Projects />
             </section>

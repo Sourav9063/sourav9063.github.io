@@ -26,13 +26,13 @@
 
 .tile:hover {
     transform: scale(1.1);
-    z-index: 1;
+    z-index: 3;
 }
 
 .tile:hover>img {
     opacity: 1;
     transform: scale(1.01);
-    z-index: 1;
+    z-index: 3;
 }
 
 .tile>img {
@@ -54,12 +54,12 @@
     width: 22%;
     left: 4%;
     top: 5%;
-
+    z-index: 2;
 }
 
 /* hall */
 .hall2 {
-    z-index: -1;
+    z-index: 1;
     background-color: #4fc2a1;
     height: 16%;
     width: 22%;
@@ -71,6 +71,7 @@
 
 /* uBook */
 .uBook1 {
+    z-index: 2;
     backdrop-filter: blur(16px);
     background-color: #fb8c25b0;
     height: 24%;
@@ -81,7 +82,7 @@
 
 /* uBook */
 .uBook2 {
-    z-index: -1;
+    z-index: 1;
     background-color: #f31953;
     height: 24%;
     width: 10%;
@@ -93,7 +94,7 @@
 /* uBook */
 
 .uBook3 {
-    z-index: -1;
+    z-index: 1;
     background-color: #001a5f;
     height: 24%;
     width: 10%;
@@ -105,6 +106,7 @@
 
 /* obstacle */
 .obstacle1 {
+    z-index: 2;
     background-color: #a40000;
     height: 24%;
     width: 11%;
@@ -113,7 +115,7 @@
 }
 
 .obstacle2 {
-    z-index: -1;
+    z-index: 1;
     background-color: #d3e7ec;
     height: 24%;
     width: 11%;
@@ -122,14 +124,14 @@
     transform: rotate(10deg);
 }
 
-.tile:nth-child(4) {
+/* .tile:nth-child(4) {
     display: none;
     background-color: rgb(102, 187, 106);
     height: 14%;
     width: 12%;
     left: 45%;
     top: 48%;
-}
+} */
 
 .ftp {
     background-color: #6c6eb3;
@@ -140,7 +142,7 @@
 }
 
 .hungry {
-
+    z-index: 2;
     background-color: rgb(255, 167, 38);
     height: 16%;
     width: 20%;
@@ -149,7 +151,7 @@
 }
 
 .hungry1 {
-    z-index: -1;
+    z-index: 1;
     background-color: #33a136;
     height: 16%;
     width: 20%;
@@ -159,7 +161,7 @@
 }
 
 .hungry2 {
-    z-index: -1;
+    z-index: 1;
     background-color: #1e2914;
     height: 16%;
     width: 20%;
@@ -170,18 +172,19 @@
 
 
 .blog {
+    z-index: 2;
     background-color: rgb(104, 107, 127);
     height: 16%;
-    width: 21%;
+    width: 23%;
     left: 50%;
     top: 70%;
 }
 
 .blog1 {
-    z-index: -1;
+    z-index: 1;
     background-color: rgb(159, 173, 248);
     height: 16%;
-    width: 21%;
+    width: 23%;
     left: 55%;
     top: 71%;
     transform: rotate(10deg);
@@ -196,26 +199,31 @@
     top: 42%;
 }
 
-.tile:nth-child(9) {
+/* .tile:nth-child(9) {
     display: none;
     background-color: rgb(250, 250, 250);
     height: 10%;
     width: 8%;
     left: 84%;
     top: 84%;
-}
+} */
 
 
 .name {
-    z-index: -1;
+    left: 31%;
+    top: 44%;
+    z-index: 1;
     position: absolute;
-    width: 100%;
-    left: 40%;
-    top: 40%;
     font-size: 200px;
+
+
     /* transform: translate(-50%, -50%); */
     color: rgba(255, 255, 255, 0.2);
     /* font-weight: bold; */
+    /* font-family: "Rubik", sans-serif;
+    font-size: 7vw;
+    margin: 0px 10vw;
+    width: 80vw; */
 }
 
 @media screen and (max-width: 500px) {

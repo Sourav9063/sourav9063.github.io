@@ -9,7 +9,10 @@ export default function Cv() {
             /> */}
 
             <object data="assets/pdf/Sourav_Ahmed_f.pdf" type="application/pdf" width="70%" height="100%">
-                <p>Alternative link <a href="https://github.com/Sourav9063/CV/blob/main/Sourav_Ahmed_f.pdf">to the PDF!</a></p>
+                <div className={`${style.alternative}`}>
+                    <p>Alternative link to<a href="https://github.com/Sourav9063/CV/blob/main/Sourav_Ahmed_f.pdf"> view the RESUME.</a></p>
+                    <p><a href="assets/pdf/Sourav_Ahmed_f.pdf" download>Click here</a> to download the RESUME.</p>
+                </div>
             </object>
         </div>
     )

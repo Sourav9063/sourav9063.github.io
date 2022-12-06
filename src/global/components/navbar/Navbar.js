@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import styles from "./Navbar.module.css"
 import { Link, useLocation } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useEffect } from "react";
 
 
 const Navbar = () => {
@@ -11,6 +12,18 @@ const Navbar = () => {
   const toggleClass = () => {
     setActive(!isActive);
   };
+
+  useEffect(() => {
+
+    if (window.innerWidth < 768) {
+      setActive(false);
+    }
+
+
+
+
+  }, []);
+
 
 
 
@@ -33,7 +46,7 @@ const Navbar = () => {
           </>}
           {user !== 'Student' && user !== "" && user != null && <Link to="/issue_list">Current Issues</Link>
           } */}
-        <Link className={`${isActive ? styles.show : styles.hide}  ${styles.pointer}`} onClick={toggleClass} >X</Link>
+        {window.innerWidth < 768 && <Link className={`${isActive ? styles.show : styles.hide}  ${styles.pointer}`} onClick={toggleClass} >X</Link>}
 
       </nav>
 
