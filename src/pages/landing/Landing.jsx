@@ -5,6 +5,7 @@ import style from './Landing.module.css'
 export default function Landing(props) {
 
     const left = useRef();
+    const fancy = useRef();
 
 
     const mouseMove = (e) => {
@@ -19,6 +20,15 @@ export default function Landing(props) {
             fill: "forwards",
             easing: "ease"
         })
+
+        fancy.current.animate({
+            backgroundPosition: leftVal
+        }, {
+            duration: 1000,
+            fill: "forwards",
+            easing: "ease"
+        })
+
 
     }
 
@@ -35,7 +45,7 @@ export default function Landing(props) {
             <div className={`${style.side} ${style.left_side}`} ref={left} style={{ backgroundSize: `${window.innerWidth}px` }}>
 
                 <h2 className={`${style.title}`}>
-                    <span className={`${style.fancy}`}>Design </span>
+                    <span className={`${style.fancy}`} ref={fancy}>Design </span>
                     is intelligence made visible.
                 </h2>
             </div>
