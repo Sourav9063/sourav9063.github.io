@@ -74,10 +74,12 @@ export default function Projects() {
                     <video
                         onMouseOver={event => {
                             event.target.play();
-
-                            console.log(event.target);
                         }}
                         onMouseOut={event => event.target.pause()}
+
+                        onPointerEnter={event => event.target.play()}
+                        onPointerLeave={event => event.target.pause()}
+
                         poster="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png"
 
                         src="https://user-images.githubusercontent.com/53114581/208036045-c13bdbf0-aacb-4b09-af9b-c8f61685230a.mp4" autoPlay loop ></video>
