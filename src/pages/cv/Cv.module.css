@@ -32,4 +32,11 @@
 .cv {
     border: none;
     height: 100vh;
+    width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+    .cv {
+        width: 100%;
+    }
 }

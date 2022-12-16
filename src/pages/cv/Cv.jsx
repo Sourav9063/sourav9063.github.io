@@ -8,7 +8,7 @@ export default function Cv() {
 
             /> */}
 
-            <iframe className={`${style.cv}`} src="assets/pdf/Sourav_Ahmed_f.pdf" type="application/pdf" width="70%" title="CV">
+            <iframe className={`${style.cv}`} src="assets/pdf/Sourav_Ahmed_f.pdf" type="application/pdf" title="CV">
             </iframe>
             <div className={`${style.alternative}`}>
                 <p>Alternative link to<a href="https://github.com/Sourav9063/CV/blob/main/Sourav_Ahmed_f.pdf"> view the RESUME.</a></p>
