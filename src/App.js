@@ -6,6 +6,7 @@ import About from "./pages/about/About";
 import Cv from "./pages/cv/Cv";
 import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects.jsx";
+import { Suspense } from "react";
 
 function App() {
   return (
@@ -16,9 +17,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
+        {/* <Suspense fallBack={<h1>Loading</h1>}> */}
         < Route path="/Cv" element={<Cv />} />
+        {/* </Suspense> */}
+
+
       </Routes>
-    </div>
+    </div >
   );
 }
 

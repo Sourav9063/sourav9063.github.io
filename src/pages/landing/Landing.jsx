@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import style from './Landing.module.css'
 
 export default function Landing(props) {
@@ -7,6 +7,33 @@ export default function Landing(props) {
     const left = useRef();
     const fancy = useRef();
 
+    let quote = {
+        fancy: "Design ",
+        normal: "is intelligence made visible."
+    }
+
+    let quotes = [
+        {
+            fancy: "Design ",
+            normal: "is intelligence made visible."
+        },
+        {
+            fancy: "Engineers ",
+            normal: "turn dreams into reality."
+        },
+        {
+            fancy: "Design ",
+            normal: "is intelligence made visible."
+        },
+        {
+            fancy: "Design ",
+            normal: "is intelligence made visible."
+        },
+        {
+            fancy: "Design ",
+            normal: "is intelligence made visible."
+        },
+    ]
 
     const mouseMove = (e) => {
 
@@ -45,14 +72,14 @@ export default function Landing(props) {
             <div className={`${style.side} ${style.left_side}`} ref={left} style={{ backgroundSize: `${window.innerWidth}px` }}>
 
                 <h2 className={`${style.title}`}>
-                    <span className={`${style.fancy}`} ref={fancy}>Design </span>
-                    is intelligence made visible.
+                    <span className={`${style.fancy}`} ref={fancy}>{quotes[1].fancy} </span>
+                    {quotes[1].normal}
                 </h2>
             </div>
             <div className={`${style.side} ${style.right_side}`}>
                 <h2 className={`${style.title}`}>
-                    <span className={`${style.fancy}`}>Design </span>
-                    is intelligence made visible.
+                    <span className={`${style.fancy}`}>{quotes[1].fancy} </span>
+                    {quotes[1].normal}
                 </h2>
             </div>
 
