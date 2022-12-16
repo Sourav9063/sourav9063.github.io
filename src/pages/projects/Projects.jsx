@@ -71,12 +71,13 @@ export default function Projects() {
                     <div className={style.title} >uBookSharing</div>
                     {/* <img alt="uBook" src="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png" /> */}
 
-                    <video
+                    <video muted
                         onMouseOver={event => {
                             event.target.play();
                         }}
                         onMouseOut={event => event.target.pause()}
 
+                        onPointerUp={event => event.target.pause()}
                         onPointerEnter={event => event.target.play()}
                         onPointerLeave={event => event.target.pause()}
 
