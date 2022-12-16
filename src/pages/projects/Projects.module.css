@@ -35,6 +35,13 @@
     z-index: 3;
 }
 
+.tile:hover>video {
+    opacity: 1;
+    transform: scale(1.01);
+    z-index: 10;
+    pointer-events: all;
+}
+
 .tile>img {
     height: 100%;
     width: 100%;
@@ -79,6 +86,25 @@
     left: 45%;
     top: 12%;
 }
+
+.uBook1 video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 800ms ease,
+        transform 800ms ease;
+    pointer-events: none;
+}
+
+/* .uBook1 video:hover {
+    opacity: 1;
+    transform: scale(1.01);
+    z-index: 3;
+} */
+
+
 
 /* uBook */
 .uBook2 {

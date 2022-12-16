@@ -69,7 +69,19 @@ export default function Projects() {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
                 }}>
                     <div className={style.title} >uBookSharing</div>
-                    <img alt="uBook" src="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png" />
+                    {/* <img alt="uBook" src="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png" /> */}
+
+                    <video
+                        onMouseOver={event => {
+                            event.target.play();
+
+                            console.log(event.target);
+                        }}
+                        onMouseOut={event => event.target.pause()}
+                        poster="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png"
+
+                        src="https://user-images.githubusercontent.com/53114581/208036045-c13bdbf0-aacb-4b09-af9b-c8f61685230a.mp4" autoPlay loop ></video>
+
                 </div>
                 {/* uBook */}
                 <div className={`${style.tile} ${style.uBook2}`} onClick={() => {
