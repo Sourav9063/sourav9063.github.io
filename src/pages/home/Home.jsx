@@ -39,8 +39,8 @@ export default function Home() {
             style={{ position: "relative", backgroundColor: "black" }}
 
         >
-            <section id='landing' ref={landing} >
-                <Landing />
+            <section id='landing' ref={landing}  >
+                <Landing scrollPercent={clamp(scrollPositionOfElement, 0, 100)} />
             </section>
             <section id='projects' ref={projects}>
                 <Projects />

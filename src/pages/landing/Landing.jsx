@@ -1,6 +1,7 @@
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import style from './Landing.module.css'
+import { useEffect } from 'react';
 
 export default function Landing(props) {
 
@@ -11,6 +12,7 @@ export default function Landing(props) {
         fancy: "Design ",
         normal: "is intelligence made visible."
     }
+
 
     let quotes = [
         {
@@ -37,7 +39,8 @@ export default function Landing(props) {
 
     const mouseMove = (e) => {
 
-        console.log(e.clientX / window.innerWidth * 100);
+        // console.log(e.clientX / window.innerWidth * 100);
+        console.log(props.scrollPercent);
 
         let leftVal = `${e.clientX / window.innerWidth * 100}%`;
         left.current.animate({
@@ -58,6 +61,17 @@ export default function Landing(props) {
 
 
     }
+    // const [scrollPercent, setScrollPercent] = useState(props.scrollPercent);
+
+
+    // useEffect(() => {
+
+    //     console.log(props.scrollPercent);
+    //     return () => {
+
+    //     }
+    // }, [scrollPercent])
+
 
 
     return (
