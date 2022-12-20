@@ -4,6 +4,7 @@ import svg from './pattern.svg'
 import svg1 from './pattern1.svg'
 import svg2 from './pattern2.svg'
 import svg3 from './pattern3.svg'
+import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent'
 export default function Projects() {
 
     const gallery = useRef()
@@ -31,14 +32,48 @@ export default function Projects() {
         })
     }
 
-    let pattern = Math.random() * 4;
-    pattern = Math.floor(pattern);
+    let pattern;
+    let hallManagement = 0;
+    const [scrollPosition, setScrollPosition] = React.useState(0);
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    // pa
+        pattern = Math.random() * 4;
+        pattern = Math.floor(pattern);
+        let tmpup = 75;
+        let tmpdown = 75;
+        let tmp = 0;
+        subscribe("project", (e) => {
+            const { scrollPositionOfElement } = e.detail;
+            if (tmp + 1 < scrollPositionOfElement) {
+                tmp = scrollPositionOfElement;
+                tmpup = true;
+                tmpdown = false;
+            }
+            else if (tmp - 1 > scrollPositionOfElement) {
+                tmp = scrollPositionOfElement;
+                tmpup = false;
+                tmpdown = true;
+            }
 
-    // }, [])
+            if (tmpup) {
+                if ((scrollPositionOfElement <= 100 || scrollPositionOfElement >= 120))
+                    setScrollPosition((scrollPositionOfElement - 100) * 30);
+            }
+            else {
+                setScrollPosition((scrollPositionOfElement - 100) * 30);
+
+            }
+
+            // console.log({ scrollPositionOfElement, tmp })
+        })
+
+        return () => {
+            unsubscribe("project")
+        }
+    }, [
+
+    ])
 
 
     return (
@@ -52,9 +87,12 @@ export default function Projects() {
                 }}
             >
                 {/* Hall management */}
+
                 <div className={`${style.tile} ${style.hall1}`} onClick={() => {
                     window.open("https://sourav9063.github.io/hall_management_rf/", '_blank')
-                }} >
+                }}
+                    style={{ transform: `translateX(${scrollPosition}px)` }}
+                >
                     <div className={style.title}>Hall Management</div>
                     <img alt="Hall Management " src="https://user-images.githubusercontent.com/53114581/202853827-47a44716-f0b2-4c0c-b831-5b651e6c8688.jpg" />
                 </div>
@@ -64,10 +102,14 @@ export default function Projects() {
                     <img src="https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg" />
                 </div>
 
+
                 {/* uBook */}
                 <div className={`${style.tile} ${style.uBook1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateY(${-1 * scrollPosition}px)` }}
+
+                >
                     <div className={style.title} >uBookSharing</div>
                     {/* <img alt="uBook" src="https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png" /> */}
 
@@ -89,33 +131,47 @@ export default function Projects() {
                 {/* uBook */}
                 <div className={`${style.tile} ${style.uBook2}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${-1.3 * scrollPosition}px) rotate(10deg)` }}
+
+                >
                     <img src="https://user-images.githubusercontent.com/53114581/118114615-a91eb780-b409-11eb-8f46-851c73e3d8fd.png" />
                 </div>
                 {/* uBook */}
                 <div className={`${style.tile} ${style.uBook3}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateY(${-1.4 * scrollPosition}px) rotate(-10deg)` }}
+
+                >
                     <img src="https://user-images.githubusercontent.com/53114581/118113292-ebdf9000-b407-11eb-9a5d-d1db4f23ce4d.png" />
                 </div>
                 {/* obstacle */}
                 <div className={`${style.tile} ${style.obstacle1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${-1 * scrollPosition}px)` }}
+
+                >
                     <div className={style.title}>Obstacle Detection</div>
                     <img alt='obstacle' src="https://user-images.githubusercontent.com/53114581/201062121-35f042c7-a4e4-4fe6-9100-8a0ba1ec8b8f.jpg" />
                 </div>
 
                 <div className={`${style.tile} ${style.obstacle2}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${-1.4 * scrollPosition}px) rotate(10deg)` }}
+
+                >
                     <img src="https://user-images.githubusercontent.com/53114581/201062149-c11e154a-5f92-45c1-bf19-c868e4d543a9.jpg" />
                 </div>
 
                 {/* ftp */}
                 <div className={`${style.tile} ${style.ftp}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${1 * scrollPosition}px) ` }}
+                >
                     <div className={style.title}>FTP Searcher</div>
                     <img src="https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg" />
 
@@ -123,7 +179,9 @@ export default function Projects() {
                 {/* hungry */}
                 <div className={`${style.tile} ${style.hungry}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${1 * scrollPosition}px) translateY(${-1 * scrollPosition}px) ` }}
+                >
                     <div className={style.title}>Hungry Camper</div>
                     <img src="https://user-images.githubusercontent.com/53114581/148637656-447cdf3b-5267-4e43-99aa-7fb7237184b9.png" />
                 </div>

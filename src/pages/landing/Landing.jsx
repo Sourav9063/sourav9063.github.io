@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import style from './Landing.module.css'
 import { useEffect } from 'react';
 
-export default function Landing(props) {
+export default function Landing() {
 
     const left = useRef();
     const fancy = useRef();
@@ -40,7 +40,7 @@ export default function Landing(props) {
     const mouseMove = (e) => {
 
         // console.log(e.clientX / window.innerWidth * 100);
-        console.log(props.scrollPercent);
+        // console.log(props.scrollPercent);
 
         let leftVal = `${e.clientX / window.innerWidth * 100}%`;
         left.current.animate({

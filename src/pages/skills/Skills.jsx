@@ -11,7 +11,7 @@ export default function Skills() {
     React.useEffect(() => {
         // rect = cardsRef.current.getBoundingClientRect();
         allCards = document.getElementsByClassName(`${style.card}`)
-        console.log(allCards);
+        // console.log(allCards);
     }, [])
 
 

@@ -11,10 +11,10 @@
 
     --bg-color: rgb(20, 20, 20);
     --card-color: rgb(23, 23, 23);
-    --bg-color: #2a0303;
-    --card-color: #3b0404;
-    --mouse-y: 10%;
-    --mouse-x: 10%;
+    --bg-color: rgb(14, 15, 25);
+    --card-color: rgb(28, 36, 41);
+    /* --mouse-y: 10%;
+    --mouse-x: 10%; */
 }
 
 html {

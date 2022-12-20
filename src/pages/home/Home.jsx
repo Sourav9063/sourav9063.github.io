@@ -5,6 +5,7 @@ import Landing from '../landing/Landing'
 
 import style from './Home.module.css'
 import Skills from '../skills/Skills'
+import { publish } from '../../global/helper/customEvent/CustomEvent'
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
     return (
         <div className={style.container}
             onScroll={(event) => {
-                const setScrollPositionOfElementTmp = landing.current.getBoundingClientRect().top / (window.innerHeight * .99) * 100 * -1;
+                const setScrollPositionOfElementTmp = landing.current.getBoundingClientRect().top / (landing.current.getBoundingClientRect().height) * 100 * -1;
 
                 // setScrollPositionOfElement(setScrollPositionOfElementTmp);
                 // console.log(scrollPositionOfElement);
@@ -34,6 +35,10 @@ export default function Home() {
                 // change blur on scroll
                 landing.current.style.filter = `blur(${clamp(setScrollPositionOfElementTmp * .20, 0, 20)}px)`;
 
+                if (setScrollPositionOfElementTmp > 75 && setScrollPositionOfElementTmp < 175) {
+                    publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                }
+
             }
             }
 
@@ -41,7 +46,7 @@ export default function Home() {
 
         >
             <section id='landing' ref={landing}  >
-                <Landing scrollPercent={clamp(scrollPositionOfElement, 0, 100)} />
+                <Landing />
             </section>
             <section id='projects' ref={projects}>
                 <Projects />

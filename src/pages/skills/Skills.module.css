@@ -110,15 +110,15 @@
 }
 
 .card::before {
-    background: radial-gradient(1800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.1),
+    background: radial-gradient(1300px circle at var(--mouse-x) var(--mouse-y),
+            rgba(35, 112, 108, 0.27),
             transparent 40%);
     z-index: 3;
 }
 
 .card::after {
     background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.6),
+            rgba(72, 175, 151, .6),
             transparent 40%);
     z-index: 1;
 }
@@ -252,14 +252,14 @@ i {
     .card {
         flex-shrink: 1;
         width: calc(45% - 4px);
-        height: calc(45% - 4px);
+        height: calc(35% - 4px);
 
     }
 }
 
 @media(max-width: 500px) {
     .card {
-        height: calc(45% - 4px);
+        height: calc(35% - 4px);
         width: calc(100% - 4px);
     }
 
