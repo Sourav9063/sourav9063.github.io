@@ -8,6 +8,13 @@
 
     --left-color: var(--c1);
     --right-color: var(--c2);
+
+    --bg-color: rgb(20, 20, 20);
+    --card-color: rgb(23, 23, 23);
+    --bg-color: #2a0303;
+    --card-color: #3b0404;
+    --mouse-y: 10%;
+    --mouse-x: 10%;
 }
 
 html {
@@ -51,4 +58,24 @@ a {
 
 a:hover {
     background-size: 100% 2px;
+}
+
+.trans_header {
+
+
+    font-size: 200px;
+
+    color: rgba(255, 255, 255, 0.119);
+}
+
+@media screen and (max-width: 750px) {
+    .trans_header {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .trans_header {
+        font-size: 50px;
+    }
 }

@@ -4,6 +4,7 @@ import Projects from '../projects/Projects'
 import Landing from '../landing/Landing'
 
 import style from './Home.module.css'
+import Skills from '../skills/Skills'
 
 export default function Home() {
 
@@ -36,7 +37,7 @@ export default function Home() {
             }
             }
 
-            style={{ position: "relative", backgroundColor: "black" }}
+        // style={{ position: "relative", backgroundColor: "black" }}
 
         >
             <section id='landing' ref={landing}  >
@@ -44,6 +45,9 @@ export default function Home() {
             </section>
             <section id='projects' ref={projects}>
                 <Projects />
+            </section>
+            <section >
+                <Skills />
             </section>
             <section id='about'>
                 <About />
