@@ -36,8 +36,8 @@ const Navbar = () => {
           onClick={toggleClass}
         >Menu</Link>
         <Link className={`${isActive ? styles.show : styles.hide}`} to="/">Home</Link>
-        <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#about">About</AnchorLink>
-        <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#projects">Projects</AnchorLink>
+        {/* <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#about">About</AnchorLink> */}
+        <a className={`${isActive ? styles.show : styles.hide}`} href="https://github.com/Sourav9063">Github</a>
         {/* <AnchorLink href="#gallery">Gallery</AnchorLink> */}
         <Link className={`${isActive ? styles.show : styles.hide}`} to="/Cv">Resume</Link>
         {/* {user === "Student" && < >

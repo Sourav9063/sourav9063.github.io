@@ -26,7 +26,7 @@ export default function Projects() {
             transform: `translate(${panX}px, ${panY}px)`
         }, {
 
-            duration: 4000,
+            duration: 5000,
             fill: "forwards",
             easing: "ease"
         })
@@ -200,13 +200,18 @@ export default function Projects() {
                 {/* blog */}
                 <div className={`${style.tile} ${style.blog}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateY(${1.2 * scrollPosition}px) rotate(-10deg)` }}
+                >
                     <div className={style.title}>News Blog</div>
                     <img src="https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg" />
                 </div>
                 <div className={`${style.tile} ${style.blog1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${1.2 * scrollPosition}px) translateY(${1 * scrollPosition}px)  rotate(10deg)` }}
+
+                >
                     <img src="https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg" />
                 </div>
 
@@ -214,7 +219,10 @@ export default function Projects() {
                 {/* ball */}
                 <div className={`${style.tile} ${style.touch}`} onClick={() => {
                     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
-                }}>
+                }}
+                    style={{ transform: `translateX(${1.2 * scrollPosition}px) translateY(${1 * scrollPosition}px) ` }}
+
+                >
                     <div className={style.title}>Touch The Ball</div>
                     <img src="https://user-images.githubusercontent.com/53114581/202858785-0711683e-262e-47ac-9822-f5383d9440de.jpg" />
                 </div>

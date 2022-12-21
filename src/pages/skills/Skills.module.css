@@ -110,14 +110,14 @@
 }
 
 .card::before {
-    background: radial-gradient(1300px circle at var(--mouse-x) var(--mouse-y),
+    background: radial-gradient(1400px circle at var(--mouse-x) var(--mouse-y),
             rgba(35, 112, 108, 0.27),
             transparent 40%);
     z-index: 3;
 }
 
 .card::after {
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+    background: radial-gradient(900px circle at var(--mouse-x) var(--mouse-y),
             rgba(72, 175, 151, .6),
             transparent 40%);
     z-index: 1;
