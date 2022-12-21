@@ -1,4 +1,4 @@
-import { React, useRef, useState } from 'react'
+import { React, useRef, useState, useEffect } from 'react'
 import About from '../about/About'
 import Projects from '../projects/Projects'
 import Landing from '../landing/Landing'
@@ -14,6 +14,16 @@ export default function Home() {
     // const [scrollPositionOfElement, setScrollPositionOfElement] = useState(0);
     // let scrollPositionOfElement = 0;
     let tmp2 = 0;
+
+    useEffect(() => {
+        publish("project", { scrollPositionOfElement: 75 })
+
+
+        return () => {
+
+        }
+    }, [])
+
 
     return (
         <div className={style.container}
