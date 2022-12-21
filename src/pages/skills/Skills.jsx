@@ -84,7 +84,7 @@ export default function Skills() {
                         </div>
                     </div>
                 </div>
-                <div className={`${style.card} ${style.col45_row11}`}>
+                <div className={`${style.card} ${style.col25_row22}`}>
                     <div className={`${style.card_content}`}>
                         <div className={`${style.card_image}`}>
                             <i className="fa-duotone fa-unicorn"></i>
@@ -117,7 +117,7 @@ export default function Skills() {
                         </div>
                     </div>
                 </div>
-                <div className={`${style.card} ${style.col25_row22}`}>
+                <div className={`${style.card} ${style.col45_row11}`}>
                     <div className={`${style.card_content}`}>
                         <div className={`${style.card_image}`}>
                             <i className="fa-duotone fa-person-to-portal"></i>

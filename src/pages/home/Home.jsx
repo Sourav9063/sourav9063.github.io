@@ -11,9 +11,9 @@ export default function Home() {
 
     const projects = useRef();
     const landing = useRef();
-    const [scrollPositionOfElement, setScrollPositionOfElement] = useState(0);
+    // const [scrollPositionOfElement, setScrollPositionOfElement] = useState(0);
     // let scrollPositionOfElement = 0;
-
+    let tmp2 = 0;
 
     return (
         <div className={style.container}
@@ -21,7 +21,7 @@ export default function Home() {
                 const setScrollPositionOfElementTmp = landing.current.getBoundingClientRect().top / (landing.current.getBoundingClientRect().height) * 100 * -1;
 
                 // setScrollPositionOfElement(setScrollPositionOfElementTmp);
-                // console.log(scrollPositionOfElement);
+                // console.log(setScrollPositionOfElementTmp);
                 // console.dir(event.target);
                 //get the scroll position of the element in percentage
                 // scrollPosition = event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight) * 100;
@@ -35,10 +35,17 @@ export default function Home() {
                 // change blur on scroll
                 landing.current.style.filter = `blur(${clamp(setScrollPositionOfElementTmp * .20, 0, 20)}px)`;
 
-                if (setScrollPositionOfElementTmp > 75 && setScrollPositionOfElementTmp < 175) {
-                    publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp })
-                }
+                if (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 1 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) {
+                    tmp2 = setScrollPositionOfElementTmp;
+                    if (setScrollPositionOfElementTmp > 75 && setScrollPositionOfElementTmp < 175) {
+                        publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    }
 
+
+                    if (setScrollPositionOfElementTmp > 250) {
+                        publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    }
+                }
             }
             }
 

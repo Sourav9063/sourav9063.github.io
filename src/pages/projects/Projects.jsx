@@ -34,7 +34,7 @@ export default function Projects() {
 
     let pattern;
     let hallManagement = 0;
-    const [scrollPosition, setScrollPosition] = React.useState(0);
+    const [scrollPosition, setScrollPosition] = React.useState(75);
 
     useEffect(() => {
 
@@ -45,6 +45,7 @@ export default function Projects() {
         let tmp = 0;
         subscribe("project", (e) => {
             const { scrollPositionOfElement } = e.detail;
+            // console.log(scrollPositionOfElement);
             if (tmp + 1 < scrollPositionOfElement) {
                 tmp = scrollPositionOfElement;
                 tmpup = true;
