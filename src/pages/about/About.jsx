@@ -6,47 +6,71 @@ import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEv
 
 export default function About() {
 
-    let paths
-    const nameAnimInit = () => {
-        paths = document.querySelectorAll(`.${style.svg_name}> path`);
 
-        for (let i = 0; i < 11; i++) {
-            console.log(paths[i].getTotalLength());
-            paths[i].style.strokeDasharray = paths[i].getTotalLength();
-            paths[i].style.strokeDashoffset = paths[i].getTotalLength();
-        }
-    }
+    const svgName = React.useRef();
+
+
+
 
 
 
     React.useEffect(() => {
+        let paths = [];
+        const nameAnimInit =
+
+            () => {
+
+                // for (let child of svgName.current.children) {
+                //     // console.dir(child.localName);
+                //     if (child.localName === "path") {
+                //         paths.push(child);
+                //     }
+                // }
+                // paths = svgName.current.children;
+                // paths = paths.filter((path) => path.localName === "path");
+                paths = [...svgName.current.children].filter((path) => path.localName === "path");
+
+                for (let path of paths) {
+                    // console.log(path.getTotalLength());
+                    path.style.strokeDasharray = path.getTotalLength();
+                    path.style.strokeDashoffset = path.getTotalLength();
+                }
+                console.count("nameAnimInit");
+            }
+
         nameAnimInit();
+
+        const nameAnime =
+            (e, paths) => {
+                const { scrollPositionOfElement } = e.detail;
+                console.count("nameAnime");
+
+                for (let i = 0; i < paths.length; i++) {
+
+                    // paths[i].style.strokeDashoffset = paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 275) / 25);
+                    paths[i].animate(
+                        {
+                            strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 250) / 50)
+                        },
+                        {
+                            duration: 300,
+                            fill: "forwards",
+                            easing: "ease",
+                            delay: 320 * i
+                        }
+
+                    );
+
+                    // paths[i].style.strokeDashoffset = paths[i].getTotalLength();
+                }
+            }
 
 
 
         subscribe("about", (e) => {
 
 
-            const { scrollPositionOfElement } = e.detail;
-
-            for (let i = 0; i < 11; i++) {
-
-                // paths[i].style.strokeDashoffset = paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 275) / 25);
-                paths[i].animate(
-                    {
-                        strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 250) / 50)
-                    },
-                    {
-                        duration: 300,
-                        fill: "forwards",
-                        easing: "ease",
-                        delay: 300 * i
-                    }
-
-                );
-
-                // paths[i].style.strokeDashoffset = paths[i].getTotalLength();
-            }
+            nameAnime(e, paths);
 
 
         })
@@ -58,13 +82,13 @@ export default function About() {
         }
 
 
-    }, [])
+    },)
 
 
     return (
-        <div className={`${style.body}`}>
 
-            {/* <div className={`${style.about_header}`}>About</div> */}
+        <div className={`${style.body}`}>
+            {/* <div className={`${style.about_header}`}>{about}</div> */}
             <div>
                 {/* <svg className={`${style.svg_name}`} width="766" height="121" viewBox="0 0 766 121" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="path-1-outside-1_8_7" maskUnits="userSpaceOnUse" x="0.0799866" y="0.199982" width="766" height="121" fill="black">
@@ -93,7 +117,7 @@ export default function About() {
                     <path d="M701.217 89.24C702.257 89.24 703.057 89.72 703.617 90.68C704.257 91.64 704.577 92.96 704.577 94.64C704.577 97.84 703.817 100.32 702.297 102.08C699.337 105.68 695.137 109 689.697 112.04C684.337 115.08 678.577 116.6 672.417 116.6C664.017 116.6 657.497 114.32 652.857 109.76C648.217 105.2 645.897 98.96 645.897 91.04C645.897 85.52 647.057 80.4 649.377 75.68C651.697 70.88 654.897 67.08 658.977 64.28C663.137 61.48 667.817 60.08 673.017 60.08C677.657 60.08 681.377 61.48 684.177 64.28C686.977 67 688.377 70.72 688.377 75.44C688.377 80.96 686.377 85.72 682.377 89.72C678.457 93.64 671.777 96.76 662.337 99.08C664.337 102.76 668.137 104.6 673.737 104.6C677.337 104.6 681.417 103.36 685.977 100.88C690.617 98.32 694.617 95 697.977 90.92C698.937 89.8 700.017 89.24 701.217 89.24ZM670.977 71.84C668.017 71.84 665.497 73.56 663.417 77C661.417 80.44 660.417 84.6 660.417 89.48V89.72C665.137 88.6 668.857 86.92 671.577 84.68C674.297 82.44 675.658 79.84 675.658 76.88C675.658 75.36 675.217 74.16 674.337 73.28C673.537 72.32 672.417 71.84 670.977 71.84Z" stroke="white" stroke-width="6" mask="url(#path-1-outside-1_8_7)" />
                     <path d="M739.101 89.24C739.981 95.8 741.261 102.28 742.941 108.68C743.261 109.72 743.421 110.8 743.421 111.92C743.421 115.52 741.221 117.32 736.821 117.32C734.341 117.32 732.421 116.64 731.061 115.28C729.781 113.92 728.581 111.36 727.461 107.6L727.341 107.12C724.301 110.88 721.541 113.4 719.061 114.68C716.661 115.96 713.861 116.6 710.661 116.6C705.781 116.6 701.741 114.8 698.541 111.2C695.421 107.52 693.861 102.76 693.861 96.92C693.861 90.52 695.221 84.6 697.941 79.16C700.661 73.72 704.381 69.28 709.101 65.84C713.821 62.32 719.101 60.2 724.941 59.48C726.461 44.36 729.341 31.2 733.581 20C737.901 8.79998 743.621 3.19998 750.741 3.19998C754.181 3.19998 757.021 4.75998 759.261 7.87999C761.581 11 762.741 15.72 762.741 22.04C762.741 30.84 760.581 41.12 756.261 52.88C751.941 64.64 746.221 76.76 739.101 89.24ZM749.421 14.96C747.101 14.96 744.901 20.88 742.821 32.72C740.821 44.56 739.461 57.44 738.741 71.36C747.621 52.16 752.061 36.56 752.061 24.56C752.061 21.52 751.781 19.16 751.221 17.48C750.741 15.8 750.141 14.96 749.421 14.96ZM714.861 104.48C716.461 104.48 717.981 103.88 719.421 102.68C720.941 101.48 722.861 99.16 725.181 95.72C724.381 89.88 723.981 83.84 723.981 77.6C723.981 75.12 724.021 73.2 724.101 71.84C719.701 73.12 716.061 76.04 713.181 80.6C710.301 85.16 708.861 90.2 708.861 95.72C708.861 101.56 710.861 104.48 714.861 104.48Z" stroke="white" stroke-width="6" mask="url(#path-1-outside-1_8_7)" />
                 </svg> */}
-                <svg className={style.svg_name} width="770" height="125" viewBox="0 0 770 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={style.svg_name} width="770" height="125" viewBox="0 0 770 125" fill="none" xmlns="http://www.w3.org/2000/svg" ref={svgName}>
                     <mask id="path-1-outside-1_8_7" maskUnits="userSpaceOnUse" x="0.0799866" y="0.199982" width="770" height="125" fill="black">
                         <rect fill="white" x="0.0799866" y="0.199982" width="770" height="125" />
                         <path d="M40.24 118.96C29.6 118.96 21.08 116.96 14.68 112.96C8.27999 108.88 5.07999 102.68 5.07999 94.36C5.07999 89.96 5.83999 86.6 7.35999 84.28C8.87999 81.96 11.12 80.8 14.08 80.8C16.24 80.8 18 81.36 19.36 82.48C20.72 83.6 21.4 85.04 21.4 86.8C21.4 88.4 21.28 89.8 21.04 91C21.04 91.32 20.96 91.88 20.8 92.68C20.72 93.48 20.68 94.32 20.68 95.2C20.68 98.8 22.48 101.48 26.08 103.24C29.76 105 34.88 105.88 41.44 105.88C48.24 105.88 53.56 104.68 57.4 102.28C61.24 99.8 63.16 96.36 63.16 91.96C63.16 89.24 62.28 86.92 60.52 85C58.76 83 56.56 81.36 53.92 80.08C51.28 78.72 47.56 77.08 42.76 75.16C36.6 72.76 31.56 70.48 27.64 68.32C23.8 66.16 20.48 63.24 17.68 59.56C14.96 55.8 13.6 51.16 13.6 45.64C13.6 39.88 15.12 34.76 18.16 30.28C21.28 25.8 25.72 22.32 31.48 19.84C37.32 17.36 44.16 16.12 52 16.12C57.84 16.12 63.2 17 68.08 18.76C72.96 20.44 76.84 23.04 79.72 26.56C82.68 30.08 84.16 34.4 84.16 39.52C84.16 44.56 83.4 48.36 81.88 50.92C80.36 53.48 78.12 54.76 75.16 54.76C73.08 54.76 71.32 54.12 69.88 52.84C68.52 51.56 67.84 50.04 67.84 48.28C67.84 46.76 67.96 45.36 68.2 44.08C68.44 41.68 68.56 40.16 68.56 39.52C68.56 36.16 66.92 33.6 63.64 31.84C60.36 30.08 56.28 29.2 51.4 29.2C44.52 29.2 39.24 30.48 35.56 33.04C31.96 35.52 30.16 39.04 30.16 43.6C30.16 46.64 31.08 49.24 32.92 51.4C34.84 53.56 37.2 55.36 40 56.8C42.8 58.24 46.72 59.96 51.76 61.96C57.84 64.44 62.72 66.68 66.4 68.68C70.08 70.68 73.2 73.4 75.76 76.84C78.4 80.28 79.72 84.52 79.72 89.56C79.72 99 76.12 106.28 68.92 111.4C61.8 116.44 52.24 118.96 40.24 118.96Z" />

@@ -21,7 +21,7 @@
 .tile {
     border-radius: 1vmax;
     position: absolute;
-    transition: transform 400ms ease, z-index 400ms ease;
+    transition: transform 800ms ease, z-index 400ms ease;
 }
 
 .tile:hover {
@@ -241,7 +241,7 @@
     z-index: 1;
     position: absolute;
     font-size: 200px;
-
+    width: 40%;
 
     /* transform: translate(-50%, -50%); */
     color: rgba(255, 255, 255, 0.2);
