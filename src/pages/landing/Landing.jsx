@@ -21,7 +21,7 @@ export default function Landing() {
         },
         {
             fancy: "Engineers ",
-            normal: "turn dreams into reality."
+            normal: "turn dreams into reality!"
         },
         {
             fancy: "Design ",
