@@ -1,17 +1,48 @@
 import React from 'react'
 import style from './Skills.module.css'
 import "../../global/css/global.css"
+import { subscribe, unsubscribe } from "../../global/helper/customEvent/CustomEvent"
 
 export default function Skills() {
 
     const cardsRef = React.useRef();
+    const scrollConst = 200;
     // let rect;
     let allCards = [];
 
     React.useEffect(() => {
-        // rect = cardsRef.current.getBoundingClientRect();
-        allCards = document.getElementsByClassName(`${style.card}`)
-        // console.log(allCards);
+
+        allCards = [...cardsRef.current.children];
+
+        subscribe("skills", (e) => {
+            const { scrollPositionOfElement } = e.detail;
+            console.log(scrollPositionOfElement - scrollConst);
+
+            for (let i = 0; i < allCards.length; i++) {
+                allCards[i].animate(
+                    {
+                        transform: `translateX(${(scrollPositionOfElement - scrollConst)}%)`,
+                        // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
+                    },
+                    {
+                        duration: 300,
+                        fill: "forwards",
+                        easing: "ease",
+                        delay: 320 * i
+                    }
+
+                );
+
+            }
+
+
+
+        })
+
+        return () => {
+            unsubscribe("skills");
+        }
+
     }, [])
 
 
@@ -175,6 +206,8 @@ export default function Skills() {
         </div>
     )
 }
+
+const clamp = (num, min, max) => Math.max(min, Math.min(num, max));
 
 
 

@@ -20,6 +20,10 @@
     overflow: hidden;
     padding: 0px;
     position: relative;
+    overflow: hidden;
+
+    background: rgb(136, 104, 102);
+    background: linear-gradient(225deg, rgba(136, 104, 102, 1) 9%, rgba(42, 38, 53, 1) 54%, rgba(15, 12, 29, 1) 100%);
 }
 
 .header {
@@ -29,9 +33,7 @@
     z-index: 10;
 }
 
-.cards:hover+.header {
-    z-index: 0;
-}
+
 
 .cards {
     display: flex;
@@ -39,17 +41,25 @@
     /* align-items: center;
     justify-content: center; */
     /*   flex-direction:column; */
-    gap: 12px;
-    max-width: 1100px;
-    width: calc(80% - 20px);
+    gap: 20px;
+    max-width: 1000px;
+    width: calc(85% - 20px);
+    overflow: visible;
+
     /* height: calc(80% - 20px); */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
 }
 
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 10px;
+    gap: 20px 20px;
     grid-template-areas:
         "Big1 Big1 . ."
         ". Big2 Big2 Big2"
@@ -74,9 +84,9 @@
     grid-area: Big3;
 }
 
-.cards:hover>.card::after {
+/* .cards:hover>.card::after {
     opacity: 1;
-}
+} */
 
 .card {
     background-color: rgba(255, 255, 255, 0.1);
@@ -98,29 +108,35 @@
 
 .card::before,
 .card::after {
+
     border-radius: inherit;
     content: "";
     height: 100%;
     left: 0px;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 0px;
     transition: opacity 500ms;
     width: 100%;
 }
 
+.card::after {
+    opacity: 1;
+}
+
 .card::before {
-    background: radial-gradient(1400px circle at var(--mouse-x) var(--mouse-y),
-            rgba(35, 112, 108, 0.27),
+    background: radial-gradient(1600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(253, 149, 91, .13),
             transparent 40%);
-    z-index: 3;
+    z-index: 4;
 }
 
 .card::after {
     background: radial-gradient(900px circle at var(--mouse-x) var(--mouse-y),
-            rgba(72, 175, 151, .6),
+            /* rgba(72, 175, 151, .6), */
+            rgba(253, 149, 91, 0.68),
             transparent 40%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .card>.card_content {
@@ -131,9 +147,10 @@
     flex-direction: column;
     flex-grow: 1;
     inset: 2px;
-    padding: 10px;
+    padding: 8px;
+    padding-bottom: 18px;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
@@ -203,13 +220,38 @@ i {
     display: grid;
     grid-template-columns: 1.5fr 0.8fr 0.7fr 0.7fr 1.3fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 10px;
+    gap: 20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
         "col13_row11 col13_row11 col13_row11 col45_row11 col45_row11"
         "col11_row23 col25_row22 col25_row22 col25_row22 col25_row22"
         "col11_row23 col23_row33 col23_row33 col34_row33 col34_row33";
 }
+
+.card {
+    box-shadow: -12px 12px 12px 3px rgba(8, 5, 25, 0.69);
+    -webkit-box-shadow: -12px 12px 12px 3px rgba(8, 5, 25, 0.69);
+    -moz-box-shadow: -12px 12px 12px 3px rgba(8, 5, 25, 0.69);
+    transform: translateX(-50%);
+    transition: box-shadow 0.7s;
+}
+
+.cards:hover {
+    z-index: 1;
+}
+
+.cards:hover .card::before {
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1 !important;
+}
+
+.cards:hover+.header {
+    z-index: 0;
+}
+
 
 .col11_row23 {
     grid-area: col11_row23;
@@ -234,6 +276,8 @@ i {
 .col25_row22 {
     grid-area: col25_row22;
 }
+
+
 
 @media(max-width: 1000px) {
     .body {
@@ -294,3 +338,17 @@ i {
         width: 100%;
     }
 }
+
+
+
+
+/* 
+background: rgb(140, 107, 105);
+background: linear-gradient(230deg, rgba(140, 107, 105, 1) 0%, rgba(28, 26, 40, 1) 100%);
+background: rgb(196, 163, 154);
+background: linear-gradient(225deg, rgba(196, 163, 154, 1) 0%, rgba(19, 17, 34, 1) 100%); 
+background: rgb(196, 163, 154);
+background: linear-gradient(225deg, rgba(196, 163, 154, 1) 0%, rgba(19, 17, 34, 1) 80%);
+background: rgb(196, 163, 154);
+background: linear-gradient(235deg, rgba(196, 163, 154, 1) 0%, rgba(136, 104, 102, 1) 26%, rgba(42, 38, 53, 1) 58%, rgba(15, 12, 29, 1) 100%);
+*/

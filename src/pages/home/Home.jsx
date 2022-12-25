@@ -51,6 +51,10 @@ export default function Home() {
                         publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp })
                     }
 
+                    if (setScrollPositionOfElementTmp > 150 && setScrollPositionOfElementTmp < 250) {
+                        publish("skills", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    }
+
 
                     if (setScrollPositionOfElementTmp > 250) {
                         publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
