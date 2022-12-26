@@ -6,6 +6,7 @@ import Landing from '../landing/Landing'
 import style from './Home.module.css'
 import Skills from '../skills/Skills'
 import { publish } from '../../global/helper/customEvent/CustomEvent'
+import Contacts from '../contacts/Contacts'
 
 export default function Home() {
 
@@ -78,6 +79,10 @@ export default function Home() {
             <section id='about'>
                 <About />
             </section>
+            <section id='about'>
+                <Contacts />
+            </section>
+
         </div >
 
     )
