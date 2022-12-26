@@ -37,7 +37,7 @@ const Navbar = () => {
         >Menu</Link>
         <Link className={`${isActive ? styles.show : styles.hide}`} to="/">Home</Link>
         {/* <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#about">About</AnchorLink> */}
-        <a className={`${isActive ? styles.show : styles.hide}`} href="https://github.com/Sourav9063">Github</a>
+        <a className={`${isActive ? styles.show : styles.hide}`} href="https://github.com/Sourav9063" target='_blank' rel="noreferrer">Github</a>
         {/* <AnchorLink href="#gallery">Gallery</AnchorLink> */}
         <Link className={`${isActive ? styles.show : styles.hide}`} to="/Cv">Resume</Link>
         {/* {user === "Student" && < >
