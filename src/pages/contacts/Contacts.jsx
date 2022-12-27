@@ -27,7 +27,7 @@ export default function Contacts() {
                 <h2>
                     I'm a student, studying Software Engineering at
                 </h2>
-                <a className={`${style.sust}`} href="https://www.sust.edu/" target="_blank" rel="noreferrer">Shahjalal University of Science and Technology </a>
+                <a className={`${style.sust}`} href="https://www.sust.edu/" target="_blank" rel="noreferrer">Shahjalal University of Science and Technology, Sylhet </a>
             </GlassDiv>
 
             <div>
@@ -41,7 +41,7 @@ export default function Contacts() {
                     create GlassDiv for all the links
                 */}
                 <GlassDiv>
-                    <a href="mailto:sourav.ahmed5654@gmail.com" target="_blank" rel="noreferrer">Email : sourav.ahmed5654@gmail.com</a>
+                    <a href="mailto:sourav.ahmed5654@gmail.com" target="_blank" rel="noreferrer">sourav.ahmed5654@gmail.com</a>
                 </GlassDiv>
                 <GlassDiv>
                     <div className="tooltip imposterA"

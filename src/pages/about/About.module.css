@@ -1,11 +1,12 @@
 .body {
     width: 100%;
     height: 99vh;
-    background-color: rgb(69, 0, 0);
-    background-image: linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%);
+    background-color: rgb(0, 0, 0);
+    background-image: linear-gradient(38.73deg, rgba(204, 0, 187, 0.35) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.35) 100%);
     position: relative;
     overflow: hidden;
     font-size: 2vw;
+    /* background-image: linear-gradient(#0f0b10, #382f32); */
 }
 
 .about_header {
@@ -121,6 +122,7 @@ div>img {
     position: absolute;
     bottom: 0;
     left: 0;
+
 
 }
 
