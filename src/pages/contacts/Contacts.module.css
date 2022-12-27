@@ -32,3 +32,9 @@
 .email h1 {
     display: inline-block;
 }
+
+@media screen and (max-width: 750px) {
+    .sust {
+        font-size: 2em;
+    }
+}
