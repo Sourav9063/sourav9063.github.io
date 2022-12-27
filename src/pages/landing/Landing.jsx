@@ -2,6 +2,8 @@
 import React, { useRef, useState } from 'react'
 import style from './Landing.module.css'
 import { useEffect } from 'react';
+import headR from './headRS.png';
+import headL from './headLS.png';
 
 export default function Landing() {
 
@@ -85,16 +87,23 @@ export default function Landing() {
 
             <div className={`${style.side} ${style.left_side}`} ref={left} style={{ backgroundSize: `${window.innerWidth}px` }}>
 
-                <h2 className={`${style.title}`}>
-                    <span className={`${style.fancy}`} ref={fancy}>{quotes[1].fancy} </span>
+                {/* <h2 className={`${style.title}`}>
+                <span className={`${style.fancy}`} ref={fancy}>{"<Coders>"}</span>
                     {quotes[1].normal}
-                </h2>
+                </h2> */}
+                <span className={`${style.title} ${style.fancy}`} ref={fancy}>{"<Coders>"}</span>
+                <div className={`${style.middle}`}>I enjoy programming a lot!</div>
+                <img className={`${style.headL}`} src={headL} alt="headL" />
             </div>
             <div className={`${style.side} ${style.right_side}`}>
-                <h2 className={`${style.title}`}>
-                    <span className={`${style.fancy}`}>{quotes[1].fancy} </span>
+                {/* <h2 className={`${style.title}`}>
+                <span className={`${style.fancy}`}>{quotes[1].fancy} </span>
                     {quotes[1].normal}
-                </h2>
+                </h2> */}
+                <span className={`${style.title} ${style.fancy}`}>{"Designer"} </span>
+                <div className={`${style.middle}`}>I'm obsessed with designs!</div>
+                <img className={`${style.headR}`} src={headR} alt="headL" />
+
             </div>
 
 
