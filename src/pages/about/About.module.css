@@ -134,6 +134,12 @@ div>img {
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
+    background: linear-gradient(#ffffff94 0%, #ffffff00 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
 
 }
 
@@ -150,9 +156,9 @@ div>img {
     /* transform: translate(0, -50%); */
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1500px) {
     .im {
-        font-size: 8.1em;
+        font-size: 6.1em;
         left: auto;
         right: 0%;
     }
