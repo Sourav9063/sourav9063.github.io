@@ -16,14 +16,14 @@ export default function Home() {
     // let scrollPositionOfElement = 0;
     let tmp2 = 0;
 
-    useEffect(() => {
-        publish("project", { scrollPositionOfElement: 75 })
+    // useEffect(() => {
+    //     // publish("project", { scrollPositionOfElement: 30 })
 
 
-        return () => {
+    //     return () => {
 
-        }
-    }, [])
+    //     }
+    // }, [])
 
 
     return (
@@ -32,7 +32,7 @@ export default function Home() {
                 const setScrollPositionOfElementTmp = landing.current.getBoundingClientRect().top / (landing.current.getBoundingClientRect().height) * 100 * -1;
 
                 // setScrollPositionOfElement(setScrollPositionOfElementTmp);
-                // console.log(setScrollPositionOfElementTmp);
+                console.log(setScrollPositionOfElementTmp);
                 // console.dir(event.target);
                 //get the scroll position of the element in percentage
                 // scrollPosition = event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight) * 100;
@@ -48,16 +48,16 @@ export default function Home() {
 
                 if (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 1 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) {
                     tmp2 = setScrollPositionOfElementTmp;
-                    if (setScrollPositionOfElementTmp > 75 && setScrollPositionOfElementTmp < 175) {
-                        publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    if (setScrollPositionOfElementTmp > 175 && setScrollPositionOfElementTmp < 275) {
+                        publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp - 200 })
                     }
 
-                    if (setScrollPositionOfElementTmp > 150 && setScrollPositionOfElementTmp < 250) {
-                        publish("skills", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    if (setScrollPositionOfElementTmp > 250 && setScrollPositionOfElementTmp < 350) {
+                        publish("skills", { scrollPositionOfElement: setScrollPositionOfElementTmp - 300 })
                     }
 
 
-                    if (setScrollPositionOfElementTmp > 250) {
+                    if (setScrollPositionOfElementTmp > 50 && setScrollPositionOfElementTmp < 185) {
                         publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
                     }
                 }
@@ -70,16 +70,16 @@ export default function Home() {
             <section id='landing' ref={landing}  >
                 <Landing />
             </section>
+            <section id='about'>
+                <About />
+            </section>
             <section id='projects' ref={projects}>
                 <Projects />
             </section>
             <section >
                 <Skills />
             </section>
-            <section id='about'>
-                <About />
-            </section>
-            <section id='about'>
+            <section id='contacts'>
                 <Contacts />
             </section>
 

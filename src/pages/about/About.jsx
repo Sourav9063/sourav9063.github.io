@@ -43,14 +43,14 @@ export default function About() {
         const nameAnime =
             (e, paths) => {
                 const { scrollPositionOfElement } = e.detail;
-                console.count("nameAnime");
+                // console.count("nameAnime");
 
                 for (let i = 0; i < paths.length; i++) {
 
                     // paths[i].style.strokeDashoffset = paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 275) / 25);
                     paths[i].animate(
                         {
-                            strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 250) / 50)
+                            strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement - 50) / 50)
                         },
                         {
                             duration: 300,

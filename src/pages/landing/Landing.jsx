@@ -4,6 +4,9 @@ import style from './Landing.module.css'
 import { useEffect } from 'react';
 import headR from './headRS.png';
 import headL from './headLS.png';
+import code from './code.jpg';
+import design from './design.jpg';
+
 
 export default function Landing() {
 
@@ -63,17 +66,6 @@ export default function Landing() {
 
 
     }
-    // const [scrollPercent, setScrollPercent] = useState(props.scrollPercent);
-
-
-    // useEffect(() => {
-
-    //     console.log(props.scrollPercent);
-    //     return () => {
-
-    //     }
-    // }, [scrollPercent])
-
 
 
     return (
@@ -94,6 +86,7 @@ export default function Landing() {
                 <span className={`${style.title} ${style.fancy}`} ref={fancy}>{"{Coder}"}</span>
                 <div className={`${style.middle}`}>I enjoy programming a lot!</div>
                 <img className={`${style.headL}`} src={headL} alt="headL" />
+                <div className={`${style.code}`} style={{ backgroundImage: ` url(${code})` }}></div>
             </div>
             <div className={`${style.side} ${style.right_side}`}>
                 {/* <h2 className={`${style.title}`}>
@@ -103,8 +96,11 @@ export default function Landing() {
                 <span className={`${style.title} ${style.fancy}`}>{"<Designer>"} </span>
                 <div className={`${style.middle}`}>I'm obsessed with designs!</div>
                 <img className={`${style.headR}`} src={headR} alt="headL" />
+                <div className={`${style.design}`} style={{ backgroundImage: ` url(${design})` }}></div>
+
 
             </div>
+
 
 
 

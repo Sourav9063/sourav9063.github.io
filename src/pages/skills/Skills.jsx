@@ -6,7 +6,7 @@ import { subscribe, unsubscribe } from "../../global/helper/customEvent/CustomEv
 export default function Skills() {
 
     const cardsRef = React.useRef();
-    const scrollConst = 200;
+
     // let rect;
     let allCards = [];
 
@@ -16,12 +16,12 @@ export default function Skills() {
 
         subscribe("skills", (e) => {
             const { scrollPositionOfElement } = e.detail;
-            console.log(scrollPositionOfElement - scrollConst);
+            // console.log(scrollPositionOfElement - scrollConst);
 
             for (let i = 0; i < allCards.length; i++) {
                 allCards[i].animate(
                     {
-                        transform: `translateX(${(scrollPositionOfElement - scrollConst)}%)`,
+                        transform: `translateX(${(scrollPositionOfElement)}%)`,
                         // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
                     },
                     {

@@ -33,7 +33,7 @@ export default function Projects() {
     }
 
     // let hallManagement = 0;
-    const [scrollPosition, setScrollPosition] = React.useState(75);
+    const [scrollPosition, setScrollPosition] = React.useState(-24*30);
     // let pattern;
     let pattern = useRef(1);
 
@@ -47,13 +47,13 @@ export default function Projects() {
             const { scrollPositionOfElement } = e.detail;
             // console.log(scrollPositionOfElement);
             
-            if (scrollPositionOfElement > 110) {
+            if (scrollPositionOfElement > 10) {
                 // setScrollPosition(700);
-                setScrollPosition((state) => (scrollPositionOfElement - 100) * 30);
+                setScrollPosition((state) => (scrollPositionOfElement) * 30);
             }
-            else if (scrollPositionOfElement <= 90) {
+            else if (scrollPositionOfElement < -10) {
                 // setScrollPosition(-700);
-                setScrollPosition((state) => (scrollPositionOfElement - 100) * 30);
+                setScrollPosition((state) => (scrollPositionOfElement) * 30);
             }
             else {
                 setScrollPosition((state) => 0);
