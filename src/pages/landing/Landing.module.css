@@ -128,13 +128,13 @@
     /* top: calc(10% + 3px); */
     /* filter: grayscale(100%); */
     filter: grayscale();
-    left: calc(50vw + 3px);
+    left: calc(50vw + 2px);
 
 }
 
 .headR {
     filter: contrast(1.5);
-    left: calc(50vw - 3px);
+    left: calc(50vw - 2px);
     /* opacity: 0.1; */
     mask-image: linear-gradient(red, yellow, blue, orange);
 
