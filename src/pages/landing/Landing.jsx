@@ -91,7 +91,7 @@ export default function Landing() {
                 <span className={`${style.fancy}`} ref={fancy}>{"<Coders>"}</span>
                     {quotes[1].normal}
                 </h2> */}
-                <span className={`${style.title} ${style.fancy}`} ref={fancy}>{"<Coders>"}</span>
+                <span className={`${style.title} ${style.fancy}`} ref={fancy}>{"{Coder}"}</span>
                 <div className={`${style.middle}`}>I enjoy programming a lot!</div>
                 <img className={`${style.headL}`} src={headL} alt="headL" />
             </div>
@@ -100,7 +100,7 @@ export default function Landing() {
                 <span className={`${style.fancy}`}>{quotes[1].fancy} </span>
                     {quotes[1].normal}
                 </h2> */}
-                <span className={`${style.title} ${style.fancy}`}>{"Designer"} </span>
+                <span className={`${style.title} ${style.fancy}`}>{"<Designer>"} </span>
                 <div className={`${style.middle}`}>I'm obsessed with designs!</div>
                 <img className={`${style.headR}`} src={headR} alt="headL" />
 
