@@ -33,6 +33,19 @@
     display: inline-block;
 }
 
+.glassDiv {
+    display: grid;
+    align-items: center;
+    width: 95vw;
+    margin-top: 10vh;
+}
+
+.glassDiv h2,
+.glassDiv a {
+    display: block;
+    text-align: center;
+}
+
 @media screen and (max-width: 750px) {
     .sust {
         font-size: 2em;

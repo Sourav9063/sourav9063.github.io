@@ -23,7 +23,7 @@ export default function Contacts() {
 
 
             />
-            <GlassDiv>
+            <GlassDiv className={`${style.glassDiv}`}>
                 <h2>
                     I'm a student, studying Software Engineering at
                 </h2>
