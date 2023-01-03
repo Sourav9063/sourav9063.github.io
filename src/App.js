@@ -7,13 +7,15 @@ import Cv from "./pages/cv/Cv";
 import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects.jsx";
 import { Suspense } from "react";
+import Links from "./global/components/links/Links";
 
 function App() {
   return (
     // <Routes>
     //   <Route path="/" element={<Projects />} />
     // </Routes>
-    <div > <Navbar />
+    <div >
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -23,6 +25,7 @@ function App() {
 
 
       </Routes>
+      <Links />
     </div >
   );
 }

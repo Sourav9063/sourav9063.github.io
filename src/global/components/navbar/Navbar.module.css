@@ -8,7 +8,7 @@ nav {
   background-color: rgba(129, 129, 129, 0.3);
 
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
   align-items: center;
   justify-content: flex-end;
   margin-right: 50px;
@@ -66,15 +66,21 @@ nav a {
 
 @media screen and (max-width: 750px) {
   nav {
+    display: flex;
     flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+
     height: auto;
     margin-right: 5px;
 
   }
 
   nav a {
-    padding: 10px 0px;
+    padding: 4px 0px;
     display: none;
+    font-size: 18px;
+    margin: 0px 8px;
 
   }
 

@@ -7,6 +7,7 @@ import style from './Home.module.css'
 import Skills from '../skills/Skills'
 import { publish } from '../../global/helper/customEvent/CustomEvent'
 import Contacts from '../contacts/Contacts'
+import Links from '../../global/components/links/Links'
 
 export default function Home() {
 
@@ -67,6 +68,9 @@ export default function Home() {
         // style={{ position: "relative", backgroundColor: "black" }}
 
         >
+
+
+
             <section id='landing' ref={landing}  >
                 <Landing />
             </section>
