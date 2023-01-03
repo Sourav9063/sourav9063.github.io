@@ -37,13 +37,15 @@
     height: 25px;
     color: var(--light-slate);
 
-    transition: var(--transition);
+    ;
     fill: none;
 }
 
 .links>ul>li>a>svg>path {
 
     stroke: var(--light-slate);
+
+    /* transition: all 2s ease-in-out; */
 
 }
 
@@ -68,7 +70,7 @@ a {
         top: 10px;
         left: 10px;
         right: auto;
-        width: 100%;
+        width: 90%;
     }
 
     .links>ul {

@@ -33,7 +33,7 @@ export default function Home() {
                 const setScrollPositionOfElementTmp = landing.current.getBoundingClientRect().top / (landing.current.getBoundingClientRect().height) * 100 * -1;
 
                 // setScrollPositionOfElement(setScrollPositionOfElementTmp);
-                console.log(setScrollPositionOfElementTmp);
+                // console.log(setScrollPositionOfElementTmp);
                 // console.dir(event.target);
                 //get the scroll position of the element in percentage
                 // scrollPosition = event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight) * 100;
@@ -60,6 +60,10 @@ export default function Home() {
 
                     if (setScrollPositionOfElementTmp > 50 && setScrollPositionOfElementTmp < 185) {
                         publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    }
+
+                    if (setScrollPositionOfElementTmp > 0 && setScrollPositionOfElementTmp < 1000) {
+                        publish("links", { scrollPositionOfElement: setScrollPositionOfElementTmp })
                     }
                 }
             }

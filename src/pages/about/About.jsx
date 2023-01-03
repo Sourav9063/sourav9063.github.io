@@ -35,7 +35,7 @@ export default function About() {
                     path.style.strokeDasharray = path.getTotalLength();
                     path.style.strokeDashoffset = path.getTotalLength();
                 }
-                console.count("nameAnimInit");
+
             }
 
         nameAnimInit();
