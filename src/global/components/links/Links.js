@@ -50,7 +50,7 @@ export default function Links() {
                         if (scrollPositionOfElement < 5 || scrollPositionOfElement > 195)
                             document.querySelector(`.${style.links}`).style.display = "none";
                         setCalled = true;
-                    }, 4100);
+                    }, 4000);
                 }
                 setCalled = true;
             }
