@@ -44,7 +44,7 @@ export default function Links() {
                         if (scrollPositionOfElement < 5 || scrollPositionOfElement > 195)
                             document.querySelector(`.${style.links}`).style.display = "none";
                         setCalled = true;
-                    }, 4500);
+                    }, 4100);
                 }
                 setCalled = true;
             }
@@ -92,6 +92,14 @@ export default function Links() {
     return (
         <div orientation="left" className={`${style.links}`}>
             <ul >
+                <li>
+                    <svg width="2" height="285" viewBox="0 0 2 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.04308e-05L1 285" stroke="white" stroke-width="2" />
+                    </svg>
+
+
+
+                </li>
                 <li>
                     {/* <a href="https://codepen.io/sourav9063" aria-label="Codepen" target="_blank" rel="noreferrer">
                      */}

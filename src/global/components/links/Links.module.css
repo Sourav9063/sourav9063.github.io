@@ -32,6 +32,11 @@
     margin-bottom: 0px;
 }
 
+.links>ul>li:first-child {
+    /* height: 40vh; */
+
+}
+
 .links>ul>li>a>svg {
     width: 25px;
     height: 25px;
@@ -55,7 +60,7 @@
 }
 
 .links>ul>li:hover {
-    transform: scale(1.1);
+    transform: translateY(-4px);
 }
 
 a {
@@ -89,7 +94,8 @@ a {
 
     }
 
-    .links>ul>li:last-child {
+    .links>ul>li:last-child,
+    .links>ul>li:first-child {
         margin-bottom: 0px;
         transform: rotate(270deg);
         display: none;
