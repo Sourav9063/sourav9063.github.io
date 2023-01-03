@@ -32,10 +32,16 @@ export default function Links() {
 
 
 
-            if (scrollPositionOfElement > 5 && scrollPositionOfElement < 195) {
+            if (scrollPositionOfElement > 1 && scrollPositionOfElement < 199) {
                 document.querySelector(`.${style.links}`).style.display = "block";
                 clearTimeout(timeoutId);
                 setCalled = false;
+            }
+            else if (scrollPositionOfElement > 250) {
+                document.querySelector(`.${style.links}`).style.display = "none";
+                setCalled = true;
+
+
             }
             else {
                 if (!setCalled) {
