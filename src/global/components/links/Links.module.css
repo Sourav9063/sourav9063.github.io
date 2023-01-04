@@ -30,6 +30,7 @@
 
 .links>ul>li:last-child {
     margin-bottom: 0px;
+    transform: rotate(180deg);
 }
 
 .links>ul>li:first-child {

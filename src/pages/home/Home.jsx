@@ -62,7 +62,7 @@ export default function Home() {
                         publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
                     }
 
-                    if (setScrollPositionOfElementTmp > 0 && setScrollPositionOfElementTmp < 1000) {
+                    if (setScrollPositionOfElementTmp > 0 && setScrollPositionOfElementTmp < 310) {
                         publish("links", { scrollPositionOfElement: setScrollPositionOfElementTmp })
                     }
                 }
