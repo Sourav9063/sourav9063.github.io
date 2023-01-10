@@ -1,6 +1,6 @@
 .body {
 
-    height: 99vh;
+    height: calc(100vh - 10px);
     background-color: #970000;
     position: relative;
     /* background with dotted texture */
@@ -20,7 +20,7 @@
 
 .side {
     display: grid;
-    height: 99vh;
+    height: calc(100vh - 10px);
     overflow: hidden;
     place-items: center;
     position: absolute;

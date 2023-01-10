@@ -1,5 +1,5 @@
 /* .body {
-    height: 99vh;
+height: calc(100vh - 10px);
     width: 100vw;
     background-color: black;
     display: flex;
@@ -14,7 +14,7 @@
     align-items: center;
     background-color: var(--bg-color);
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 10px);
     justify-content: center;
     margin: 0px;
     overflow: hidden;

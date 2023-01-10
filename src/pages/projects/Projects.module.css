@@ -1,6 +1,6 @@
 .body {
     background-color: rgb(10, 10, 10);
-    height: 99vh;
+    height: calc(100vh - 10px);
     overflow: hidden;
     position: relative;
 }

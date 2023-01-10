@@ -1,9 +1,9 @@
 
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import style from './Landing.module.css'
-import { useEffect } from 'react';
-import headR from './headRS.png';
-import headL from './headLS.png';
+
+// import headR from './headRS.png';
+// import headL from './headLS.png';
 import code from './code.jpg';
 import design from './design.jpg';
 
@@ -13,34 +13,6 @@ export default function Landing() {
     const left = useRef();
     const fancy = useRef();
 
-    let quote = {
-        fancy: "Design ",
-        normal: "is intelligence made visible."
-    }
-
-
-    let quotes = [
-        {
-            fancy: "Design ",
-            normal: "is intelligence made visible."
-        },
-        {
-            fancy: "Engineers ",
-            normal: "turn dreams into reality!"
-        },
-        {
-            fancy: "Design ",
-            normal: "is intelligence made visible."
-        },
-        {
-            fancy: "Design ",
-            normal: "is intelligence made visible."
-        },
-        {
-            fancy: "Design ",
-            normal: "is intelligence made visible."
-        },
-    ]
 
     const mouseMove = (e) => {
 
@@ -85,7 +57,7 @@ export default function Landing() {
                 </h2> */}
                 <span className={`${style.title} ${style.fancy}`} ref={fancy}>{"{Coder}"}</span>
                 <div className={`${style.middle}`}>I enjoy programming a lot!</div>
-                <img className={`${style.headL}`} src={headL} alt="headL" />
+                <img className={`${style.headL}`} src={"https://user-images.githubusercontent.com/53114581/211598847-c8db40bb-b1d9-4da7-b234-4fe4b7fa89a2.png"} alt="headL" />
                 <div className={`${style.code}`} style={{ backgroundImage: ` url(${code})` }}></div>
             </div>
             <div className={`${style.side} ${style.right_side}`}>
@@ -95,7 +67,7 @@ export default function Landing() {
                 </h2> */}
                 <span className={`${style.title} ${style.fancy}`}>{"<Designer>"} </span>
                 <div className={`${style.middle}`}>I'm obsessed with designs!</div>
-                <img className={`${style.headR}`} src={headR} alt="headL" />
+                <img className={`${style.headR}`} src={"https://user-images.githubusercontent.com/53114581/211598601-821b4a48-0539-4a16-a884-23f052f7ad43.png"} alt="headR" />
                 <div className={`${style.design}`} style={{ backgroundImage: ` url(${design})` }}></div>
 
 
@@ -107,3 +79,33 @@ export default function Landing() {
         </div >
     )
 }
+
+
+// let quote = {
+//     fancy: "Design ",
+//     normal: "is intelligence made visible."
+// }
+
+
+// let quotes = [
+//     {
+//         fancy: "Design ",
+//         normal: "is intelligence made visible."
+//     },
+//     {
+//         fancy: "Engineers ",
+//         normal: "turn dreams into reality!"
+//     },
+//     {
+//         fancy: "Design ",
+//         normal: "is intelligence made visible."
+//     },
+//     {
+//         fancy: "Design ",
+//         normal: "is intelligence made visible."
+//     },
+//     {
+//         fancy: "Design ",
+//         normal: "is intelligence made visible."
+//     },
+// ]
