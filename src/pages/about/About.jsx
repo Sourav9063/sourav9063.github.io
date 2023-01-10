@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './About.module.css'
-// import profPic from "./profPic.png"
+import profPic from "./profPic1.png"
 
 import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent';
 
@@ -161,7 +161,8 @@ export default function About() {
 
                 <div className={style.hello}>Hello</div>
                 <div className={style.im}>I'm</div>
-                <img src={"https://user-images.githubusercontent.com/53114581/211597885-2a6e0466-1279-4149-a043-3054941943e1.png"} alt="Profile" />
+                {/* <img src={"https://user-images.githubusercontent.com/53114581/211597885-2a6e0466-1279-4149-a043-3054941943e1.png"} alt="Profile" /> */}
+                <img src={profPic} alt="Profile" />
             </div>
 
 
