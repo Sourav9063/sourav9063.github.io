@@ -8,13 +8,16 @@ export default function About() {
 
 
     const svgName = React.useRef();
+    const pic = React.useRef();
 
+    const [scrollPosition, setScrollPosition] = React.useState(0);
 
 
 
 
 
     React.useEffect(() => {
+        console.count("useEffect")
         let paths = [];
         const nameAnimInit =
 
@@ -69,6 +72,9 @@ export default function About() {
 
         subscribe("about", (e) => {
 
+            setScrollPosition((state) => e.detail.scrollPositionOfElement);
+            // pic.current.style.transform = `translateX(${3 * (e.detail.scrollPositionOfElement - 100)}px)`;
+
 
             nameAnime(e, paths);
 
@@ -82,13 +88,17 @@ export default function About() {
         }
 
 
-    },)
+    },
+        [])
 
 
     return (
 
+
+
         <div className={`${style.body}`}>
             {/* <div className={`${style.about_header}`}>{about}</div> */}
+            {/* <div style={{ position: "fixed", top: "0px", left: "0px", color: "white", zIndex: "100" }}>{scrollPosition}</div> */}
             <div>
                 {/* <svg className={`${style.svg_name}`} width="766" height="121" viewBox="0 0 766 121" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="path-1-outside-1_8_7" maskUnits="userSpaceOnUse" x="0.0799866" y="0.199982" width="766" height="121" fill="black">
@@ -159,10 +169,16 @@ export default function About() {
                     <path d="M578.521 69.592C579.225 74.84 580.249 80.024 581.593 85.144C581.849 85.976 581.977 86.84 581.977 87.736C581.977 90.616 580.217 92.056 576.697 92.056C574.713 92.056 573.177 91.512 572.089 90.424C571.065 89.336 570.105 87.288 569.209 84.28L569.113 83.896C566.681 86.904 564.473 88.92 562.489 89.944C560.569 90.968 558.329 91.48 555.769 91.48C551.865 91.48 548.633 90.04 546.073 87.16C543.577 84.216 542.329 80.408 542.329 75.736C542.329 70.616 543.417 65.88 545.593 61.528C547.769 57.176 550.745 53.624 554.521 50.872C558.297 48.056 562.521 46.36 567.193 45.784C568.409 33.688 570.713 23.16 574.105 14.2C577.561 5.24001 582.137 0.76001 587.833 0.76001C590.585 0.76001 592.857 2.00801 594.649 4.50401C596.505 7.00001 597.433 10.776 597.433 15.832C597.433 22.872 595.705 31.096 592.249 40.504C588.793 49.912 584.217 59.608 578.521 69.592ZM586.777 10.168C584.921 10.168 583.161 14.904 581.497 24.376C579.897 33.848 578.809 44.152 578.233 55.288C585.337 39.928 588.889 27.448 588.889 17.848C588.889 15.416 588.665 13.528 588.217 12.184C587.833 10.84 587.353 10.168 586.777 10.168ZM559.129 81.784C560.409 81.784 561.625 81.304 562.777 80.344C563.993 79.384 565.529 77.528 567.385 74.776C566.745 70.104 566.425 65.272 566.425 60.28C566.425 58.296 566.457 56.76 566.521 55.672C563.001 56.696 560.089 59.032 557.785 62.68C555.481 66.328 554.329 70.36 554.329 74.776C554.329 79.448 555.929 81.784 559.129 81.784Z" fill="white" />
                 </svg> */}
 
-                <div className={style.hello}>Hello</div>
+                <div className={style.hello}
+                    style={{ transform: `translate(0, -50%) scale(${scrollPosition / 100} )` }}
+                >Hello</div>
                 <div className={style.im}>I'm</div>
                 {/* <img src={"https://user-images.githubusercontent.com/53114581/211597885-2a6e0466-1279-4149-a043-3054941943e1.png"} alt="Profile" /> */}
-                <img src={profPic} alt="Profile" />
+                <img src={profPic} alt="Profile"
+                    style={{ transform: `translateX(${3 * (scrollPosition - 100)}px)` }}
+
+                // ref={pic}
+                />
             </div>
 
 

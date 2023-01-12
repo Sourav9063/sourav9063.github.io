@@ -5,7 +5,8 @@ import svg1 from './pattern1.svg'
 import svg2 from './pattern2.svg'
 import svg3 from './pattern3.svg'
 import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent'
-import { render } from '@testing-library/react'
+
+
 export default function Projects() {
 
     const gallery = useRef()
@@ -38,13 +39,12 @@ export default function Projects() {
     // let pattern;
     // let pattern = useRef(1);
     const [pattern, setPattern] = React.useState(-1);
-    console.log(pattern.current + "pattern");
+
 
 
     
     useEffect(() => {
       pattern === -1 && setPattern( (state) => (Math.floor(Math.random() * 4)));
-        console.log("useEffect");
 
     
         subscribe("project", (e) => {
@@ -76,7 +76,7 @@ export default function Projects() {
     return (
         <div className={`${style.body}`}>
             {/* <div style={{ position: "fixed", top: "0px", left: "0px", color: "white", zIndex: "100" }}>{scrollPosition}</div> */}
-            {console.log(pattern.current)}
+            {/* {console.log(pattern.current)} */}
 
             <div className={`${style.gallery}`} ref={gallery}
                 style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
