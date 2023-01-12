@@ -128,17 +128,48 @@
     /* top: calc(10% + 3px); */
     /* filter: grayscale(100%); */
     filter: grayscale();
-    left: calc(50vw + 2px);
+    /* left: calc(50vw + 2px); */
+    left: 30vw;
+    animation: headLAni .7s ease .1s;
+    animation-fill-mode: forwards;
 
 }
+
+@keyframes headLAni {
+    from {
+        left: 30vw;
+    }
+
+    to {
+        left: var(--headLleft);
+    }
+
+}
+
+
+
 
 .headR {
     filter: contrast(1.5);
-    left: calc(50vw - 2px);
+    /* left: calc(50vw - 2px); */
     /* opacity: 0.1; */
-    mask-image: linear-gradient(red, yellow, blue, orange);
+    left: 70vw;
+    animation: headRAni .7s ease .1s;
+    animation-fill-mode: forwards;
 
 }
+
+@keyframes headRAni {
+    from {
+        left: 70vw;
+    }
+
+    to {
+        left: var(--headRleft);
+    }
+
+}
+
 
 .middle {
     position: absolute;
