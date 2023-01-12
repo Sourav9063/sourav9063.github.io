@@ -30,13 +30,10 @@
 
 .links>ul>li:last-child {
     margin-bottom: 0px;
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
 }
 
-.links>ul>li:first-child {
-    /* height: 40vh; */
 
-}
 
 .links>ul>li>a>svg {
     width: 25px;
