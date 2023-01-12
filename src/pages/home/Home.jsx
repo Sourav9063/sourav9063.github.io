@@ -47,7 +47,7 @@ export default function Home() {
                 // change blur on scroll
                 landing.current.style.filter = `blur(${clamp(setScrollPositionOfElementTmp * .20, 0, 20)}px)`;
 
-                if (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 1 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) {
+                if (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 2 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) {
                     tmp2 = setScrollPositionOfElementTmp;
                     if (setScrollPositionOfElementTmp > 175 && setScrollPositionOfElementTmp < 275) {
                         publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp - 200 })
