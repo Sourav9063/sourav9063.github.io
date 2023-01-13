@@ -17,7 +17,7 @@ export default function About() {
 
 
     React.useEffect(() => {
-        console.count("useEffect")
+        // console.log("useEffect")
         let paths = [];
         const nameAnimInit =
 
@@ -73,7 +73,8 @@ export default function About() {
         subscribe("scroll", (e) => {
             const { scrollPositionOfElement } = e.detail;
 
-            if (scrollPositionOfElement > 50 && scrollPositionOfElement < 185) {// console.count(e.detail.scrollPositionOfElement);
+            if (scrollPositionOfElement > 50 && scrollPositionOfElement < 185) {
+                // console.count(e.detail.scrollPositionOfElement);
                 // if (e.detail.scrollPositionOfElement > 80 && e.detail.scrollPositionOfElement < 120) {
                 setScrollPosition((state) => e.detail.scrollPositionOfElement);
                 // }

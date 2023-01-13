@@ -48,7 +48,7 @@ export default function Home() {
                 landing.current.style.filter = `blur(${clamp(setScrollPositionOfElementTmp * .20, 0, 20)}px)`;
 
                 if ((Math.abs(tmp2 - setScrollPositionOfElementTmp) > 5 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) && (Math.ceil(setScrollPositionOfElementTmp) !== Math.ceil(tmp2))) {
-                    console.count(setScrollPositionOfElementTmp);
+                    // console.count(setScrollPositionOfElementTmp);
                     tmp2 = setScrollPositionOfElementTmp;
 
                     publish("scroll", { scrollPositionOfElement: setScrollPositionOfElementTmp });

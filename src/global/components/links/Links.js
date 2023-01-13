@@ -46,7 +46,7 @@ export default function Links() {
                 else {
                     if (!setCalled) {
                         timeoutId = setTimeout(() => {
-                            console.log("setCalled " + scrollPositionOfElement)
+                            // console.log("setCalled " + scrollPositionOfElement)
                             if (scrollPositionOfElement < 30 || scrollPositionOfElement > 185)
                                 document.querySelector(`.${style.links}`).style.display = "none";
                             setCalled = true;
@@ -58,7 +58,7 @@ export default function Links() {
 
 
                 for (let i = 0; i < paths.length; i++) {
-                    const animation = paths[i].animate(
+                    paths[i].animate(
                         { strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement) / 100) },
                         {
                             duration: 1000,
