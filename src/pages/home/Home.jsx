@@ -47,24 +47,28 @@ export default function Home() {
                 // change blur on scroll
                 landing.current.style.filter = `blur(${clamp(setScrollPositionOfElementTmp * .20, 0, 20)}px)`;
 
-                if (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 2 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) {
+                if ((Math.abs(tmp2 - setScrollPositionOfElementTmp) > 5 || Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) && (Math.ceil(setScrollPositionOfElementTmp) !== Math.ceil(tmp2))) {
+                    console.count(setScrollPositionOfElementTmp);
                     tmp2 = setScrollPositionOfElementTmp;
-                    if (setScrollPositionOfElementTmp > 175 && setScrollPositionOfElementTmp < 275) {
-                        publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp - 200 })
-                    }
 
-                    if (setScrollPositionOfElementTmp > 250 && setScrollPositionOfElementTmp < 350) {
-                        publish("skills", { scrollPositionOfElement: setScrollPositionOfElementTmp - 300 })
-                    }
+                    publish("scroll", { scrollPositionOfElement: setScrollPositionOfElementTmp });
+
+                    // if (setScrollPositionOfElementTmp > 175 && setScrollPositionOfElementTmp < 275) {
+                    //     publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp - 200 })
+                    // }
+
+                    // if (setScrollPositionOfElementTmp > 250 && setScrollPositionOfElementTmp < 350) {
+                    //     publish("skills", { scrollPositionOfElement: setScrollPositionOfElementTmp - 300 })
+                    // }
 
 
-                    if (setScrollPositionOfElementTmp > 50 && setScrollPositionOfElementTmp < 185) {
-                        publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
-                    }
+                    // if (setScrollPositionOfElementTmp > 50 && setScrollPositionOfElementTmp < 185) {
+                    //     publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    // }
 
-                    if (setScrollPositionOfElementTmp > 0 && setScrollPositionOfElementTmp < 310) {
-                        publish("links", { scrollPositionOfElement: setScrollPositionOfElementTmp })
-                    }
+                    // if (setScrollPositionOfElementTmp > 0 && setScrollPositionOfElementTmp < 310) {
+                    //     publish("links", { scrollPositionOfElement: setScrollPositionOfElementTmp })
+                    // }
                 }
             }
             }

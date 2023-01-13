@@ -19,7 +19,7 @@ export default function Links() {
             path.style.strokeDashoffset = path.getTotalLength();
         })
 
-        subscribe("links", (e) => {
+        subscribe("scroll", (e) => {
 
 
 
@@ -31,65 +31,65 @@ export default function Links() {
             // }
 
 
-
-            if (scrollPositionOfElement > 1 && scrollPositionOfElement < 199) {
-                document.querySelector(`.${style.links}`).style.display = "block";
-                clearTimeout(timeoutId);
-                setCalled = false;
-            }
-            else if (scrollPositionOfElement > 250) {
-                document.querySelector(`.${style.links}`).style.display = "none";
-                setCalled = true;
-
-
-            }
-            else {
-                if (!setCalled) {
-                    timeoutId = setTimeout(() => {
-                        console.log("setCalled " + scrollPositionOfElement)
-                        if (scrollPositionOfElement < 5 || scrollPositionOfElement > 195)
-                            document.querySelector(`.${style.links}`).style.display = "none";
-                        setCalled = true;
-                    }, 4000);
+            if (scrollPositionOfElement > 0 && scrollPositionOfElement < 310) {
+                if (scrollPositionOfElement > 30 && scrollPositionOfElement < 199) {
+                    document.querySelector(`.${style.links}`).style.display = "block";
+                    clearTimeout(timeoutId);
+                    setCalled = false;
                 }
-                setCalled = true;
+                else if (scrollPositionOfElement > 250) {
+                    document.querySelector(`.${style.links}`).style.display = "none";
+                    setCalled = true;
+
+
+                }
+                else {
+                    if (!setCalled) {
+                        timeoutId = setTimeout(() => {
+                            console.log("setCalled " + scrollPositionOfElement)
+                            if (scrollPositionOfElement < 30 || scrollPositionOfElement > 185)
+                                document.querySelector(`.${style.links}`).style.display = "none";
+                            setCalled = true;
+                        }, 4000);
+                    }
+                    setCalled = true;
+                }
+
+
+
+                for (let i = 0; i < paths.length; i++) {
+                    const animation = paths[i].animate(
+                        { strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement) / 100) },
+                        {
+                            duration: 1000,
+                            delay: 500 * i,
+                            easing: 'ease-in-out',
+                            fill: 'forwards',
+
+
+
+                        },
+
+                    );
+
+                    // if (i === paths.length - 1) {
+                    //     animation.onfinish = () => {
+                    //         console.log("animation finished" + i + " " + scrollPositionOfElement);
+                    //         if (scrollPositionOfElement > 190 || scrollPositionOfElement < 10) {
+                    //             document.querySelector(`.${style.links}`).style.display = "none";
+                    //         }
+
+
+                    //     }
+                    // }
+
+                }
             }
-
-
-
-            for (let i = 0; i < paths.length; i++) {
-                const animation = paths[i].animate(
-                    { strokeDashoffset: paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement) / 100) },
-                    {
-                        duration: 1000,
-                        delay: 500 * i,
-                        easing: 'ease-in-out',
-                        fill: 'forwards',
-
-
-
-                    },
-
-                );
-
-                // if (i === paths.length - 1) {
-                //     animation.onfinish = () => {
-                //         console.log("animation finished" + i + " " + scrollPositionOfElement);
-                //         if (scrollPositionOfElement > 190 || scrollPositionOfElement < 10) {
-                //             document.querySelector(`.${style.links}`).style.display = "none";
-                //         }
-
-
-                //     }
-                // }
-
-            }
-
 
         })
 
         return () => {
-            unsubscribe("links");
+            unsubscribe("scroll");
 
         }
     }, [])

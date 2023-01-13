@@ -14,33 +14,35 @@ export default function Skills() {
 
         allCards = [...cardsRef.current.children];
 
-        subscribe("skills", (e) => {
+        subscribe("scroll", (e) => {
             const { scrollPositionOfElement } = e.detail;
             // console.log(scrollPositionOfElement - scrollConst);
 
-            for (let i = 0; i < allCards.length; i++) {
-                allCards[i].animate(
-                    {
-                        transform: `translateX(${(scrollPositionOfElement)}%)`,
-                        // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
-                    },
-                    {
-                        duration: 300,
-                        fill: "forwards",
-                        easing: "ease",
-                        delay: 320 * i
-                    }
 
-                );
+            if (scrollPositionOfElement > 250 && scrollPositionOfElement < 350) {
+                for (let i = 0; i < allCards.length; i++) {
+                    allCards[i].animate(
+                        {
+                            transform: `translateX(${(scrollPositionOfElement - 300)}%)`,
+                            // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
+                        },
+                        {
+                            duration: 300,
+                            fill: "forwards",
+                            easing: "ease",
+                            delay: 320 * i
+                        }
+
+                    );
+
+                }
 
             }
-
-
 
         })
 
         return () => {
-            unsubscribe("skills");
+            unsubscribe("scroll");
         }
 
     }, [])

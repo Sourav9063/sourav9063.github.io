@@ -47,28 +47,31 @@ export default function Projects() {
       pattern === -1 && setPattern( (state) => (Math.floor(Math.random() * 4)));
 
     
-        subscribe("project", (e) => {
+        subscribe("scroll", (e) => {
             const { scrollPositionOfElement } = e.detail;
             // console.log(scrollPositionOfElement);
             
-            if (scrollPositionOfElement > 10) {
+            if (scrollPositionOfElement > 175 && scrollPositionOfElement < 275) {
+
+             const   scrollPositionOfElementTmp =scrollPositionOfElement- 200;
+                if (scrollPositionOfElementTmp > 10) {
                 // setScrollPosition(700);
-                setScrollPosition((state) => (scrollPositionOfElement) * 30);
+                setScrollPosition((state) => (scrollPositionOfElementTmp) * 30);
             }
-            else if (scrollPositionOfElement < -10) {
+            else if (scrollPositionOfElementTmp < -10) {
                 // setScrollPosition(-700);
-                setScrollPosition((state) => (scrollPositionOfElement) * 30);
+                setScrollPosition((state) => (scrollPositionOfElementTmp) * 30);
             }
             else {
                 setScrollPosition((state) => 0);
             }
 
-
+}
 
         })
 
         return () => {
-            unsubscribe("project")
+            unsubscribe("scroll")
         }
     }, [pattern])
 
