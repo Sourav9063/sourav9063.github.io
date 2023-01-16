@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react'
 import style from './Projects.module.css'
 import svg from './pattern.svg'
 import svg1 from './pattern1.svg'
-import svg2 from './pattern2.svg'
+import svg2 from './pattern4.svg'
 import svg3 from './pattern3.svg'
+
 import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent'
 
 
