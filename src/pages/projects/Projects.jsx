@@ -7,6 +7,7 @@ import svg3 from './pattern3.svg'
 
 import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent'
 
+let pattern = Math.floor(Math.random() * 4) + 1;
 
 export default function Projects() {
 
@@ -39,13 +40,13 @@ export default function Projects() {
     const [scrollPosition, setScrollPosition] = React.useState(-24*30);
     // let pattern;
     // let pattern = useRef(1);
-    const [pattern, setPattern] = React.useState(-1);
+    // const [pattern, setPattern] = React.useState(-1);
 
 
 
     
     useEffect(() => {
-      pattern === -1 && setPattern( (state) => (Math.floor(Math.random() * 4)));
+    //   pattern === -1 && setPattern( (state) => (Math.floor(Math.random() * 4)));
 
     
         subscribe("scroll", (e) => {

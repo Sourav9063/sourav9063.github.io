@@ -5,6 +5,15 @@ import keyboard from "./keyboard.riv"
 import "../../global/css/global.css"
 import { Link } from 'react-router-dom';
 import GlassDiv from '../../global/components/glassDiv/GlassDiv';
+// import svg from "./ssscribble.svg";
+// import svg1 from "./rrrainbow.svg";
+import svg2 from "./ttten.svg";
+// import svg3 from "./ssscribble1.svg";
+// import svg4 from "./dddepth248.jpg";
+
+
+// let pattern = Math.floor(Math.random() * 5) + 1;
+// let pattern = 3
 
 export default function Contacts() {
 
@@ -18,11 +27,16 @@ export default function Contacts() {
 
     return (
         <div className={`${style.body}`}
+            style={{
+                // backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : pattern === 4 ? svg3 : svg4})`,
+                backgroundImage: `url(${svg2})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundColor: "#000000"
+            }}
             onMouseEnter={() => rive && rive.play()}>
-            <RiveComponent className={`${style.rive}`}
-
-
-            />
+            <RiveComponent className={`${style.rive}`} />
             <GlassDiv className={`${style.glassDiv}`}>
                 <h2>
                     I'm a student, studying Software Engineering at
