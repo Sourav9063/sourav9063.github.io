@@ -8,7 +8,7 @@ export default React.forwardRef(function GlassDiv(props) {
         classes += ` ${props.className}`
     }
     return (
-        <div className={classes} >{props.children}</div>
+        <div className={classes} ref={props.ref}>{props.children}</div>
     )
 }
 )

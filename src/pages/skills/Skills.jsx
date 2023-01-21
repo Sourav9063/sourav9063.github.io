@@ -143,7 +143,7 @@ export default function Skills() {
                                 <i className="fa-duotone fa-blender-phone"></i>
                                 <div className={`${style.card_info_title}`}>
                                     <h3>Framework & Library</h3>
-                                    <h4>- ASP.NET <br></br> - Android Studio <br></br> - ReactJS <br></br> - ExpressJS <br></br> - NodeJS, Flutter <br></br> - Arduino <br></br> - MySQL <br></br> - Firebase <br></br>
+                                    <h4>- ASP.NET <br></br> - Android Studio <br></br> - ReactJS <br></br> - ExpressJS <br></br> - NodeJS <br></br> - Flutter <br></br> - Arduino <br></br> - MySQL <br></br> - Firebase <br></br>
                                         - Git & GitHub <br></br> - Docker <br></br> - Unity</h4>
                                 </div>
                             </div>
