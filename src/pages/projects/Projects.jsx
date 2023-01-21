@@ -113,7 +113,7 @@ export default function Projects() {
                 </div>
 
 
-                {/* uBook */}
+                {/* uBookSharing */}
                 <div className={`${style.tile} ${style.uBook1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
                 }}
@@ -138,7 +138,7 @@ export default function Projects() {
                         src="https://user-images.githubusercontent.com/53114581/208036045-c13bdbf0-aacb-4b09-af9b-c8f61685230a.mp4" autoPlay loop ></video>
 
                 </div>
-                {/* uBook */}
+
                 <div className={`${style.tile} ${style.uBook2}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
                 }}
@@ -147,7 +147,6 @@ export default function Projects() {
                 >
                     <img alt='uBookSharing' src="https://user-images.githubusercontent.com/53114581/118114615-a91eb780-b409-11eb-8f46-851c73e3d8fd.png" />
                 </div>
-                {/* uBook */}
                 <div className={`${style.tile} ${style.uBook3}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
                 }}
@@ -156,7 +155,8 @@ export default function Projects() {
                 >
                     <img alt='uBookSharing' src="https://user-images.githubusercontent.com/53114581/118113292-ebdf9000-b407-11eb-9a5d-d1db4f23ce4d.png" />
                 </div>
-                {/* obstacle */}
+
+                {/* Obstacle Detection */}
                 <div className={`${style.tile} ${style.obstacle1}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
                 }}
@@ -176,7 +176,7 @@ export default function Projects() {
                     <img alt="obstacle" src="https://user-images.githubusercontent.com/53114581/201062149-c11e154a-5f92-45c1-bf19-c868e4d543a9.jpg" />
                 </div>
 
-                {/* ftp */}
+                {/* FTP Searcher */}
                 <div className={`${style.tile} ${style.ftp}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
                 }}
@@ -186,7 +186,7 @@ export default function Projects() {
                     <img alt='obstacle' src="https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg" />
 
                 </div>
-                {/* hungry */}
+                {/* Hungry Camper */}
                 <div className={`${style.tile} ${style.hungry}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
                 }}
@@ -206,7 +206,7 @@ export default function Projects() {
                     <img alt='Hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png" />
                 </div>
 
-                {/* blog */}
+                {/* News Blog */}
                 <div className={`${style.tile} ${style.blog}`} onClick={() => {
                     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
                 }}
@@ -225,7 +225,7 @@ export default function Projects() {
                 </div>
 
 
-                {/* ball */}
+                {/* Touch The Ball */}
                 <div className={`${style.tile} ${style.touch}`} onClick={() => {
                     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
                 }}
