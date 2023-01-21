@@ -4,6 +4,7 @@ import svg from './pattern.svg'
 import svg1 from './pattern1.svg'
 import svg2 from './pattern4.svg'
 import svg3 from './pattern3.svg'
+import ProjectModal from '../../global/components/projectModal/ProjectModal'
 
 import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent'
 
@@ -37,7 +38,8 @@ export default function Projects() {
     }
 
     // let hallManagement = 0;
-    const [scrollPosition, setScrollPosition] = React.useState(-24*30);
+    const [scrollPosition, setScrollPosition] = React.useState(-24 * 30);
+    const [showModal, setShowModal] = React.useState(false);
     // let pattern;
     // let pattern = useRef(1);
     // const [pattern, setPattern] = React.useState(-1);
@@ -75,14 +77,18 @@ export default function Projects() {
         return () => {
             unsubscribe("scroll")
         }
-    }, [pattern])
+    }, [])
 
 
     return (
         <div className={`${style.body}`}>
             {/* <div style={{ position: "fixed", top: "0px", left: "0px", color: "white", zIndex: "100" }}>{scrollPosition}</div> */}
             {/* {console.log(pattern.current)} */}
-
+            <button onClick={() => { 
+                setShowModal(true)
+                console.log(showModal)
+             }} >showModal</button>
+        {showModal && <ProjectModal setShowModal={setShowModal} ></ProjectModal>}
             <div className={`${style.gallery}`} ref={gallery}
                 style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
                 onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
