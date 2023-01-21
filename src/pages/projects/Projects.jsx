@@ -84,10 +84,10 @@ export default function Projects() {
         <div className={`${style.body}`}>
             {/* <div style={{ position: "fixed", top: "0px", left: "0px", color: "white", zIndex: "100" }}>{scrollPosition}</div> */}
             {/* {console.log(pattern.current)} */}
-            <button onClick={() => { 
+            {/* <button onClick={() => { 
                 setShowModal(true)
                 console.log(showModal)
-             }} >showModal</button>
+             }} >showModal</button> */}
         {showModal && <ProjectModal setShowModal={setShowModal} ></ProjectModal>}
             <div className={`${style.gallery}`} ref={gallery}
                 style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
@@ -158,7 +158,7 @@ export default function Projects() {
 
                 {/* Obstacle Detection */}
                 <div className={`${style.tile} ${style.obstacle1}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
+                    window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
                 }}
                     style={{ transform: `translateX(${-1 * scrollPosition}px)` }}
 
@@ -201,7 +201,7 @@ export default function Projects() {
                     <img alt='hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637660-776055e8-1fc3-4f40-84f8-3fdc2cde4e65.png" />
                 </div>
                 <div className={`${style.tile} ${style.hungry2}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
+                    window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
                 }}>
                     <img alt='Hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png" />
                 </div>
