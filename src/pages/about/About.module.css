@@ -113,11 +113,12 @@
     stroke-dashoffset: 1000;
 } */
 
-div>img {
+.profPic {
     /* width: 60vw; */
     /* height: 60vh; */
     max-width: 618px;
     width: 100%;
+    height: auto;
     object-fit: contain;
     position: absolute;
     bottom: 0;

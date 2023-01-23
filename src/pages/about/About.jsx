@@ -183,7 +183,7 @@ export default function About() {
                 >Hello</div>
                 <div className={style.im}>I'm</div>
                 {/* <img src={"https://user-images.githubusercontent.com/53114581/211597885-2a6e0466-1279-4149-a043-3054941943e1.png"} alt="Profile" /> */}
-                <img src={profPic} alt="Profile"
+                <img className={style.profPic} src={profPic} alt="Profile"
                     style={{ transform: `translateX(${1.4 * (scrollPosition - 100)}px)` }}
 
                 // 
