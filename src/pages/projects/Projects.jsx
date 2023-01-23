@@ -5,41 +5,50 @@ import svg1 from './pattern1.svg'
 import svg2 from './pattern4.svg'
 import svg3 from './pattern3.svg'
 import ProjectModal from '../../global/components/projectModal/ProjectModal'
-
+import projectsData from '../../global/helper/data/projectsData'
 import { subscribe, unsubscribe } from '../../global/helper/customEvent/CustomEvent'
 
 let pattern = Math.floor(Math.random() * 4) + 1;
+const onMouseMoveFunc = (e,gallery) => {
+    // console.log(e.clientX, e.clientY)
+    const mouseX = e.clientX,
+        mouseY = e.clientY;
+    const xDecimal = mouseX / window.innerWidth,
+        yDecimal = mouseY / window.innerHeight;
+
+    const maxX = gallery.current.offsetWidth - window.innerWidth,
+        maxY = gallery.current.offsetHeight - window.innerHeight;
+
+    const panX = maxX * xDecimal * -1,
+        panY = maxY * yDecimal * -1;
+
+    gallery.current.animate({
+        transform: `translate(${panX}px, ${panY}px)`
+    }, {
+
+        duration: 5000,
+        fill: "forwards",
+        easing: "ease"
+    })
+}
+
+// const renderModal = (selectedProject, setShowModal) => {
+//     return <ProjectModal setShowModal={setShowModal} selectedProject={selectedProject} ></ProjectModal>
+
+// }
 
 export default function Projects() {
 
     const gallery = useRef()
+    
 
-    const onMouseMoveFunc = (e) => {
-        // console.log(e.clientX, e.clientY)
-        const mouseX = e.clientX,
-            mouseY = e.clientY;
-        const xDecimal = mouseX / window.innerWidth,
-            yDecimal = mouseY / window.innerHeight;
 
-        const maxX = gallery.current.offsetWidth - window.innerWidth,
-            maxY = gallery.current.offsetHeight - window.innerHeight;
-
-        const panX = maxX * xDecimal * -1,
-            panY = maxY * yDecimal * -1;
-
-        gallery.current.animate({
-            transform: `translate(${panX}px, ${panY}px)`
-        }, {
-
-            duration: 5000,
-            fill: "forwards",
-            easing: "ease"
-        })
-    }
 
     // let hallManagement = 0;
     const [scrollPosition, setScrollPosition] = React.useState(-24 * 30);
     const [showModal, setShowModal] = React.useState(false);
+    const [selectedProject, setSelectedProject] = React.useState(projectsData['Touch The Ball']);
+
     // let pattern;
     // let pattern = useRef(1);
     // const [pattern, setPattern] = React.useState(-1);
@@ -88,18 +97,21 @@ export default function Projects() {
                 setShowModal(true)
                 console.log(showModal)
              }} >showModal</button> */}
-        {showModal && <ProjectModal setShowModal={setShowModal} ></ProjectModal>}
+        {showModal && <ProjectModal setShowModal={setShowModal} selectedProject={selectedProject} ></ProjectModal>}
             <div className={`${style.gallery}`} ref={gallery}
                 style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
                 onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
                 onMouseMove={(event) => {
-                    onMouseMoveFunc(event);
+                    onMouseMoveFunc(event,gallery);
                 }}
             >
                 {/* Hall management */}
 
                 <div className={`${style.tile} ${style.hall1}`} onClick={() => {
-                    window.open("https://sourav9063.github.io/hall_management_rf/", '_blank')
+                    // window.open("https://sourav9063.github.io/hall_management_rf/", '_blank')
+                    setSelectedProject(projectsData['Hall Management'])
+                    setShowModal(true)
+
                 }}
                     style={{ transform: `translateX(${scrollPosition}px)` }}
                 >
@@ -107,7 +119,9 @@ export default function Projects() {
                     <img alt="Hall Management " src="https://user-images.githubusercontent.com/53114581/202853827-47a44716-f0b2-4c0c-b831-5b651e6c8688.jpg" />
                 </div>
                 <div className={`${style.tile} ${style.hall2}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/hall_management_rf", '_blank')
+                    // window.open("https://github.com/Sourav9063/hall_management_rf", '_blank')
+                    setSelectedProject(projectsData['Hall Management'])
+                    setShowModal(true)
                 }} >
                     <img alt='Hall Management' src="https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg" />
                 </div>
@@ -115,7 +129,9 @@ export default function Projects() {
 
                 {/* uBookSharing */}
                 <div className={`${style.tile} ${style.uBook1}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
+                    // window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
+                    setSelectedProject(projectsData['uBookSharing'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateY(${-1 * scrollPosition}px)` }}
 
@@ -140,7 +156,10 @@ export default function Projects() {
                 </div>
 
                 <div className={`${style.tile} ${style.uBook2}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
+                    // window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
+                    setSelectedProject(projectsData['uBookSharing'])
+                    setShowModal(true)
+                    
                 }}
                     style={{ transform: `translateX(${-1.3 * scrollPosition}px) rotate(10deg)` }}
 
@@ -148,7 +167,9 @@ export default function Projects() {
                     <img alt='uBookSharing' src="https://user-images.githubusercontent.com/53114581/118114615-a91eb780-b409-11eb-8f46-851c73e3d8fd.png" />
                 </div>
                 <div className={`${style.tile} ${style.uBook3}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
+                    // window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
+                    setSelectedProject(projectsData['uBookSharing'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateY(${-1.4 * scrollPosition}px) rotate(-10deg)` }}
 
@@ -158,7 +179,9 @@ export default function Projects() {
 
                 {/* Obstacle Detection */}
                 <div className={`${style.tile} ${style.obstacle1}`} onClick={() => {
-                    window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
+                    // window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
+                    setSelectedProject(projectsData['Obstacle Detection'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateX(${-1 * scrollPosition}px)` }}
 
@@ -168,7 +191,9 @@ export default function Projects() {
                 </div>
 
                 <div className={`${style.tile} ${style.obstacle2}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
+                    // window.open("https://github.com/Sourav9063/obstacles_detection", '_blank')
+                    setSelectedProject(projectsData['Obstacle Detection'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateX(${-1.4 * scrollPosition}px) rotate(10deg)` }}
 
@@ -178,7 +203,9 @@ export default function Projects() {
 
                 {/* FTP Searcher */}
                 <div className={`${style.tile} ${style.ftp}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
+                    // window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
+                    setSelectedProject(projectsData['FTP Searcher'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateX(${1 * scrollPosition}px) ` }}
                 >
@@ -188,7 +215,10 @@ export default function Projects() {
                 </div>
                 {/* Hungry Camper */}
                 <div className={`${style.tile} ${style.hungry}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
+                    // window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
+                    setSelectedProject(projectsData['Hungry Camper'])
+                    setShowModal(true)
+
                 }}
                     style={{ transform: `translateX(${1 * scrollPosition}px) translateY(${-1 * scrollPosition}px) ` }}
                 >
@@ -196,19 +226,25 @@ export default function Projects() {
                     <img alt='hungry camper' src="https://user-images.githubusercontent.com/53114581/148637656-447cdf3b-5267-4e43-99aa-7fb7237184b9.png" />
                 </div>
                 <div className={`${style.tile} ${style.hungry1}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
+                    // window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
+                    setSelectedProject(projectsData['Hungry Camper'])
+                    setShowModal(true)
                 }}>
                     <img alt='hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637660-776055e8-1fc3-4f40-84f8-3fdc2cde4e65.png" />
                 </div>
                 <div className={`${style.tile} ${style.hungry2}`} onClick={() => {
-                    window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
+                    // window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
+                    setSelectedProject(projectsData['Hungry Camper'])
+                    setShowModal(true)
                 }}>
                     <img alt='Hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png" />
                 </div>
 
                 {/* News Blog */}
                 <div className={`${style.tile} ${style.blog}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+                    // window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+                    setSelectedProject(projectsData['News Blog'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateY(${1.2 * scrollPosition}px) rotate(-10deg)` }}
                 >
@@ -216,7 +252,9 @@ export default function Projects() {
                     <img alt='News Blogs' src="https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg" />
                 </div>
                 <div className={`${style.tile} ${style.blog1}`} onClick={() => {
-                    window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+                    // window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+                    setSelectedProject(projectsData['News Blog'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateX(${1.2 * scrollPosition}px) translateY(${1 * scrollPosition}px)  rotate(10deg)` }}
 
@@ -227,7 +265,9 @@ export default function Projects() {
 
                 {/* Touch The Ball */}
                 <div className={`${style.tile} ${style.touch}`} onClick={() => {
-                    window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
+                    // window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
+                    setSelectedProject(projectsData['Touch The Ball'])
+                    setShowModal(true)
                 }}
                     style={{ transform: `translateX(${1.2 * scrollPosition}px) translateY(${1 * scrollPosition}px) ` }}
 
