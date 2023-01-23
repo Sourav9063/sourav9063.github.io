@@ -151,8 +151,8 @@ const projectsData = {
             "https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg"
         ],
         links: [
-            "https://sourav9063.github.io/hall_management_rf/",
-            "https://github.com/Sourav9063/hall_management_rf"
+            "https://github.com/Sourav9063/hall_management_rf",
+            "https://sourav9063.github.io/hall_management_rf/"
         ],
         description: "",
         onClicks: [
@@ -183,7 +183,9 @@ const projectsData = {
             "https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png"
         ],
         links: [
-            ""
+            "https://github.com/Sourav9063/Hungry-Camper-scripts",
+            "https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing"
+
         ],
         description: "",
         onClicks: [
@@ -201,7 +203,7 @@ const projectsData = {
             "https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg"
         ],
         links: [
-            ""
+            "https://github.com/Sourav9063/Blog-CRUD-by-Nodejs"
         ],
         description: "",
         onClicks: [
@@ -215,7 +217,8 @@ const projectsData = {
             "https://user-images.githubusercontent.com/53114581/202858785-0711683e-262e-47ac-9822-f5383d9440de.jpg"
         ],
         links: [
-            ""
+            "https://github.com/Sourav9063/Touch-The-Ball",
+            "https://sourav9063.github.io/Touch-The-Ball/"
         ],
         description: "",
         onClicks: [
@@ -226,11 +229,12 @@ const projectsData = {
     "Obstacle Detection": {
         title: "Obstacle Detection",
         images: [
-            "https://user-images.githubusercontent.com/53114581/202859100-6d2f2d8a-1f3d-4b1e-9b1a-3b1f1b8b2b1f.jpg",
-            "https://user-images.githubusercontent.com/53114581/202859101-6d2f2d8a-1f3d-4b1e-9b1a-3b1f1b8b2b1f.jpg"
+            "https://user-images.githubusercontent.com/53114581/201062121-35f042c7-a4e4-4fe6-9100-8a0ba1ec8b8f.jpg",
+            "https://user-images.githubusercontent.com/53114581/201062149-c11e154a-5f92-45c1-bf19-c868e4d543a9.jpg"
         ],
         links: [
-            ""
+            "https://github.com/Sourav9063/obstacles_detection",
+            "https://youtu.be/YIr5vqj7AQA"
         ],
         description: "",
         onClicks: [
@@ -242,11 +246,10 @@ const projectsData = {
     "FTP Searcher": {
         title: "FTP Searcher",
         images: [
-            "https://user-images.githubusercontent.com/53114581/202859100-6d2f2d8a-1f3d-4b1e-9b1a-3b1f1b8b2b1f.jpg",
-            "https://user-images.githubusercontent.com/53114581/202859101-6d2f2d8a-1f3d-4b1e-9b1a-3b1f1b8b2b1f.jpg"
+            "https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg",
         ],
         links: [
-            ""
+            "https://github.com/Sourav9063/ftp_searcher"
         ],
         description: "",
         onClicks: [
@@ -263,3 +266,6 @@ const projectsData = {
 
 
 }
+
+
+module.exports = projectsData;
