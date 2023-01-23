@@ -124,10 +124,14 @@
     width: 50vw;
 
 
+
     position: absolute;
     top: 2%;
     left: 50vw;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%, 0%);
+    object-fit: contain;
+
+
 }
 
 .headL {
