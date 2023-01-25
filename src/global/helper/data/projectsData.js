@@ -110,7 +110,7 @@
 
 // {/* News Blog */}
 // <div className={`${style.tile} ${style.blog}`} onClick={() => {
-//     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+//     window.open("https://github.com/Sourav9063/Blog-CRUD-by-NodeJS", '_blank')
 // }}
 //     style={{ transform: `translateY(${1.2 * scrollPosition}px) rotate(-10deg)` }}
 // >
@@ -118,7 +118,7 @@
 //     <img alt='News Blogs' src="https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg" />
 // </div>
 // <div className={`${style.tile} ${style.blog1}`} onClick={() => {
-//     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+//     window.open("https://github.com/Sourav9063/Blog-CRUD-by-NodeJS", '_blank')
 // }}
 //     style={{ transform: `translateX(${1.2 * scrollPosition}px) translateY(${1 * scrollPosition}px)  rotate(10deg)` }}
 
@@ -155,6 +155,16 @@ const projectsData = {
             "https://sourav9063.github.io/hall_management_rf/"
         ],
         description: "",
+        tech: [
+            "NodeJS",
+            "ExpressJS",
+            "MySQL",
+            "JWT token",
+            "React"
+        ]
+
+
+
         // onClicks: [
         //     () => window.open("https://sourav9063.github.io/hall_management_rf/", '_blank'),
         // ]
@@ -167,9 +177,17 @@ const projectsData = {
             "https://user-images.githubusercontent.com/53114581/118113292-ebdf9000-b407-11eb-9a5d-d1db4f23ce4d.png"
         ],
         links: [
-            "https://github.com/Sourav9063/uBookSharing"
+            "https://github.com/Sourav9063/uBookSharing",
+            "https://github.com/Sourav9063/uBookSharing/tags"
+
         ],
-        description: "",
+        description: "University based Book sharing app. Users are divided according to their Universities. Anyone can upload details of his/her book for sell/rent/share and anyone can request them for that book providing their contact information. Individual's contact information is not publicly available. Only when someone requests to get a book then and only then the owner of the book will get the contact information. If you want to try it out here is an auth credential Email: sourav.ahmed5654@gmail.com Password: 12345678",
+        tech: [
+            "Flutter",
+            "Firebase",
+            "Rive"
+        ]
+
         // onClicks: [
         //     () => window.open("https://github.com/Sourav9063/uBookSharing", '_blank'),
         // ]
@@ -188,6 +206,10 @@ const projectsData = {
 
         ],
         description: "",
+        tech: [
+            "Unity",
+            "C#",
+        ]
         // onClicks: [
         //     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank'),
         //     window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
@@ -203,11 +225,19 @@ const projectsData = {
             "https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg"
         ],
         links: [
-            "https://github.com/Sourav9063/Blog-CRUD-by-Nodejs"
+            "https://github.com/Sourav9063/Blog-CRUD-by-NodeJS"
         ],
         description: "",
+        tech: [
+            "NodeJS",
+            "ExpressJS",
+            "MySQL",
+            "JWT token",
+            "React"
+        ]
+
         // onClicks: [
-        //     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+        //     window.open("https://github.com/Sourav9063/Blog-CRUD-by-NodeJS", '_blank')
         // ]
 
     },
@@ -221,6 +251,9 @@ const projectsData = {
             "https://sourav9063.github.io/Touch-The-Ball/"
         ],
         description: "",
+
+        tech: ["HTML", "CSS", "JavaScript"]
+
         // onClicks: [
         //     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
 
@@ -237,6 +270,13 @@ const projectsData = {
             "https://youtu.be/YIr5vqj7AQA"
         ],
         description: "",
+        tech: [
+            "Android Studio",
+            "Java",
+            "Tensorflow"
+        ]
+
+
         // onClicks: [
         //     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank'),
         //     window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
@@ -247,11 +287,17 @@ const projectsData = {
         title: "FTP Searcher",
         images: [
             "https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg",
+            "https://user-images.githubusercontent.com/53114581/189787355-fe77adf2-8f67-4792-abed-af7fb61b99c2.jpg"
         ],
         links: [
             "https://github.com/Sourav9063/ftp_searcher"
         ],
         description: "",
+        tech: [
+            "NodeJS"
+        ]
+
+
         // onClicks: [
         //     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
 
