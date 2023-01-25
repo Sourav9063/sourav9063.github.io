@@ -155,9 +155,9 @@ const projectsData = {
             "https://sourav9063.github.io/hall_management_rf/"
         ],
         description: "",
-        onClicks: [
-            () => window.open("https://sourav9063.github.io/hall_management_rf/", '_blank'),
-        ]
+        // onClicks: [
+        //     () => window.open("https://sourav9063.github.io/hall_management_rf/", '_blank'),
+        // ]
     },
     "uBookSharing": {
         title: "uBookSharing",
@@ -170,9 +170,9 @@ const projectsData = {
             "https://github.com/Sourav9063/uBookSharing"
         ],
         description: "",
-        onClicks: [
-            () => window.open("https://github.com/Sourav9063/uBookSharing", '_blank'),
-        ]
+        // onClicks: [
+        //     () => window.open("https://github.com/Sourav9063/uBookSharing", '_blank'),
+        // ]
 
     },
     "Hungry Camper": {
@@ -188,12 +188,12 @@ const projectsData = {
 
         ],
         description: "",
-        onClicks: [
-            window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank'),
-            window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
+        // onClicks: [
+        //     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank'),
+        //     window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
 
 
-        ]
+        // ]
 
     },
     "News Blog": {
@@ -206,9 +206,9 @@ const projectsData = {
             "https://github.com/Sourav9063/Blog-CRUD-by-Nodejs"
         ],
         description: "",
-        onClicks: [
-            window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
-        ]
+        // onClicks: [
+        //     window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
+        // ]
 
     },
     "Touch The Ball": {
@@ -221,10 +221,10 @@ const projectsData = {
             "https://sourav9063.github.io/Touch-The-Ball/"
         ],
         description: "",
-        onClicks: [
-            window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
+        // onClicks: [
+        //     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
 
-        ]
+        // ]
     },
     "Obstacle Detection": {
         title: "Obstacle Detection",
@@ -237,11 +237,11 @@ const projectsData = {
             "https://youtu.be/YIr5vqj7AQA"
         ],
         description: "",
-        onClicks: [
-            window.open("https://github.com/Sourav9063/obstacles_detection", '_blank'),
-            window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
+        // onClicks: [
+        //     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank'),
+        //     window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
 
-        ]
+        // ]
     },
     "FTP Searcher": {
         title: "FTP Searcher",
@@ -252,10 +252,10 @@ const projectsData = {
             "https://github.com/Sourav9063/ftp_searcher"
         ],
         description: "",
-        onClicks: [
-            window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
+        // onClicks: [
+        //     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
 
-        ]
+        // ]
 
     },
 
