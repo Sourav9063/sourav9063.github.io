@@ -100,7 +100,7 @@ export default function Projects() {
         {showModal && <ProjectModal setShowModal={setShowModal} selectedProject={selectedProject} ></ProjectModal>}
             <div className={`${style.gallery}`} ref={gallery}
                 style={{ backgroundImage: `url(${pattern === 1 ? svg : pattern === 2 ? svg1 : pattern === 3 ? svg2 : svg3})` }}
-                onTouchMove={(event) => onMouseMoveFunc(event.touches[0])}
+                onTouchMove={(event) => onMouseMoveFunc(event.touches[0],gallery)}
                 onMouseMove={(event) => {
                     onMouseMoveFunc(event,gallery);
                 }}
