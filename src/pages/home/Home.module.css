@@ -4,6 +4,8 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
+    height: 100dvh;
+
     position: relative;
     background-color: black;
 
@@ -28,4 +30,6 @@ section {
     background-color: aqua;
     scroll-snap-align: start;
     height: 100vh;
+    height: 100dvh;
+
 }

@@ -32,12 +32,15 @@
 .cv {
     border: none;
     height: 100vh;
+    height: 100dvh;
     width: 70%;
 
 }
 
 .cv iframe {
     height: 100vh;
+    height: 100dvh;
+
     width: 100%;
 }
 
