@@ -6,8 +6,10 @@
     right: auto;
     z-index: 10;
     --light-state: #102155;
-    --green: #64ffda;
+    --green: #34ffb4;
     color: var(--light-slate);
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 
@@ -25,7 +27,7 @@
 
 .links>ul>li {
     margin-bottom: 20px;
-    transition: transform 0.3s ease 0s;
+    transition: transform 0.3s ease 0s, opacity 0.5s ease;
 }
 
 .links>ul>li:last-child {
@@ -48,7 +50,8 @@
 
     stroke: var(--light-slate);
 
-    /* transition: all 2s ease-in-out; */
+
+    transition: all 1s ease-in-out;
 
 }
 
@@ -58,7 +61,12 @@
 }
 
 .links>ul>li:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.1);
+}
+
+.links>ul:has(li:hover) li:not(:hover, :last-child, :first-child) {
+    transform: scale(.9);
+    opacity: .3;
 }
 
 .links>ul>li>a {
