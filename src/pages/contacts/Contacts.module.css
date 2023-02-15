@@ -41,6 +41,17 @@
     margin-top: 10vh;
 }
 
+.glassDivTop {
+    margin: auto;
+    margin-top: 10vh;
+}
+
+.glassDivTop+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .glassDiv h2,
 .glassDiv a {
     display: block;
@@ -49,6 +60,6 @@
 
 @media screen and (max-width: 750px) {
     .sust {
-        font-size: 2em;
+        font-size: 2.2rem;
     }
 }
