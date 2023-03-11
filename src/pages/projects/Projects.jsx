@@ -113,7 +113,7 @@ export default function Projects() {
                     setShowModal(true)
 
                 }}
-                    style={{ transform: `translateX(${scrollPosition}px)` }}
+                    style={{ transform: `translateX(${-1*scrollPosition}px)` }}
                 >
                     <div className={style.title}>Hall Management</div>
                     <img alt="Hall Management " src="https://user-images.githubusercontent.com/53114581/202853827-47a44716-f0b2-4c0c-b831-5b651e6c8688.jpg" />
@@ -122,7 +122,10 @@ export default function Projects() {
                     // window.open("https://github.com/Sourav9063/hall_management_rf", '_blank')
                     setSelectedProject(projectsData['Hall Management'])
                     setShowModal(true)
-                }} >
+                }}
+                style={{ transform: `translateX(${-1 * scrollPosition}px) translateY(${-1 * scrollPosition}px)  rotate(10deg)` }}
+                
+                >
                     <img alt='Hall Management' src="https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg" />
                 </div>
 
@@ -229,14 +232,18 @@ export default function Projects() {
                     // window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank')
                     setSelectedProject(projectsData['Hungry Camper'])
                     setShowModal(true)
-                }}>
+                }}
+                style={{ transform: ` translateY(${-1 * scrollPosition}px) rotate(10deg)` }}
+                >
                     <img alt='hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637660-776055e8-1fc3-4f40-84f8-3fdc2cde4e65.png" />
                 </div>
                 <div className={`${style.tile} ${style.hungry2}`} onClick={() => {
                     // window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
                     setSelectedProject(projectsData['Hungry Camper'])
                     setShowModal(true)
-                }}>
+                }}
+                style={{ transform: ` translateX(${scrollPosition}px) rotate(-10deg)` }}
+                >
                     <img alt='Hungry Camper' src="https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png" />
                 </div>
 
@@ -287,6 +294,7 @@ export default function Projects() {
 // let tmpup = 75;
 // let tmpdown = 75;
 // let tmp = 0;
+// scale(max(.3,calc(1*${1/((1-1*scrollPosition))}))
 
                 // if (tmp + 1 < scrollPositionOfElement) {
                 //     tmp = scrollPositionOfElement;

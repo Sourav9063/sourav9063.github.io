@@ -27,13 +27,13 @@
 }
 
 .tile:hover {
-    transform: scale(1.5) !important;
+    transform: scale(1.2) !important;
     z-index: 3;
 }
 
 .gallery:has(.tile:hover) .tile:not(:hover) {
-    opacity: .1;
-    transform: scale(0.01) !important;
+    opacity: .6;
+    transform: scale(0.9) !important;
 
 
 }
