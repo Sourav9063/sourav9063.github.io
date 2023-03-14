@@ -8,7 +8,7 @@
 
 .gallery {
     height: 115vmax;
-    width: 120vmax;
+    width: 110vmax;
     /* height: 100%;
     width: 100%; */
     position: absolute;
@@ -23,7 +23,7 @@
     border-radius: 1vmax;
     position: absolute;
     cursor: pointer;
-    transition: transform 1000ms ease, z-index 400ms ease, opacity 1s ease;
+    transition: transform 600ms ease, z-index 400ms ease 120ms, opacity 1s ease;
 }
 
 .tile:hover {
@@ -31,12 +31,12 @@
     z-index: 3;
 }
 
-.gallery:has(.tile:hover) .tile:not(:hover) {
+/* .gallery:has(.tile:hover) .tile:not(:hover) {
     opacity: .6;
     transform: scale(0.9) !important;
 
 
-}
+} */
 
 
 .tile:hover>img {
