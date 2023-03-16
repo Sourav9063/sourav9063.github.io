@@ -7,6 +7,7 @@ import style from './Home.module.css'
 import Skills from '../skills/Skills'
 import { publish } from '../../global/helper/customEvent/CustomEvent'
 import Contacts from '../contacts/Contacts'
+import Stars from '../stars/stars'
 import Links from '../../global/components/links/Links'
 
 export default function Home() {
@@ -90,6 +91,9 @@ export default function Home() {
             </section>
             <section >
                 <Skills />
+            </section>
+            <section>
+                <Stars />
             </section>
             <section id='contacts'>
                 <Contacts />
