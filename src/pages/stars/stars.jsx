@@ -10,10 +10,10 @@ const getRandomStarPlacement = (starsCount) => {
             top: Math.floor(Math.random() * 100),
             left: Math.floor(Math.random() * 100),
             opacity: Math.random() * .6 + 0.2,
-            size: Math.floor(Math.random() * 18) + 2,
+            size: Math.floor(Math.random() * 16) + 4,
             backgroundColor: `hsl(${Math.floor(Math.random() * 100) + 240}, 100%, 50%)`,
             animationDelay: Math.floor(Math.random() * 20) + 's',
-            animationDuration: Math.floor(Math.random() * 10) + 10 + 's',
+            animationDuration: Math.floor(Math.random() * 10) + 5 + 's',
         };
         stars.push(star);
     }
@@ -47,7 +47,9 @@ const distConst = Math.max(((percent * ratio) * (percent * ratio)), 255);
 console.log("run")
 
 const listOfWords = ["I've a Great Attention Span",
-    "I'm Attentive To Detail", "I'm a Team Player", "I'm Communicative", "I'm a Creative Thinker", "I'm Humble", "I'm Eager to Learn", "I'm Adaptive"]
+    "I'm Attentive To Detail", "I'm a Team Player", "I'm Communicative", "I'm a Creative Thinker", "I'm Humble", "I'm Eager to Learn", "I'm Adaptive",
+    "I'm a Quick Learner"
+]
 let change = true;
 export default function Stars() {
 
