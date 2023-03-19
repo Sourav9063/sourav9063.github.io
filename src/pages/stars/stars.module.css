@@ -9,7 +9,7 @@
     height: calc(100dvh - 10px);
     display: grid;
     place-items: center;
-    z-index: 100;
+    z-index: 21;
     position: relative;
 }
 
@@ -32,7 +32,7 @@
     animation: starAni 30s ease infinite alternate;
     transition: all 400ms ease-out;
     opacity: 0;
-    z-index: 99;
+    z-index: 20;
 }
 
 .debug {
@@ -107,8 +107,8 @@
     height: 100%;
     left: 0;
     /* background-color: blue; */
-    z-index: 50;
-    background: radial-gradient(circle at var(--x) var(--y), transparent 5%, rgba(0, 0, 0, .95) 15%);
+    z-index: 19;
+    background: radial-gradient(circle at var(--x) var(--y), transparent 5%, rgba(0, 0, 0, .96) 20%);
 }
 
 @keyframes starAni {

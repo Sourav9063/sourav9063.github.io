@@ -96,12 +96,12 @@ export default function Stars() {
                         // console.log({ x, y })
                     }
                     // console.log({ change })
-                    if ((x < 10 || x > 90) && change) {
+                    if ((x <= 20 || x >= 80) && change) {
                         setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
                         change = false;
                         // console.log(change)
                     }
-                    else if (x > 10 && x < 90) {
+                    else if (x > 20 && x < 80) {
                         change = true;
                     }
                 }
@@ -118,12 +118,12 @@ export default function Stars() {
                         setY(ytmp);
                         // console.log({ x, y })
                     }
-                    if ((x < 10 || x > 90) && change) {
+                    if ((x <= 20 || x >= 80) && change) {
                         setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
                         change = false;
                         // console.log(change)
                     }
-                    else if (x > 10 && x < 90) {
+                    else if (x > 20 && x < 80) {
                         change = true;
                     }
                 }}
