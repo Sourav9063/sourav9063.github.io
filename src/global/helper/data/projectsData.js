@@ -14,7 +14,6 @@
 //     <img alt='Hall Management' src="https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg" />
 // </div>
 
-
 // {/* uBookSharing */}
 // <div className={`${style.tile} ${style.uBook1}`} onClick={() => {
 //     window.open("https://github.com/Sourav9063/uBookSharing", '_blank')
@@ -126,7 +125,6 @@
 //     <img alt='News Blogs' src="https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg" />
 // </div>
 
-
 // {/* Touch The Ball */}
 // <div className={`${style.tile} ${style.touch}`} onClick={() => {
 //     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
@@ -138,186 +136,155 @@
 //     <img alt='Touch the ball' src="https://user-images.githubusercontent.com/53114581/202858785-0711683e-262e-47ac-9822-f5383d9440de.jpg" />
 // </div>
 
-
 // extract all onClick functions into a object
 
-
-
 const projectsData = {
-    "Hall Management": {
-        title: "Hall Management",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/202853827-47a44716-f0b2-4c0c-b831-5b651e6c8688.jpg",
-            "https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg"
-        ],
-        links: [
-            "https://github.com/Sourav9063/hall_management_rf",
-            "https://sourav9063.github.io/hall_management_rf/"
-        ],
-        description: "",
-        tech: [
-            "NodeJS",
-            "ExpressJS",
-            "MySQL",
-            "JWT token",
-            "React"
-        ]
+  "Hall Management": {
+    title: "Hall Management",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/202853827-47a44716-f0b2-4c0c-b831-5b651e6c8688.jpg",
+      "https://user-images.githubusercontent.com/53114581/202853980-62389a23-3935-4666-9a00-8a5824fb4151.jpg",
+    ],
+    links: [
+      "https://github.com/Sourav9063/hall_management_rf",
+      "https://sourav9063.github.io/hall_management_rf/",
+    ],
+    description: "",
+    tech: ["NodeJS", "ExpressJS", "MySQL", "JWT token", "React"],
 
+    // onClicks: [
+    //     () => window.open("https://sourav9063.github.io/hall_management_rf/", '_blank'),
+    // ]
+  },
+  uBookSharing: {
+    title: "uBookSharing",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png",
+      "https://user-images.githubusercontent.com/53114581/118113063-a02ce680-b407-11eb-8a3d-b3a416460e8b.png",
+      "https://user-images.githubusercontent.com/53114581/118113104-ad49d580-b407-11eb-8f5d-477d27e2d20d.png",
+      "https://user-images.githubusercontent.com/53114581/118113768-84761000-b408-11eb-8643-2f93778c5a1c.png",
+      "https://user-images.githubusercontent.com/53114581/118113843-9eafee00-b408-11eb-9bc1-a15be24807d6.png",
+      "https://user-images.githubusercontent.com/53114581/118114654-b340b600-b409-11eb-8bbd-e383e3b029b6.png",
+      "https://user-images.githubusercontent.com/53114581/118114615-a91eb780-b409-11eb-8f46-851c73e3d8fd.png",
+      "https://user-images.githubusercontent.com/53114581/118113292-ebdf9000-b407-11eb-9a5d-d1db4f23ce4d.png",
+    ],
+    links: [
+      "https://github.com/Sourav9063/uBookSharing",
+      "https://github.com/Sourav9063/uBookSharing/tags",
+    ],
+    description:
+      "University based Book sharing app. Users are divided according to their Universities. Anyone can upload details of his/her book for sell/rent/share and anyone can request them for that book providing their contact information. Individual's contact information is not publicly available. Only when someone requests to get a book then and only then the owner of the book will get the contact information. If you want to try it out here is an auth credential Email: sourav.ahmed5654@gmail.com Password: 12345678",
+    tech: ["Flutter", "Firebase", "Rive"],
 
+    // onClicks: [
+    //     () => window.open("https://github.com/Sourav9063/uBookSharing", '_blank'),
+    // ]
+  },
+  "Hungry Camper": {
+    title: "Hungry Camper",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/148637656-447cdf3b-5267-4e43-99aa-7fb7237184b9.png",
+      "https://user-images.githubusercontent.com/53114581/148637660-776055e8-1fc3-4f40-84f8-3fdc2cde4e65.png",
+      "https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png",
+    ],
+    links: [
+      "https://github.com/Sourav9063/Hungry-Camper-scripts",
+      "https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing",
+    ],
+    description: "",
+    tech: ["Unity", "C#"],
+    // onClicks: [
+    //     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank'),
+    //     window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
 
-        // onClicks: [
-        //     () => window.open("https://sourav9063.github.io/hall_management_rf/", '_blank'),
-        // ]
-    },
-    "uBookSharing": {
-        title: "uBookSharing",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/118112856-61972c00-b407-11eb-8004-1f516bbf91f4.png",
-            "https://user-images.githubusercontent.com/53114581/118113063-a02ce680-b407-11eb-8a3d-b3a416460e8b.png",
-            "https://user-images.githubusercontent.com/53114581/118113104-ad49d580-b407-11eb-8f5d-477d27e2d20d.png",
-            "https://user-images.githubusercontent.com/53114581/118113768-84761000-b408-11eb-8643-2f93778c5a1c.png",
-            "https://user-images.githubusercontent.com/53114581/118113843-9eafee00-b408-11eb-9bc1-a15be24807d6.png",
-            "https://user-images.githubusercontent.com/53114581/118114654-b340b600-b409-11eb-8bbd-e383e3b029b6.png",
-            "https://user-images.githubusercontent.com/53114581/118114615-a91eb780-b409-11eb-8f46-851c73e3d8fd.png",
-            "https://user-images.githubusercontent.com/53114581/118113292-ebdf9000-b407-11eb-9a5d-d1db4f23ce4d.png",
+    // ]
+  },
+  "News Blog": {
+    title: "News Blog",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg",
+      "https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg",
+    ],
+    links: ["https://github.com/Sourav9063/Blog-CRUD-by-NodeJS"],
+    description: "",
+    tech: ["NodeJS", "ExpressJS", "MySQL", "JWT token", "React"],
 
-        ],
-        links: [
-            "https://github.com/Sourav9063/uBookSharing",
-            "https://github.com/Sourav9063/uBookSharing/tags"
+    // onClicks: [
+    //     window.open("https://github.com/Sourav9063/Blog-CRUD-by-NodeJS", '_blank')
+    // ]
+  },
+  "Touch The Ball": {
+    title: "Touch The Ball",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/202858785-0711683e-262e-47ac-9822-f5383d9440de.jpg",
+    ],
+    links: [
+      "https://github.com/Sourav9063/Touch-The-Ball",
+      "https://sourav9063.github.io/Touch-The-Ball/",
+    ],
+    description:
+      " A Fun Games I made using JavaScript. It has a high score system and you can compete with your friends.",
 
-        ],
-        description: "University based Book sharing app. Users are divided according to their Universities. Anyone can upload details of his/her book for sell/rent/share and anyone can request them for that book providing their contact information. Individual's contact information is not publicly available. Only when someone requests to get a book then and only then the owner of the book will get the contact information. If you want to try it out here is an auth credential Email: sourav.ahmed5654@gmail.com Password: 12345678",
-        tech: [
-            "Flutter",
-            "Firebase",
-            "Rive"
-        ]
+    tech: ["HTML", "CSS", "JavaScript"],
 
-        // onClicks: [
-        //     () => window.open("https://github.com/Sourav9063/uBookSharing", '_blank'),
-        // ]
+    // onClicks: [
+    //     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
 
-    },
-    "Hungry Camper": {
-        title: "Hungry Camper",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/148637656-447cdf3b-5267-4e43-99aa-7fb7237184b9.png",
-            "https://user-images.githubusercontent.com/53114581/148637660-776055e8-1fc3-4f40-84f8-3fdc2cde4e65.png",
-            "https://user-images.githubusercontent.com/53114581/148637665-3e0ccf21-cb50-4c7d-99b3-51d9947b8de3.png"
-        ],
-        links: [
-            "https://github.com/Sourav9063/Hungry-Camper-scripts",
-            "https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing"
+    // ]
+  },
+  "Game of Fortune": {
+    title: "Game of Fortune",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/244893835-8b8882ed-1329-4311-bccb-971aac14cff0.png",
+    ],
+    links: [
+      "https://github.com/Sourav9063/JsGameSBH",
+      "https://sourav9063.github.io/JsGameSBH/",
+    ],
+    description: "A fun game I made using JavaScript.",
+    tech: ["HTML", "CSS", "JavaScript"],
+  },
+  "Obstacle Detection": {
+    title: "Obstacle Detection",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/201062121-35f042c7-a4e4-4fe6-9100-8a0ba1ec8b8f.jpg",
+      "https://user-images.githubusercontent.com/53114581/201062149-c11e154a-5f92-45c1-bf19-c868e4d543a9.jpg",
+    ],
+    links: [
+      "https://github.com/Sourav9063/obstacles_detection",
+      "https://youtu.be/YIr5vqj7AQA",
+    ],
+    description: "",
+    tech: ["Android Studio", "Java", "Tensorflow"],
 
-        ],
-        description: "",
-        tech: [
-            "Unity",
-            "C#",
-        ]
-        // onClicks: [
-        //     window.open("https://github.com/Sourav9063/Hungry-Camper-scripts", '_blank'),
-        //     window.open("https://drive.google.com/drive/folders/1PgYjzrHBPHihQ0aPrk3Ni7PxuUWpbZd3?usp=sharing", '_blank')
+    // onClicks: [
+    //     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank'),
+    //     window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
 
+    // ]
+  },
+  "FTP Searcher": {
+    title: "FTP Nextron",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/242640601-ef725b70-c01a-4142-9616-73799580af51.png",
+      "https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg",
+      "https://user-images.githubusercontent.com/53114581/242640671-af94327a-ff8b-4fd0-887b-53cde1f6ca19.png",
+      "https://user-images.githubusercontent.com/53114581/189787355-fe77adf2-8f67-4792-abed-af7fb61b99c2.jpg",
+    ],
+    links: [
+      "https://github.com/Sourav9063/ftp-nextron",
+      "https://sourav9063.github.io/ftp-nextron/",
+      "https://github.com/Sourav9063/ftp_searcher",
+    ],
+    description:
+      "All ftp links for media and live tv of Bangladesh. This program searches through all available links in Bangladesh and enlists all working links for your Internet service provider and allows you to open them in your browser.Made using ElectronJs. It's a UI project of Ftp Searcher",
+    tech: ["NodeJS", "ElectronJS", "NextJS"],
 
-        // ]
+    // onClicks: [
+    //     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
 
-    },
-    "News Blog": {
-        title: "News Blog",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg",
-            "https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg"
-        ],
-        links: [
-            "https://github.com/Sourav9063/Blog-CRUD-by-NodeJS"
-        ],
-        description: "",
-        tech: [
-            "NodeJS",
-            "ExpressJS",
-            "MySQL",
-            "JWT token",
-            "React"
-        ]
-
-        // onClicks: [
-        //     window.open("https://github.com/Sourav9063/Blog-CRUD-by-NodeJS", '_blank')
-        // ]
-
-    },
-    "Touch The Ball": {
-        title: "Touch The Ball",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/202858785-0711683e-262e-47ac-9822-f5383d9440de.jpg"
-        ],
-        links: [
-            "https://github.com/Sourav9063/Touch-The-Ball",
-            "https://sourav9063.github.io/Touch-The-Ball/"
-        ],
-        description: "",
-
-        tech: ["HTML", "CSS", "JavaScript"]
-
-        // onClicks: [
-        //     window.open("https://sourav9063.github.io/Touch-The-Ball/", '_blank')
-
-        // ]
-    },
-    "Obstacle Detection": {
-        title: "Obstacle Detection",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/201062121-35f042c7-a4e4-4fe6-9100-8a0ba1ec8b8f.jpg",
-            "https://user-images.githubusercontent.com/53114581/201062149-c11e154a-5f92-45c1-bf19-c868e4d543a9.jpg"
-        ],
-        links: [
-            "https://github.com/Sourav9063/obstacles_detection",
-            "https://youtu.be/YIr5vqj7AQA"
-        ],
-        description: "",
-        tech: [
-            "Android Studio",
-            "Java",
-            "Tensorflow"
-        ]
-
-
-        // onClicks: [
-        //     window.open("https://github.com/Sourav9063/obstacles_detection", '_blank'),
-        //     window.open("https://youtu.be/YIr5vqj7AQA", '_blank')
-
-        // ]
-    },
-    "FTP Searcher": {
-        title: "FTP Searcher",
-        images: [
-            "https://user-images.githubusercontent.com/53114581/190019523-8446eb43-4751-446c-8505-547fe58f3ff6.jpg",
-            "https://user-images.githubusercontent.com/53114581/189787355-fe77adf2-8f67-4792-abed-af7fb61b99c2.jpg"
-        ],
-        links: [
-            "https://github.com/Sourav9063/ftp_searcher"
-        ],
-        description: "",
-        tech: [
-            "NodeJS"
-        ]
-
-
-        // onClicks: [
-        //     window.open("https://github.com/Sourav9063/ftp_searcher", '_blank')
-
-        // ]
-
-    },
-
-
-
-
-
-
-
-}
-
+    // ]
+  },
+};
 
 module.exports = projectsData;

@@ -91,7 +91,7 @@
     z-index: 2;
     backdrop-filter: blur(16px);
     background-color: #fb8c25b0;
-    height: 24%;
+    height: 22%;
     width: 10%;
     left: 45%;
     top: 12%;
@@ -120,7 +120,7 @@
 .uBook2 {
     z-index: 1;
     background-color: #f31953;
-    height: 24%;
+    height: 22%;
     width: 10%;
     left: 53%;
     top: 13%;
@@ -132,7 +132,7 @@
 .uBook3 {
     z-index: 1;
     background-color: #001a5f;
-    height: 24%;
+    height: 22%;
     width: 10%;
     left: 37%;
     top: 13%;
@@ -170,12 +170,32 @@
 } */
 
 .ftp {
-    background-color: #6c6eb3;
+    background-color: hsl(271, 62%, 51%);
     height: 15.5%;
     width: 26%;
     left: 8%;
     top: 70%;
+    z-index: 2;
 }
+
+.ftp1 {
+    background-color: hsl(121, 86%, 19%);
+    height: 15.5%;
+    width: 26%;
+    left: 12%;
+    top: 70%;
+    transform: rotate(10deg);
+}
+
+.ftp2 {
+    background-color: hsl(226, 71%, 54%);
+    height: 15.5%;
+    width: 26%;
+    left: 4%;
+    top: 70%;
+    transform: rotate(-10deg);
+}
+
 
 .hungry {
     z-index: 2;
@@ -229,11 +249,21 @@
 
 .touch {
     background-color: #621b16;
-    height: 18%;
+    height: 15%;
     width: 24%;
     left: 72%;
     top: 42%;
     z-index: 2;
+}
+
+.touch2 {
+    background-color: hsl(29, 99%, 36%);
+    height: 15%;
+    width: 24%;
+    left: 76%;
+    top: 42%;
+    transform: rotate(10deg);
+
 }
 
 /* .tile:nth-child(9) {

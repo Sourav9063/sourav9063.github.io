@@ -23,7 +23,7 @@ nav {
 
 
 nav:hover {
-  transform: scaleX(1.1) scaleY(1.2);
+  transform: scaleX(1.1) scaleY(1.12);
 }
 
 
@@ -69,11 +69,15 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: start;
+    justify-content: center;
 
     height: auto;
     margin-right: 5px;
 
+  }
+
+  nav:hover {
+    transform: none;
   }
 
   nav a {
@@ -81,6 +85,7 @@ nav a {
     display: none;
     font-size: 18px;
     margin: 0px 8px;
+    text-align: center;
 
   }
 
