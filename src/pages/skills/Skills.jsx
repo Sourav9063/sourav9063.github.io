@@ -133,11 +133,13 @@ export default function Skills() {
                 <div className={`${style.card_info_title}`}>
                   <h3>Framework & Library</h3>
                   <h4>
-                    - ASP.NET <br></br> - Android Studio <br></br> - ReactJS
+                    - ReactJS
                     <br></br> - NextJS <br></br> - ElectronJS <br></br> -
-                    ExpressJS <br></br> - NodeJS <br></br> - Flutter <br></br> -
-                    Arduino <br></br> - MySQL <br></br> - MongoDB <br></br> -
-                    Firebase <br></br>- Git & GitHub <br></br> - Docker
+                    ExpressJS <br></br> - NodeJS <br></br> - Flutter
+                    <br></br>- Android Studio <br></br> - Arduino <br></br> -
+                    MySQL <br></br> - MongoDB
+                    <br></br> - Firebase <br></br>- Git & GitHub <br></br> -
+                    Docker
                     <br></br> - Unity
                   </h4>
                 </div>

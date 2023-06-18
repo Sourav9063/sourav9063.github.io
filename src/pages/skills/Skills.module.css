@@ -152,6 +152,7 @@ height: calc(100vh - 10px);
     padding-bottom: 18px;
     position: absolute;
     z-index: 3;
+    overflow: scroll;
 }
 
 /* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
@@ -280,7 +281,7 @@ i {
 
 
 
-@media(max-width: 1000px) {
+@media(max-width: 700px) {
     .body {
         align-items: flex-start;
         overflow: auto;
@@ -297,7 +298,7 @@ i {
     .card {
         flex-shrink: 1;
         width: calc(45% - 4px);
-        height: calc(35% - 4px);
+        height: calc(45% - 4px);
 
     }
 }
@@ -306,6 +307,10 @@ i {
     .card {
         height: calc(35% - 4px);
         width: calc(100% - 4px);
+    }
+
+    .card:nth-child(3) {
+        height: calc(42% - 4px);
     }
 
     .card_image {
