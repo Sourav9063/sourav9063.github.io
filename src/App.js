@@ -7,23 +7,24 @@ import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects.jsx";
 import { Suspense } from "react";
 import Links from "./global/components/links/Links";
-
+import GlobalProvider from "./global/provider/GlobalProvider";
 function App() {
   return (
     // <Routes>
     //   <Route path="/" element={<Projects />} />
     // </Routes>
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        {/* <Suspense fallBack={<h1>Loading</h1>}> */}
-        <Route path="/Cv" element={<Cv />} />
-        {/* </Suspense> */}
-      </Routes>
-      <Links />
-    </div>
+    <GlobalProvider>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Suspense fallBack={<h1>Loading</h1>}> */}
+          <Route path="/Cv" element={<Cv />} />
+          {/* </Suspense> */}
+        </Routes>
+        <Links />
+      </div>
+    </GlobalProvider>
   );
 }
 
