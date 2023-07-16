@@ -7,6 +7,7 @@
     background-image: repeating-linear-gradient(45deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(20, 3, 37), rgb(83, 16, 61));
     color: white;
     width: 100vw;
+    overflow: auto;
 }
 
 .rive {
@@ -51,6 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-inline: 5vw;
 }
 
 .glassDiv h2,
@@ -59,32 +61,18 @@
     text-align: center;
 }
 
-.emailSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-.emailSection>* {
-    width: 100%;
-    min-height: 50px;
-    min-width: 500px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.294);
-    color: white;
-    padding: 1rem;
-
-}
 
 @media screen and (max-width: 750px) {
+    .glassDiv h2 {
+        font-size: 1.1rem;
+    }
+
     .glassDivTop {
         background-color: rgba(0, 0, 0, 0.27);
     }
 
     .sust {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .rive {
