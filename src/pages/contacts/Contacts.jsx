@@ -10,6 +10,7 @@ import svg1 from "./rrrainbow.svg";
 import svg2 from "./ttten.svg";
 import svg3 from "./ssscribble1.svg";
 import svg4 from "./dddepth248.jpg";
+import EmailSection from "../../global/components/emailSection/EmailSection";
 
 let pattern = Math.floor(Math.random() * 5) + 1;
 // let pattern = 3
@@ -54,7 +55,7 @@ export default function Contacts() {
           target="_blank"
           rel="noreferrer"
         >
-          Shahjalal University of Science and Technology, Sylhet{" "}
+          Shahjalal University of Science and Technology, Sylhet
         </a>
       </GlassDiv>
 
@@ -129,13 +130,7 @@ export default function Contacts() {
         </GlassDiv>
       </div>
 
-      <GlassDiv>
-        <form className={`${style.emailSection}`}>
-          <input type="email" name="email" />
-          <input type="text" name="subject" />
-          <textarea name="body" id="" cols="30" rows="10"></textarea>
-        </form>
-      </GlassDiv>
+      <EmailSection></EmailSection>
     </div>
   );
 }
@@ -150,9 +145,8 @@ export default function Contacts() {
     <h1>Email : sourav.ahmed5654@gmail.com</h1><span> hii</span>
 </div> */
 
-
-{
-    // router.push("/" + MODAL_QUERY_POST);
+// {
+// router.push("/" + MODAL_QUERY_POST);
 //     const res = await fetch("/api/email-sender/from-portfolio", {
 //       method: "POST",
 //       headers: {
