@@ -1,17 +1,28 @@
 import React from "react";
+import style from "./SendButton.module.css";
 
-export default function SendButton() {
+export default function SendButton({
+  onClick,
+  type = "button",
+  btnTxt = "SEND",
+}) {
   return (
-    <button class="btn" type="button">
-      <strong>SPACE</strong>
-      <div id="container-stars">
-        <div id="stars"></div>
+    <>
+      <button className={style.btn} type={type}>
+        <strong>{btnTxt}</strong>
+        <div className={style["glow"]}>
+          <div className={style["circle"]}></div>
+          <div className={style["circle"]}></div>
+        </div>
+      </button>
+      <div className={style["container-stars"]}>
+        <div className={style["stars"]}></div>
       </div>
-
-      <div id="glow">
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-    </button>
+      {/* <div
+        className={`${style["container-stars"]} ${style["container-stars-2"]}`}
+      >
+        <div className={style["stars"]}></div>
+      </div> */}
+    </>
   );
 }
