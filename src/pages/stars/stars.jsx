@@ -44,8 +44,6 @@ stars = getRandomStarPlacement(ratio > 1 ? 300 : 375);
 const percent = ratio > 1 ? 12 : 15;
 const distConst = Math.max(percent * ratio * (percent * ratio), 255);
 
-console.log("run");
-
 const listOfWords = [
   "I've a Great Attention Span",
   "I'm Attentive To Detail",
