@@ -1,0 +1,52 @@
+.glass {
+  margin-left: 5.7vw;
+}
+
+
+.emailSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90vw;
+  /* overflow: hidden; */
+}
+
+
+.emailSection>* {
+  max-width: 100%;
+  min-height: 50px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+  border: none;
+
+}
+
+.emailSection>*::placeholder {
+  color: rgb(146, 146, 146);
+}
+
+.h2.h2 {
+  background-color: transparent;
+  text-align: center;
+  padding: .5rem;
+  padding-bottom: 0px;
+  font-weight: bold;
+  min-height: fit-content;
+}
+
+@media screen and (max-width: 750px) {
+  .glass {
+    margin: 0;
+    margin-top: 1rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+}
