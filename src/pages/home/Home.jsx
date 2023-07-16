@@ -103,7 +103,7 @@ export default function Home() {
       <section>
         <Stars />
       </section>
-      <section id="contacts">
+      <section>
         <Contacts />
       </section>
     </div>
