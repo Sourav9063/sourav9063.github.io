@@ -103,7 +103,7 @@ strong {
 
 .stars::after {
   background-image: radial-gradient(#ffffff 1px, transparent 1%);
-  background-size: 50px 50px;
+  background-size: 70px 70px;
 }
 
 .stars::before {
@@ -118,7 +118,7 @@ strong {
 
 .stars::before {
   background-image: radial-gradient(#ffffff 1px, transparent 1%);
-  background-size: 50px 50px;
+  background-size: 70px 70px;
   opacity: 0.5;
 }
 
