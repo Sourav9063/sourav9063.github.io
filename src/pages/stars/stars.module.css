@@ -51,12 +51,11 @@
     width: 80%;
     pointer-events: none;
     cursor: pointer;
-    font-size: 200px;
-    font-weight: bolder;
+    font-size: 170px;
+    /* font-weight: bolder; */
 
     /* color: rgba(255, 255, 255, 0.119); */
     /* color: rgba(255, 255, 255, 0.119); */
-    font-weight: bolder;
     /* color: rgba(255, 255, 255, 0.583); */
     /* font-size: 10.1em; */
 
@@ -65,13 +64,16 @@
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
+    display: grid;
+    place-items: center;
     /* background: linear-gradient(#ffffff94 0%, #ffffff00 100%); */
     /* background-clip: text; */
     /* -webkit-background-clip: text; */
     /* -webkit-text-fill-color: transparent; */
 
     text-align: justify;
-    font-size: 10.3vw;
+    font-size: 10vw;
+    height: fit-content;
     z-index: 2;
 
 
@@ -79,12 +81,6 @@
 
 .word>div {
     text-align: center;
-}
-
-.word:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
 }
 
 .im {
@@ -108,7 +104,7 @@
     left: 0;
     /* background-color: blue; */
     z-index: 19;
-    background: radial-gradient(circle at var(--x) var(--y), rgba(0, 0, 0, .1) 10%, rgba(0, 0, 0, .5) 12%, rgba(0, 0, 0, .93) 25%);
+    background: radial-gradient(circle at var(--x) var(--y), rgba(0, 0, 0, .1) 10%, rgba(0, 0, 0, .5) 12%, rgba(0, 0, 0, .96) 25%);
 }
 
 @keyframes starAni {
