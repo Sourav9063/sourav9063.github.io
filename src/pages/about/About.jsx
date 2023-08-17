@@ -6,6 +6,7 @@ import {
   subscribe,
   unsubscribe,
 } from "../../global/helper/customEvent/CustomEvent";
+import { randomRGBA } from "../../global/helper/function/ui";
 
 export default function About() {
   const svgName = React.useRef();
@@ -15,6 +16,10 @@ export default function About() {
 
   React.useEffect(() => {
     // console.log("useEffect")
+    const main = document.querySelector("." + style.body);
+    main.style.setProperty("--left-color", randomRGBA());
+    main.style.setProperty("--right-color", randomRGBA());
+    let change = false;
     let paths = [];
     const nameAnimInit = () => {
       // for (let child of svgName.current.children) {
@@ -66,6 +71,9 @@ export default function About() {
       const { scrollPositionOfElement } = e.detail;
 
       if (scrollPositionOfElement > 50 && scrollPositionOfElement < 185) {
+        if (!change) {
+          change = true;
+        }
         // console.count(e.detail.scrollPositionOfElement);
         // if (e.detail.scrollPositionOfElement > 80 && e.detail.scrollPositionOfElement < 120) {
         setScrollPosition((state) => e.detail.scrollPositionOfElement);
@@ -74,8 +82,15 @@ export default function About() {
         // console.dir(pic.current)
         // pic.current.innerHTML += (e.detail.scrollPositionOfElement + "<br/> ");
         // pic.current.style.transform = `translateX(${3 * (e.detail.scrollPositionOfElement - 100)}px)`;
-
         nameAnime(e, paths);
+      }
+      if (
+        change &&
+        (scrollPositionOfElement > 195 || scrollPositionOfElement < 50)
+      ) {
+        main.style.setProperty("--left-color", randomRGBA());
+        main.style.setProperty("--right-color", randomRGBA());
+        change = false;
       }
     });
 
