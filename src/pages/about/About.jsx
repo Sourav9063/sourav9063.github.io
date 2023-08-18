@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./About.module.css";
-import profPic from "./profPic1.png";
+import profPic from "./profPic1.webp";
 
 import {
   subscribe,
