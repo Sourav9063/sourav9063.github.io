@@ -40,9 +40,9 @@ export default function Links() {
     );
   };
 
-  let setCalled = true;
-  let timeoutId = null;
-  let linkDiv = useRef();
+  const setCalled = useRef();
+  const timeoutId = useRef();
+  const linkDiv = useRef();
   useEffect(() => {
     linkDiv.current = document.querySelector(`.${style.links}`);
     paths.current = document.querySelectorAll("ul path");
@@ -64,19 +64,18 @@ export default function Links() {
           linkDiv.current.style.opacity = "1";
         }, 100);
 
-        clearTimeout(timeoutId);
-        setCalled = false;
+        clearTimeout(timeoutId.current);
+        setCalled.current = false;
       } else if (scrollPositionOfElement > 250) {
         linkDiv.current.style.opacity = "0";
         setTimeout(() => {
           linkDiv.current.style.display = "none";
         }, 1000);
 
-        setCalled = true;
+        setCalled.current = true;
       } else {
-        if (!setCalled) {
-          timeoutId = setTimeout(() => {
-            // console.log("setCalled " + scrollPositionOfElement)
+        if (!setCalled.current) {
+          timeoutId.current = setTimeout(() => {
             if (scrollPositionOfElement < 30 || scrollPositionOfElement > 185) {
               // linkDiv.current.style.display = "none";
               linkDiv.current.style.opacity = "0";
@@ -84,10 +83,10 @@ export default function Links() {
                 linkDiv.current.style.display = "none";
               }, 1000);
             }
-            setCalled = true;
+            setCalled.current = true;
           }, 4000);
         }
-        setCalled = true;
+        setCalled.current = true;
       }
 
       for (let i = 0; i < paths.current.length; i++) {
