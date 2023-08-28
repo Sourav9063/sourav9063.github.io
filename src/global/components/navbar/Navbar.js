@@ -28,7 +28,14 @@ const Navbar = () => {
         >
           Menu
         </Link>
-        <Link className={`${isActive ? styles.show : styles.hide}`} to="/">
+        <Link
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.replace("/");
+          }}
+          className={`${isActive ? styles.show : styles.hide}`}
+          to="/"
+        >
           Home
         </Link>
         {/* <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#about">About</AnchorLink> */}
@@ -38,7 +45,7 @@ const Navbar = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Github
+          GitHub
         </a>
         {/* <AnchorLink href="#gallery">Gallery</AnchorLink> */}
         <Link className={`${isActive ? styles.show : styles.hide}`} to="/Cv">
