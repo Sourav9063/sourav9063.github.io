@@ -6,10 +6,7 @@ import svg2 from "./pattern4.svg";
 import svg3 from "./pattern3.svg";
 import ProjectModal from "../../global/components/projectModal/ProjectModal";
 import projectsData from "../../global/helper/data/projectsData";
-import {
-  subscribe,
-  unsubscribe,
-} from "../../global/helper/customEvent/CustomEvent";
+import { useScrollPosition } from "../../global/provider/GlobalProvider";
 
 let pattern = Math.floor(Math.random() * 4) + 1;
 const onMouseMoveFunc = (e, gallery) => {
@@ -52,35 +49,23 @@ export default function Projects() {
     projectsData["Touch The Ball"]
   );
 
-  // let pattern;
-  // let pattern = useRef(1);
-  // const [pattern, setPattern] = React.useState(-1);
+  const [scrollPositionOfElement] = useScrollPosition();
 
   useEffect(() => {
-    //   pattern === -1 && setPattern( (state) => (Math.floor(Math.random() * 4)));
-
-    subscribe("scroll", (e) => {
-      const { scrollPositionOfElement } = e.detail;
-      // console.log(scrollPositionOfElement);
-
-      if (scrollPositionOfElement > 175 && scrollPositionOfElement < 275) {
-        const scrollPositionOfElementTmp = scrollPositionOfElement - 200;
-        if (scrollPositionOfElementTmp > 10) {
-          // setScrollPosition(700);
-          setScrollPosition((state) => scrollPositionOfElementTmp * 30);
-        } else if (scrollPositionOfElementTmp < -10) {
-          // setScrollPosition(-700);
-          setScrollPosition((state) => scrollPositionOfElementTmp * 30);
-        } else {
-          setScrollPosition((state) => 0);
-        }
+    if (scrollPositionOfElement > 175 && scrollPositionOfElement < 275) {
+      const scrollPositionOfElementTmp = scrollPositionOfElement - 200;
+      if (scrollPositionOfElementTmp > 10) {
+        // setScrollPosition(700);
+        setScrollPosition((state) => scrollPositionOfElementTmp * 30);
+      } else if (scrollPositionOfElementTmp < -10) {
+        // setScrollPosition(-700);
+        setScrollPosition((state) => scrollPositionOfElementTmp * 30);
+      } else {
+        setScrollPosition((state) => 0);
       }
-    });
-
-    return () => {
-      unsubscribe("scroll");
-    };
-  }, []);
+    }
+    return () => {};
+  }, [scrollPositionOfElement]);
 
   return (
     <div className={`${style.body}`}>

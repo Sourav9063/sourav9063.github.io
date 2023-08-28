@@ -1,46 +1,35 @@
 import React from "react";
 import style from "./Skills.module.css";
 import "../../global/css/global.css";
-import {
-  subscribe,
-  unsubscribe,
-} from "../../global/helper/customEvent/CustomEvent";
+import { useScrollPosition } from "../../global/provider/GlobalProvider";
+import { useEffect } from "react";
 
 export default function Skills() {
   const cardsRef = React.useRef();
 
   // let rect;
-  let allCards = [];
 
-  React.useEffect(() => {
-    allCards = [...cardsRef.current.children];
+  const [scrollPositionOfElement] = useScrollPosition();
 
-    subscribe("scroll", (e) => {
-      const { scrollPositionOfElement } = e.detail;
-      // console.log(scrollPositionOfElement - scrollConst);
-
-      if (scrollPositionOfElement > 250 && scrollPositionOfElement < 350) {
-        for (let i = 0; i < allCards.length; i++) {
-          allCards[i].animate(
-            {
-              transform: `translateX(${scrollPositionOfElement - 300}%)`,
-              // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
-            },
-            {
-              duration: 300,
-              fill: "forwards",
-              easing: "ease",
-              delay: 320 * i,
-            }
-          );
-        }
+  useEffect(() => {
+    if (scrollPositionOfElement > 250 && scrollPositionOfElement < 350) {
+      for (let i = 0; i < [...cardsRef.current.children].length; i++) {
+        [...cardsRef.current.children][i].animate(
+          {
+            transform: `translateX(${scrollPositionOfElement - 300}%)`,
+            // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
+          },
+          {
+            duration: 300,
+            fill: "forwards",
+            easing: "ease",
+            delay: 320 * i,
+          }
+        );
       }
-    });
-
-    return () => {
-      unsubscribe("scroll");
-    };
-  }, []);
+    }
+    return () => {};
+  }, [scrollPositionOfElement]);
 
   return (
     <div className={`${style.body}`}>
@@ -60,7 +49,7 @@ export default function Skills() {
           // }
           // console.log(allCards[0]);
 
-          for (const card of allCards) {
+          for (const card of [...cardsRef.current.children]) {
             // allCards[i].style.setProperty('--mouse-x', event.clientX / event.target.clientWidth * 100 + '%');
             // allCards[i].style.setProperty('--mouse-y', event.clientY / event.target.clientHeight * 100 + '%');
 
@@ -72,7 +61,7 @@ export default function Skills() {
           }
         }}
         onTouchMove={(event) => {
-          for (const card of allCards) {
+          for (const card of [...cardsRef.current.children]) {
             const rect = card.getBoundingClientRect();
             const x = event.touches[0].clientX - rect.left;
             const y = event.touches[0].clientY - rect.top;

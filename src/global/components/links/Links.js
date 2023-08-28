@@ -1,14 +1,18 @@
 import React from "react";
 import style from "./Links.module.css";
-import { subscribe, unsubscribe } from "../../helper/customEvent/CustomEvent";
+import { useEffect } from "react";
+import { useScrollPosition } from "../../provider/GlobalProvider";
+import { useRef } from "react";
 
 export default function Links() {
-  let paths = [];
+  const [scrollPositionOfElement] = useScrollPosition();
+  const paths = useRef();
   const funcMouseLeave = (i) => {
-    paths[i].animate(
+    paths.current[i].animate(
       {
         strokeDashoffset:
-          paths[i].getTotalLength() - paths[i].getTotalLength() * 1,
+          paths.current[i].getTotalLength() -
+          paths.current[i].getTotalLength() * 1,
       },
       {
         duration: 500,
@@ -20,11 +24,12 @@ export default function Links() {
   };
   const funcMouseEnter = (i) => {
     // path.style.strokeDasharray = path.getTotalLength();
-    // paths[i].style.strokeDashoffset = paths[i].getTotalLength() * 3;
-    paths[i].animate(
+    // paths.current[i].style.strokeDashoffset = paths.current[i].getTotalLength() * 3;
+    paths.current[i].animate(
       {
         strokeDashoffset:
-          paths[i].getTotalLength() - paths[i].getTotalLength() * 3,
+          paths.current[i].getTotalLength() -
+          paths.current[i].getTotalLength() * 3,
       },
       {
         duration: 1200,
@@ -35,95 +40,86 @@ export default function Links() {
     );
   };
 
-  React.useEffect(() => {
-    let setCalled = true;
-    let timeoutId = null;
-    paths = document.querySelectorAll("ul path");
-    let linkDiv = document.querySelector(`.${style.links}`);
+  let setCalled = true;
+  let timeoutId = null;
+  let linkDiv = useRef();
+  useEffect(() => {
+    linkDiv.current = document.querySelector(`.${style.links}`);
+    paths.current = document.querySelectorAll("ul path");
 
-    paths.forEach((path) => {
+    paths.current.forEach((path) => {
       path.style.strokeDasharray = path.getTotalLength();
       path.style.strokeDashoffset = path.getTotalLength();
     });
 
-    subscribe("scroll", (e) => {
-      const { scrollPositionOfElement } = e.detail;
-      // console.log(paths[1].getTotalLength() - (paths[1].getTotalLength() * (scrollPositionOfElement) / 100))
-
-      // for (let i = 0; i < paths.length; i++) {
-      //     paths[i].style.strokeDashoffset = paths[i].getTotalLength() - (paths[i].getTotalLength() * (scrollPositionOfElement) / 100)
-
-      // }
-
-      if (scrollPositionOfElement > 0 && scrollPositionOfElement < 310) {
-        if (scrollPositionOfElement > 30 && scrollPositionOfElement < 199) {
-          linkDiv.style.display = "block";
-
-          setTimeout(() => {
-            linkDiv.style.opacity = "1";
-          }, 100);
-
-          clearTimeout(timeoutId);
-          setCalled = false;
-        } else if (scrollPositionOfElement > 250) {
-          linkDiv.style.opacity = "0";
-          setTimeout(() => {
-            linkDiv.style.display = "none";
-          }, 1000);
-
-          setCalled = true;
-        } else {
-          if (!setCalled) {
-            timeoutId = setTimeout(() => {
-              // console.log("setCalled " + scrollPositionOfElement)
-              if (
-                scrollPositionOfElement < 30 ||
-                scrollPositionOfElement > 185
-              ) {
-                // linkDiv.style.display = "none";
-                linkDiv.style.opacity = "0";
-                setTimeout(() => {
-                  linkDiv.style.display = "none";
-                }, 1000);
-              }
-              setCalled = true;
-            }, 4000);
-          }
-          setCalled = true;
-        }
-
-        for (let i = 0; i < paths.length; i++) {
-          paths[i].animate(
-            {
-              strokeDashoffset:
-                paths[i].getTotalLength() -
-                (paths[i].getTotalLength() * scrollPositionOfElement) / 100,
-            },
-            {
-              duration: 1000,
-              delay: 500 * i,
-              easing: "ease-in-out",
-              fill: "forwards",
-            }
-          );
-
-          // if (i === paths.length - 1) {
-          //     animation.onfinish = () => {
-          //         console.log("animation finished" + i + " " + scrollPositionOfElement);
-          //         if (scrollPositionOfElement > 190 || scrollPositionOfElement < 10) {
-          //             document.querySelector(`.${style.links}`).style.display = "none";
-          //         }
-
-          //     }
-          // }
-        }
-      }
-    });
-
-    return () => {
-      unsubscribe("scroll");
-    };
+    return () => {};
   }, []);
+
+  useEffect(() => {
+    if (scrollPositionOfElement > 0 && scrollPositionOfElement < 310) {
+      if (scrollPositionOfElement > 30 && scrollPositionOfElement < 199) {
+        linkDiv.current.style.display = "block";
+
+        setTimeout(() => {
+          linkDiv.current.style.opacity = "1";
+        }, 100);
+
+        clearTimeout(timeoutId);
+        setCalled = false;
+      } else if (scrollPositionOfElement > 250) {
+        linkDiv.current.style.opacity = "0";
+        setTimeout(() => {
+          linkDiv.current.style.display = "none";
+        }, 1000);
+
+        setCalled = true;
+      } else {
+        if (!setCalled) {
+          timeoutId = setTimeout(() => {
+            // console.log("setCalled " + scrollPositionOfElement)
+            if (scrollPositionOfElement < 30 || scrollPositionOfElement > 185) {
+              // linkDiv.current.style.display = "none";
+              linkDiv.current.style.opacity = "0";
+              setTimeout(() => {
+                linkDiv.current.style.display = "none";
+              }, 1000);
+            }
+            setCalled = true;
+          }, 4000);
+        }
+        setCalled = true;
+      }
+
+      for (let i = 0; i < paths.current.length; i++) {
+        paths.current[i].animate(
+          {
+            strokeDashoffset:
+              paths.current[i].getTotalLength() -
+              (paths.current[i].getTotalLength() * scrollPositionOfElement) /
+                100,
+          },
+          {
+            duration: 1000,
+            delay: 500 * i,
+            easing: "ease-in-out",
+            fill: "forwards",
+          }
+        );
+
+        // if (i === paths.current.length - 1) {
+        //     animation.onfinish = () => {
+        //         console.log("animation finished" + i + " " + scrollPositionOfElement);
+        //         if (scrollPositionOfElement > 190 || scrollPositionOfElement < 10) {
+        //             document.querySelector(`.${style.links}`).style.display = "none";
+        //         }
+
+        //     }
+        // }
+      }
+    }
+
+    return () => {};
+  }, [scrollPositionOfElement]);
 
   return (
     <div orientation="left" className={`${style.links}`}>

@@ -12,7 +12,7 @@ import Stars from "../stars/stars";
 export default function Home() {
   const projects = useRef();
   const landing = useRef();
-  // const [scrollPositionOfElement, setScrollPositionOfElement] = useState(0);
+  const [, setScrollPositionOfElement] = useState(0);
   // let scrollPositionOfElement = 0;
   let tmp2 = 0;
 
@@ -25,69 +25,7 @@ export default function Home() {
   // }, [])
 
   return (
-    <div
-      className={style.container}
-      onScroll={(event) => {
-        const setScrollPositionOfElementTmp =
-          (landing.current.getBoundingClientRect().top /
-            landing.current.getBoundingClientRect().height) *
-          100 *
-          -1;
-
-        // setScrollPositionOfElement(setScrollPositionOfElementTmp);
-        // console.log(setScrollPositionOfElementTmp);
-        // console.dir(event.target);
-        //get the scroll position of the element in percentage
-        // scrollPosition = event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight) * 100;
-        // console.log(scrollPosition);
-        // console.log((event.target.scrollHeight - event.target.clientHeight));
-        // console.log(Math.max(0, Math.min(scrollPositionOfElement * .01, 1)));
-
-        landing.current.style.opacity = `${Math.max(
-          0.3,
-          1 - Math.min(setScrollPositionOfElementTmp * 0.01, 1)
-        )}`;
-
-        // landing.current.style.transform = `translateX(${clamp(setScrollPositionOfElementTmp, 0, 100)}%)`;
-        // change blur on scroll
-        landing.current.style.filter = `blur(${clamp(
-          setScrollPositionOfElementTmp * 0.2,
-          0,
-          20
-        )}px)`;
-
-        if (
-          (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 5 ||
-            Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) &&
-          Math.ceil(setScrollPositionOfElementTmp) !== Math.ceil(tmp2)
-        ) {
-          // console.count(setScrollPositionOfElementTmp);
-          tmp2 = setScrollPositionOfElementTmp;
-
-          publish("scroll", {
-            scrollPositionOfElement: setScrollPositionOfElementTmp,
-          });
-
-          // if (setScrollPositionOfElementTmp > 175 && setScrollPositionOfElementTmp < 275) {
-          //     publish("project", { scrollPositionOfElement: setScrollPositionOfElementTmp - 200 })
-          // }
-
-          // if (setScrollPositionOfElementTmp > 250 && setScrollPositionOfElementTmp < 350) {
-          //     publish("skills", { scrollPositionOfElement: setScrollPositionOfElementTmp - 300 })
-          // }
-
-          // if (setScrollPositionOfElementTmp > 50 && setScrollPositionOfElementTmp < 185) {
-          //     publish("about", { scrollPositionOfElement: setScrollPositionOfElementTmp })
-          // }
-
-          // if (setScrollPositionOfElementTmp > 0 && setScrollPositionOfElementTmp < 310) {
-          //     publish("links", { scrollPositionOfElement: setScrollPositionOfElementTmp })
-          // }
-        }
-      }}
-
-      // style={{ position: "relative", backgroundColor: "black" }}
-    >
+    <div className={style.container}>
       <section id="landing" ref={landing}>
         <Landing />
       </section>
