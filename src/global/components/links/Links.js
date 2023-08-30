@@ -4,8 +4,21 @@ import { useEffect } from "react";
 import { useScrollPosition } from "../../provider/GlobalProvider";
 import { useRef } from "react";
 
+const linkColors = {
+  1: "#FF0000",
+  2: "#000000",
+  3: "#4267B2",
+  4: "#E1306C",
+  5: "#1DA1F2",
+  6: "#0A66C2",
+};
+
 export default function Links() {
   const [scrollPositionOfElement] = useScrollPosition();
+  const setCalled = useRef();
+  const timeoutId = useRef();
+  const linkDiv = useRef();
+  const linkA = useRef();
   const paths = useRef();
   const funcMouseLeave = (i) => {
     paths.current[i].animate(
@@ -16,7 +29,6 @@ export default function Links() {
       },
       {
         duration: 500,
-
         easing: "ease-in-out",
         fill: "forwards",
       }
@@ -25,6 +37,8 @@ export default function Links() {
   const funcMouseEnter = (i) => {
     // path.style.strokeDasharray = path.getTotalLength();
     // paths.current[i].style.strokeDashoffset = paths.current[i].getTotalLength() * 3;
+
+    linkA.current?.style.setProperty("--green", linkColors[i]);
     paths.current[i].animate(
       {
         strokeDashoffset:
@@ -33,19 +47,16 @@ export default function Links() {
       },
       {
         duration: 1200,
-
         easing: "ease-in-out",
         fill: "forwards",
       }
     );
   };
 
-  const setCalled = useRef();
-  const timeoutId = useRef();
-  const linkDiv = useRef();
   useEffect(() => {
     linkDiv.current = document.querySelector(`.${style.links}`);
     paths.current = document.querySelectorAll("ul path");
+    linkA.current = document.querySelector("." + style.links);
 
     paths.current.forEach((path) => {
       path.style.strokeDasharray = path.getTotalLength();

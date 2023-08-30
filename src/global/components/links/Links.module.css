@@ -41,27 +41,23 @@
     width: 25px;
     height: 25px;
     color: var(--light-slate);
-
-    ;
     fill: none;
 }
 
 .links>ul>li>a>svg>path {
-
     stroke: var(--light-slate);
-
-
-    transition: all 1s ease-in-out;
+    transition: all 1s ease;
 
 }
 
 
 .links>ul>li>a:hover>svg {
+    transition-delay: .35s;
     color: var(--green);
 }
 
 .links>ul>li:hover {
-    transform: translateY(-4px) scale(1.1);
+    transform: translateY(-4px) scale(1.22);
 }
 
 .links>ul:has(li:hover) li:not(:hover, :last-child, :first-child) {
@@ -71,6 +67,10 @@
 
 .links>ul>li>a {
     background-image: linear-gradient(var(--green), var(--green));
+}
+
+.links>ul>li>a:hover {
+    background-size: 100% 2.5px;
 }
 
 
