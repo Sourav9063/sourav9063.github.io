@@ -88,7 +88,7 @@ export default function Stars() {
           let ytmp = e.clientY - rect.top;
           xtmp = (xtmp / rect.width) * 100;
           ytmp = (ytmp / rect.height) * 100;
-          if (Math.abs(xtmp - x) > 1 || Math.abs(ytmp - y) > 1) {
+          if (Math.abs(xtmp - x) > 0.5 || Math.abs(ytmp - y) > 0.5) {
             setX(xtmp);
             setY(ytmp);
             // console.log({ x, y })
@@ -111,7 +111,7 @@ export default function Stars() {
           let ytmp = e.touches[0].clientY - rect.top;
           xtmp = (xtmp / rect.width) * 100;
           ytmp = (ytmp / rect.height) * 100;
-          if (Math.abs(xtmp - x) > 1 || Math.abs(ytmp - y) > 1) {
+          if (Math.abs(xtmp - x) > 0.5 || Math.abs(ytmp - y) > 0.5) {
             setX(xtmp);
             setY(ytmp);
             // console.log({ x, y })

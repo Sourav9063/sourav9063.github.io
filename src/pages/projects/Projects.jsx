@@ -52,7 +52,7 @@ export default function Projects() {
   const [scrollPositionOfElement] = useScrollPosition();
 
   useEffect(() => {
-    if (scrollPositionOfElement > 175 && scrollPositionOfElement < 275) {
+    if (scrollPositionOfElement > 150 && scrollPositionOfElement < 275) {
       const scrollPositionOfElementTmp = scrollPositionOfElement - 200;
       if (scrollPositionOfElementTmp > 10) {
         // setScrollPosition(700);
