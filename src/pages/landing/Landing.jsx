@@ -5,7 +5,6 @@ import headR from "./headRS1.webp";
 import headL from "./headLS1.webp";
 import code from "./codemin.jpg";
 import design from "./design.webp";
-
 export default function Landing() {
   const left = useRef();
   const fancy = useRef();
