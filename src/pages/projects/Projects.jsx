@@ -43,23 +43,29 @@ export default function Projects() {
   const gallery = useRef();
 
   // let hallManagement = 0;
-  const [scrollPosition, setScrollPosition] = React.useState(-24 * 30);
+  const [scrollPosition, setScrollPosition] = React.useState(-75 * 9.6);
   const [showModal, setShowModal] = React.useState(false);
   const [selectedProject, setSelectedProject] = React.useState(
     projectsData["Touch The Ball"]
   );
 
   const [scrollPositionOfElement] = useScrollPosition();
+  const scrollRef = useRef(65);
 
   useEffect(() => {
-    if (scrollPositionOfElement > 150 && scrollPositionOfElement < 275) {
+    if (
+      scrollPositionOfElement > 125 &&
+      scrollPositionOfElement < 275 &&
+      Math.abs(scrollPositionOfElement - scrollRef.current) > 5
+    ) {
+      scrollRef.current = scrollPositionOfElement;
       const scrollPositionOfElementTmp = scrollPositionOfElement - 200;
       if (scrollPositionOfElementTmp > 10) {
         // setScrollPosition(700);
-        setScrollPosition((state) => scrollPositionOfElementTmp * 30);
+        setScrollPosition((state) => scrollPositionOfElementTmp * 9.6);
       } else if (scrollPositionOfElementTmp < -10) {
         // setScrollPosition(-700);
-        setScrollPosition((state) => scrollPositionOfElementTmp * 30);
+        setScrollPosition((state) => scrollPositionOfElementTmp * 9.6);
       } else {
         setScrollPosition((state) => 0);
       }

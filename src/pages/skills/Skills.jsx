@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import style from "./Skills.module.css";
 import "../../global/css/global.css";
 import { useScrollPosition } from "../../global/provider/GlobalProvider";
@@ -6,27 +6,19 @@ import { useEffect } from "react";
 
 export default function Skills() {
   const cardsRef = React.useRef();
-
-  // let rect;
-
   const [scrollPositionOfElement] = useScrollPosition();
+  const [scrollPosition, setScrollPosition] = useState(245);
 
   useEffect(() => {
-    if (scrollPositionOfElement > 250 && scrollPositionOfElement < 350) {
-      for (let i = 0; i < [...cardsRef.current.children].length; i++) {
-        [...cardsRef.current.children][i].animate(
-          {
-            transform: `translateX(${scrollPositionOfElement - 300}%)`,
-            // boxShadow: `-${clamp(scrollPositionOfElement - scrollConst, 2, 20)}px ${clamp(scrollPositionOfElement - scrollConst, 0, 20)}px 25px 5px rgba(8, 5, 25, 0.7)`
-          },
-          {
-            duration: 300,
-            fill: "forwards",
-            easing: "ease",
-            delay: 320 * i,
-          }
-        );
-      }
+    console.log(scrollPosition);
+    if (
+      scrollPositionOfElement > 250 &&
+      scrollPositionOfElement < 350 &&
+      Math.abs(scrollPositionOfElement - scrollPosition) > 10
+    ) {
+      if (scrollPositionOfElement > 295 && scrollPositionOfElement < 305) {
+        setScrollPosition(300);
+      } else setScrollPosition(scrollPositionOfElement);
     }
     return () => {};
   }, [scrollPositionOfElement]);
@@ -70,7 +62,13 @@ export default function Skills() {
           }
         }}
       >
-        <div className={`${style.card} ${style.col13_row11}`}>
+        <div
+          className={`${style.card} ${style.col13_row11}`}
+          style={{
+            transform: `translateX(${scrollPosition - 300}%)`,
+            transitionDelay: 100 + "ms",
+          }}
+        >
           <div className={`${style.card_content}`}>
             <div className={`${style.card_image}`}>
               <i className="fa-duotone fa-apartment"></i>
@@ -90,7 +88,13 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className={`${style.card} ${style.col25_row22}`}>
+        <div
+          className={`${style.card} ${style.col25_row22}`}
+          style={{
+            transform: `translateX(${scrollPosition - 300}%)`,
+            transitionDelay: 320 * 1 + "ms",
+          }}
+        >
           <div className={`${style.card_content}`}>
             <div className={`${style.card_image}`}>
               <i className="fa-duotone fa-unicorn"></i>
@@ -111,7 +115,13 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className={`${style.card} ${style.col11_row23}`}>
+        <div
+          className={`${style.card} ${style.col11_row23}`}
+          style={{
+            transform: `translateX(${scrollPosition - 300}%)`,
+            transitionDelay: 320 * 2 + "ms",
+          }}
+        >
           <div className={`${style.card_content}`}>
             <div className={`${style.card_image}`}>
               <i className="fa-duotone fa-blender-phone"></i>
@@ -136,7 +146,13 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className={`${style.card} ${style.col45_row11}`}>
+        <div
+          className={`${style.card} ${style.col45_row11}`}
+          style={{
+            transform: `translateX(${scrollPosition - 300}%)`,
+            transitionDelay: 320 * 3 + "ms",
+          }}
+        >
           <div className={`${style.card_content}`}>
             <div className={`${style.card_image}`}>
               <i className="fa-duotone fa-person-to-portal"></i>
@@ -155,7 +171,13 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className={`${style.card} ${style.col23_row33}`}>
+        <div
+          className={`${style.card} ${style.col23_row33}`}
+          style={{
+            transform: `translateX(${scrollPosition - 300}%)`,
+            transitionDelay: 320 * 4 + "ms",
+          }}
+        >
           <div className={`${style.card_content}`}>
             <div className={`${style.card_image}`}>
               <i className="fa-duotone fa-person-from-portal"></i>
@@ -175,7 +197,13 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className={`${style.card} ${style.col34_row33}`}>
+        <div
+          className={`${style.card} ${style.col34_row33}`}
+          style={{
+            transform: `translateX(${scrollPosition - 300}%)`,
+            transitionDelay: 320 * 5 + "ms",
+          }}
+        >
           <div className={`${style.card_content}`}>
             <div className={`${style.card_image}`}>
               <i className="fa-duotone fa-otter"></i>
