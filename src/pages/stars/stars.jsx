@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import style from "./stars.module.css";
 
 let ratio = window.innerHeight / window.innerWidth;
@@ -58,14 +58,24 @@ const listOfWords = [
 let change = true;
 export default function Stars() {
   // const [stars, setStars] = useState(getRandomStarPlacement(500))
-  const [word, setWord] = useState(
-    listOfWords[Math.floor(Math.random() * listOfWords.length)]
-  );
+  const [word, setWord] = useState("");
 
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
-  const [translateY, setTranslateY] = useState(0);
+  const interval = useRef(null);
+  useEffect(() => {
+    setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
+    return () => {};
+  }, []);
+  useEffect(() => {
+    clearInterval(interval.current);
+    interval.current = setInterval(() => {
+      setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
+    }, 5000);
+    return () => {
+      clearInterval(interval.current);
+    };
+  }, [word]);
 
   return (
     <div className={`${style.beforeZ} text_not_selectable`}>
@@ -200,7 +210,7 @@ export default function Stars() {
         })}
       </div>
 
-      <div className={style.word}>
+      <div className={style.word} key={word}>
         <div>{word}</div>
       </div>
       <div
