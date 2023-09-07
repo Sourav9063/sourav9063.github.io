@@ -10,13 +10,12 @@ export default function Skills() {
   const [scrollPosition, setScrollPosition] = useState(245);
 
   useEffect(() => {
-    console.log(scrollPosition);
     if (
       scrollPositionOfElement > 250 &&
       scrollPositionOfElement < 350 &&
-      Math.abs(scrollPositionOfElement - scrollPosition) > 10
+      Math.abs(scrollPositionOfElement - scrollPosition) > 8
     ) {
-      if (scrollPositionOfElement > 295 && scrollPositionOfElement < 305) {
+      if (scrollPositionOfElement > 290 && scrollPositionOfElement < 310) {
         setScrollPosition(300);
       } else setScrollPosition(scrollPositionOfElement);
     }
@@ -29,22 +28,7 @@ export default function Skills() {
         className={`${style.cards}`}
         ref={cardsRef}
         onMouseMove={(event) => {
-          // console.dir(style)
-          // let x = event.clientX / event.target.clientWidth * 100;
-          // let y = event.clientY / event.target.clientHeight * 100;
-
-          // event.target.style.setProperty('--mouse-x', x + '%');
-          // event.target.style.setProperty('--mouse-y', y + '%');
-          // console.dir(cardsRef);
-          // for (const card in allCards) {
-          //     console.log(card);
-          // }
-          // console.log(allCards[0]);
-
           for (const card of [...cardsRef.current.children]) {
-            // allCards[i].style.setProperty('--mouse-x', event.clientX / event.target.clientWidth * 100 + '%');
-            // allCards[i].style.setProperty('--mouse-y', event.clientY / event.target.clientHeight * 100 + '%');
-
             const rect = card.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
