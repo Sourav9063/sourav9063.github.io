@@ -28,14 +28,7 @@ const Navbar = () => {
         >
           Menu
         </Link>
-        <Link
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.replace("/");
-          }}
-          className={`${isActive ? styles.show : styles.hide}`}
-          to="/"
-        >
+        <Link className={`${isActive ? styles.show : styles.hide}`} to="/">
           Home
         </Link>
         {/* <AnchorLink className={`${isActive ? styles.show : styles.hide}`} href="#about">About</AnchorLink> */}
