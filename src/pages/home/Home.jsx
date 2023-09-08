@@ -8,6 +8,7 @@ import Skills from "../skills/Skills";
 
 import Contacts from "../contacts/Contacts";
 import Stars from "../stars/stars";
+import Experience from "../experience/Experience";
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
       <section>
         <Stars />
       </section>
+      {/* <section>
+        <Experience />
+      </section> */}
       <section>
         <Contacts />
       </section>
