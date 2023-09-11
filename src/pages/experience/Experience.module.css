@@ -1,6 +1,6 @@
 .hs-wrapper {
   background-color: #fff;
-  background-color: hsl(0, 0%, 88%);
+  /* background-color: hsl(0, 0%, 88%); */
   width: 100vh;
   height: max(100vh, 100vw);
   max-height: fit-content;
@@ -88,11 +88,13 @@
 
 @media screen and (max-width: 768px) {
 
+  .hs-wrapper {
+    width: 100vw;
+    height: 100vh;
+    transform: none;
+  }
 
-  .hs-wrapper>div>div {
-    position: relative;
-    min-width: 100vh;
-    min-height: 100vh;
-    max-height: 100vh;
+  .hs-wrapper>div {
+    transform: none;
   }
 }
