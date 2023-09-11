@@ -1,26 +1,98 @@
 .hs-wrapper {
-
+  background-color: #fff;
+  background-color: hsl(0, 0%, 88%);
+  width: 100vh;
+  height: max(100vh, 100vw);
+  max-height: fit-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translateY(-100vh);
   transform-origin: right top;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  /* transform: rotate(-90deg) translateY(calc(-100vh)); */
-  /* scroll-snap-type: y mandatory; */
-  transform: rotate(-90deg) translateY(-100vw);
-  width: 100vw;
 }
 
 .hs-wrapper>div {
-  transform: rotate(90deg);
-  transform-origin: right top;
+  transform: rotate(90deg)translateY(-100vh);
+  transform-origin: top left;
+  width: 100vw;
+  height: max(100vh, 100vw);
+  position: relative;
   /* scroll-snap-align: start; */
+}
 
+
+.hs-wrapper>div>div {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 .body {
-  width: 100vh;
-  width: 100dvh;
-  height: 100vw;
-  background-color: #970000;
-  color: white;
+
+  background-color: hsl(0, 0%, 88%);
+  color: hsl(100, 2%, 25%);
   position: relative;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.back-text {
+
+
+  /* width: 5em; */
+  font-weight: bolder;
+  color: hsl(100, 2%, 25%);
+  font-size: 10vw;
+  transition: transform 1s;
+  /* background: linear-gradient(#ffffff94 0%, #ffffff00 100%); */
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+
+
+
+}
+
+.back-text-white {
+
+
+  /* width: 5em; */
+  margin-left: 2rem;
+  font-weight: bolder;
+  color: hsl(0, 0%, 100%);
+  font-size: 10vw;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transition: transform 1s;
+  /* background: linear-gradient(#ffffff94 0%, #ffffff00 100%); */
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+
+
+
+}
+
+.experiment-home {}
+
+.achievement-home {}
+
+.education-home {}
+
+@media screen and (max-width: 768px) {
+
+
+  .hs-wrapper>div>div {
+    position: relative;
+    min-width: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
 }

@@ -28,9 +28,9 @@ export default function Home() {
       <section>
         <Stars />
       </section>
-      {/* <section>
+      <section>
         <Experience />
-      </section> */}
+      </section>
       <section>
         <Contacts />
       </section>
