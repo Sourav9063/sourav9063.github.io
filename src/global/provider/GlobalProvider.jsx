@@ -3,7 +3,6 @@ import styles from "../../pages/home/Home.module.css";
 export const GlobalContext = createContext();
 export default function GlobalProvider({ children }) {
   const [scrollPositionOfElement, setScrollPositionOfElement] = useState(0);
-  const tmp2 = 0;
   const handleScroll = (e) => {
     const setScrollPositionOfElementTmp =
       (e.target.firstChild.getBoundingClientRect().top /
@@ -11,9 +10,11 @@ export default function GlobalProvider({ children }) {
       100 *
       -1;
     if (
-      (Math.abs(tmp2 - setScrollPositionOfElementTmp) > 5 ||
-        Math.ceil(setScrollPositionOfElementTmp) % 100 === 0) &&
-      Math.ceil(setScrollPositionOfElementTmp) !== Math.ceil(tmp2)
+      (Math.abs(scrollPositionOfElement - setScrollPositionOfElementTmp) > 2 ||
+        Math.ceil(setScrollPositionOfElementTmp) % 100 > 90 ||
+        Math.ceil(setScrollPositionOfElementTmp) % 100 < 10) &&
+      Math.ceil(setScrollPositionOfElementTmp) !==
+        Math.ceil(scrollPositionOfElement)
     ) {
       setScrollPositionOfElement(setScrollPositionOfElementTmp);
     }
