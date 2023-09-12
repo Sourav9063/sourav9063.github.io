@@ -43,18 +43,10 @@
 
 .back-text {
 
-
-  /* width: 5em; */
-  font-weight: bolder;
+  font-weight: 900;
   color: hsl(100, 2%, 25%);
-  font-size: 10vw;
+  font-size: 8vw;
   transition: transform 1s;
-  /* background: linear-gradient(#ffffff94 0%, #ffffff00 100%); */
-  /* background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
-
 
 }
 
