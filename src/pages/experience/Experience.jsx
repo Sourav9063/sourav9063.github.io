@@ -4,12 +4,42 @@ import { useScrollPosition } from "../../global/provider/GlobalProvider";
 
 export default function Experience() {
   const [scrollPositionOfElement] = useScrollPosition();
-
   return (
     <div className={styles["hs-wrapper"]}>
       <div className={styles["body"]} style={{ top: `calc(0*93vh)` }}>
         <section className={styles["back"]}>
-          <h1
+          <div
+            className={styles["back-white"]}
+            style={{
+              opacity: ` ${
+                scrollPositionOfElement > 470
+                  ? Math.min(1, (scrollPositionOfElement - 470) / 30)
+                  : 0
+              }`,
+            }}
+          >
+            <div
+              className={`${styles["back-text-white"]} ${styles["back-text-reset-pos"]} `}
+            >
+              Experiences
+            </div>
+            <div
+              className={`${styles["back-text-white"]} ${styles["back-text-reset-pos"]} `}
+            >
+              Educations
+            </div>
+            <div
+              className={`${styles["back-text-white"]} ${styles["back-text-reset-pos"]} `}
+            >
+              Achievements
+            </div>
+            <div
+              className={`${styles["back-text-white"]} ${styles["back-text-reset-pos"]} `}
+            >
+              & Co-curriculars
+            </div>
+          </div>
+          <div
             className={styles["back-text"]}
             style={{
               transform: `translateX(${
@@ -20,8 +50,8 @@ export default function Experience() {
             }}
           >
             Experiences
-          </h1>
-          <h1
+          </div>
+          <div
             className={styles["back-text"]}
             style={{
               transform: `translateX(${
@@ -32,8 +62,8 @@ export default function Experience() {
             }}
           >
             Educations
-          </h1>
-          <h1
+          </div>
+          <div
             className={styles["back-text"]}
             style={{
               transform: `translateX(${
@@ -44,8 +74,8 @@ export default function Experience() {
             }}
           >
             Achievements
-          </h1>
-          <h1
+          </div>
+          <div
             className={styles["back-text"]}
             style={{
               transform: `translateX(${
@@ -55,18 +85,21 @@ export default function Experience() {
               }px)`,
             }}
           >
-            & Co-curricular
-          </h1>
+            & Co-curriculars
+          </div>
         </section>
       </div>
       <div className={`${styles["body"]} ${styles["t50vw"]} `}>
         <ExperienceHome />
       </div>
       <div className={`${styles["body"]} ${styles["t50vw"]} `}>
+        <EducationHome />
+      </div>
+      <div className={`${styles["body"]} ${styles["t50vw"]} `}>
         <AchievementHome />
       </div>
       <div className={`${styles["body"]} ${styles["t50vw"]} `}>
-        <EducationHome />
+        <CoCurricularHome />
       </div>
     </div>
   );
@@ -75,14 +108,21 @@ export default function Experience() {
 function ExperienceHome() {
   return (
     <div className={styles["experiment-home"]}>
-      <h1 className={styles["back-text-white"]}>Experiences</h1>
+      <div className={styles["back-text-white"]}>Experiences</div>
     </div>
   );
 }
 function AchievementHome() {
   return (
     <div className={styles["achievement-home"]}>
-      <h1 className={styles["back-text-white"]}>Achievements</h1>
+      <div className={styles["back-text-white"]}>Achievements</div>
+    </div>
+  );
+}
+function CoCurricularHome() {
+  return (
+    <div className={styles["achievement-home"]}>
+      <div className={styles["back-text-white"]}>Co-curriculars</div>
     </div>
   );
 }
@@ -90,7 +130,7 @@ function AchievementHome() {
 function EducationHome() {
   return (
     <div className={styles["education-home"]}>
-      <h1 className={styles["back-text-white"]}>Educations</h1>
+      <div className={styles["back-text-white"]}>Educations</div>
     </div>
   );
 }
