@@ -3,7 +3,6 @@ import style from "./Skills.module.css";
 import "../../global/css/global.css";
 import { useScrollPosition } from "../../global/provider/GlobalProvider";
 import { useEffect } from "react";
-import { clamp } from "../../global/helper/function/ui";
 
 export default function Skills() {
   const cardsRef = React.useRef();

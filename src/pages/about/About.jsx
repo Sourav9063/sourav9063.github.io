@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import style from "./About.module.css";
 import profPic from "./profPic1.webp";
-import { randomRGBA } from "../../global/helper/function/ui";
+import { isIn, randomRGBA } from "../../global/helper/function/ui";
 import { useScrollPosition } from "../../global/provider/GlobalProvider";
 import { useState } from "react";
 
@@ -228,7 +228,7 @@ export default function About() {
           alt="Profile"
           style={{
             transform: `translateX(${
-              1.5 * (hello === 1 ? 0 : hello == 0 ? -1 * 100 : 1 * 100)
+              1.5 * (hello === 1 ? 0 : hello == 0 ? -1 * 200 : 1 * 200)
             }px)`,
           }}
         />
@@ -236,3 +236,33 @@ export default function About() {
     </div>
   );
 }
+
+// <div
+// className={style.hello}
+// style={{
+//   transform: `translate(0, -50%) scale(${
+//     isIn(90, scrollPositionOfElement, 110)
+//       ? 1
+//       : scrollPositionOfElement / 100
+//   } )`,
+// }}
+// >
+// Hello
+// </div>
+// <div className={style.im}>I'm</div>
+// <img
+// className={style.profPic}
+// src={profPic}
+// alt="Profile"
+// style={{
+//   transform: `translateX(${
+//     isIn(90, scrollPositionOfElement, 110)
+//       ? 0
+//       : 10 * (scrollPositionOfElement - 100)
+//   }px)`,
+// }}
+// />
+// </div>
+// </div>
+// );
+// }
