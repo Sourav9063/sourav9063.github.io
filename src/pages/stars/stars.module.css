@@ -75,17 +75,42 @@
     font-size: 8vw;
     height: fit-content;
     z-index: 2;
-    animation: word-anime .2s ease forwards;
+    animation: word-anime 1s ease forwards;
 }
+
+.word-out {
+    animation: word-anime-out 1s ease forwards;
+}
+
 
 @keyframes word-anime {
     0% {
-        transform: translateY(0);
+        transform: translateY(0%);
+        opacity: 0;
+        display: none;
     }
 
     100% {
         transform: translateY(-50%);
+        opacity: 1;
+        display: inline;
     }
+
+}
+
+@keyframes word-anime-out {
+    0% {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+        display: none;
+    }
+
+
 }
 
 .word>div {

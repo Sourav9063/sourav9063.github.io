@@ -59,6 +59,7 @@ let change = true;
 export default function Stars() {
   // const [stars, setStars] = useState(getRandomStarPlacement(500))
   const [word, setWord] = useState("");
+  const [show, setShow] = useState(1);
 
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
@@ -67,15 +68,24 @@ export default function Stars() {
     setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
     return () => {};
   }, []);
-  useEffect(() => {
-    clearInterval(interval.current);
-    interval.current = setInterval(() => {
-      setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
-    }, 5000);
-    return () => {
-      clearInterval(interval.current);
-    };
-  }, [word]);
+  // useEffect(() => {
+  //   setShow(2);
+  //   clearInterval(interval.current);
+  //   setTimeout(() => {
+  //     setShow(1);
+  //   }, 1000);
+
+  //   interval.current = setInterval(() => {
+  //     setShow((state) => 2);
+  //     setTimeout(() => {
+  //       setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
+  //       setShow(1);
+  //     }, 1000);
+  //   }, 7000);
+  //   return () => {
+  //     clearInterval(interval.current);
+  //   };
+  // }, []);
 
   return (
     <div className={`${style.beforeZ} text_not_selectable`}>
@@ -95,9 +105,13 @@ export default function Stars() {
           }
           // console.log({ change })
           if ((x <= 20 || x >= 80) && change) {
-            setWord(
-              listOfWords[Math.floor(Math.random() * listOfWords.length)]
-            );
+            setShow((state) => 2);
+            setTimeout(() => {
+              setWord(
+                listOfWords[Math.floor(Math.random() * listOfWords.length)]
+              );
+              setShow(1);
+            }, 1000);
             change = false;
             // console.log(change)
           } else if (x > 20 && x < 80) {
@@ -117,9 +131,13 @@ export default function Stars() {
             // console.log({ x, y })
           }
           if ((x <= 20 || x >= 80) && change) {
-            setWord(
-              listOfWords[Math.floor(Math.random() * listOfWords.length)]
-            );
+            setShow((state) => 2);
+            setTimeout(() => {
+              setWord(
+                listOfWords[Math.floor(Math.random() * listOfWords.length)]
+              );
+              setShow(1);
+            }, 1000);
             change = false;
             // console.log(change)
           } else if (x > 20 && x < 80) {
@@ -130,9 +148,13 @@ export default function Stars() {
           // setStars(getRandomStarPlacement(500))
 
           {
-            setWord(
-              listOfWords[Math.floor(Math.random() * listOfWords.length)]
-            );
+            setShow((state) => 2);
+            setTimeout(() => {
+              setWord(
+                listOfWords[Math.floor(Math.random() * listOfWords.length)]
+              );
+              setShow(1);
+            }, 1000);
           }
         }
       >
@@ -210,7 +232,9 @@ export default function Stars() {
         })}
       </div>
 
-      <div className={style.word} key={word}>
+      <div
+        className={`${style["word"]} ${show == 2 ? style["word-out"] : ""} `}
+      >
         <div>{word}</div>
       </div>
       <div
