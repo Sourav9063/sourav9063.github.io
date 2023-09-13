@@ -1,24 +1,32 @@
-import React, { useState, createContext, useContext, useEffect } from "react";
+import React, {
+  useState,
+  createContext,
+  useContext,
+  useEffect,
+  useCallback,
+} from "react";
 import styles from "../../pages/home/Home.module.css";
 export const GlobalContext = createContext();
+let temp = 0;
 export default function GlobalProvider({ children }) {
   const [scrollPositionOfElement, setScrollPositionOfElement] = useState(0);
-  const handleScroll = (e) => {
-    const setScrollPositionOfElementTmp =
+  const handleScroll = useCallback((e) => {
+    const setScrollPositionOfElementTmp = Math.ceil(
       (e.target.firstChild.getBoundingClientRect().top /
         e.target.firstChild.getBoundingClientRect().height) *
-      100 *
-      -1;
+        100 *
+        -1
+    );
     if (
-      (Math.abs(scrollPositionOfElement - setScrollPositionOfElementTmp) > 2 ||
-        Math.ceil(setScrollPositionOfElementTmp) % 100 > 90 ||
-        Math.ceil(setScrollPositionOfElementTmp) % 100 < 10) &&
-      Math.ceil(setScrollPositionOfElementTmp) !==
-        Math.ceil(scrollPositionOfElement)
+      Math.abs(temp - setScrollPositionOfElementTmp) > 5 ||
+      setScrollPositionOfElementTmp % 100 < 5 ||
+      setScrollPositionOfElementTmp % 100 < 95
     ) {
-      setScrollPositionOfElement(setScrollPositionOfElementTmp);
+      temp = setScrollPositionOfElementTmp;
+      if (Math.abs(scrollPositionOfElement - setScrollPositionOfElementTmp) > 5)
+        setScrollPositionOfElement(setScrollPositionOfElementTmp);
     }
-  };
+  }, []);
 
   useEffect(() => {
     document
