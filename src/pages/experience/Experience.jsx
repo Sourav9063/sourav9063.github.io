@@ -109,6 +109,11 @@ function ExperienceHome() {
   return (
     <div className={styles["experiment-home"]}>
       <div className={styles["back-text-white"]}>Experiences</div>
+      <div>
+        {data.Experiences.map((el, index) => {
+          return <div key={el.at}>{el.at}</div>;
+        })}
+      </div>
     </div>
   );
 }
@@ -116,6 +121,11 @@ function AchievementHome() {
   return (
     <div className={styles["achievement-home"]}>
       <div className={styles["back-text-white"]}>Achievements</div>
+      <div>
+        {data.Achievements.map((el, index) => {
+          return <div key={el.at}>{el.at}</div>;
+        })}
+      </div>
     </div>
   );
 }
@@ -123,6 +133,11 @@ function CoCurricularHome() {
   return (
     <div className={styles["achievement-home"]}>
       <div className={styles["back-text-white"]}>Co-curriculars</div>
+      <div>
+        {data.CoCurriculars.map((el, index) => {
+          return <div key={el.at}>{el.at}</div>;
+        })}
+      </div>
     </div>
   );
 }
@@ -131,6 +146,7 @@ function EducationHome() {
   return (
     <div className={styles["education-home"]}>
       <div className={styles["back-text-white"]}>Educations</div>
+      <div></div>
     </div>
   );
 }
@@ -181,6 +197,33 @@ const data = {
       at: "Idea Competition of Mobile App Game & Job Festival 2023",
       from: "March 2023",
       pos: "1st Runner Up",
+    },
+  ],
+
+  // Creative Executive at SUST ACM Student Chapter Jul’ 22 - present
+  // Assistant Treasurer at Maavoi Abritti Samsad, SUST Jan’ 20 - Jul’ 20
+  // Organizing Committee SUST SWE Technovent 2023, IICT Jan’ 23
+  // Volunteer at LICT Techfest, IICT, SUST Mar’ 19
+  // Assistant Office Secretary at Manikganj Shamprity, SUST Jan’ 22- present
+  CoCurriculars: [
+    {
+      at: "Assistant Treasurer at Maavoi Abritti Samsad, SUST",
+      from: "Jan 2020",
+      to: "Jul 2020",
+    },
+    {
+      at: "Assistant Office Secretary at Manikganj Shamprity, SUST",
+      from: "Jan 2022",
+      to: "Jul 2022",
+    },
+    {
+      at: "Creative Executive at SUST ACM Student Chapter",
+      from: "Jul 2022",
+      to: "Jan 2023",
+    },
+    {
+      at: "Organizing Committee SUST SWE Technovent 2023, IICT",
+      from: "Jan 2023",
     },
   ],
 };
