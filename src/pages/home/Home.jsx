@@ -37,5 +37,3 @@ export default function Home() {
     </div>
   );
 }
-
-const clamp = (num, min, max) => Math.max(min, Math.min(num, max));
