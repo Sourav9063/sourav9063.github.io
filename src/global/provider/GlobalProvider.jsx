@@ -20,10 +20,10 @@ export default function GlobalProvider({ children }) {
     if (
       Math.abs(temp - setScrollPositionOfElementTmp) > 5 ||
       setScrollPositionOfElementTmp % 100 < 5 ||
-      setScrollPositionOfElementTmp % 100 < 95
+      setScrollPositionOfElementTmp % 100 > 95
     ) {
       temp = setScrollPositionOfElementTmp;
-      if (Math.abs(scrollPositionOfElement - setScrollPositionOfElementTmp) > 5)
+      if (Math.abs(scrollPositionOfElement - setScrollPositionOfElementTmp) > 2)
         setScrollPositionOfElement(setScrollPositionOfElementTmp);
     }
   }, []);
