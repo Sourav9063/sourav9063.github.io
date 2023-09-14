@@ -13,18 +13,14 @@ function App() {
     // <Routes>
     //   <Route path="/" element={<Projects />} />
     // </Routes>
-    <GlobalProvider>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Suspense fallBack={<h1>Loading</h1>}> */}
-          <Route path="/Cv" element={<Cv />} />
-          {/* </Suspense> */}
-        </Routes>
-        <Links />
-      </div>
-    </GlobalProvider>
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Cv" element={<Cv />} />
+      </Routes>
+    </>
   );
 }
 

@@ -111,7 +111,7 @@ function ExperienceHome() {
       <div className={styles["back-text-white"]}>Experiences</div>
       <div>
         {data.Experiences.map((el, index) => {
-          return <div key={el.at}>{el.at}</div>;
+          return <div key={index}>{el.at}</div>;
         })}
       </div>
     </div>
@@ -123,7 +123,7 @@ function AchievementHome() {
       <div className={styles["back-text-white"]}>Achievements</div>
       <div>
         {data.Achievements.map((el, index) => {
-          return <div key={el.at}>{el.at}</div>;
+          return <div key={index}>{el.at}</div>;
         })}
       </div>
     </div>
@@ -135,7 +135,7 @@ function CoCurricularHome() {
       <div className={styles["back-text-white"]}>Co-curriculars</div>
       <div>
         {data.CoCurriculars.map((el, index) => {
-          return <div key={el.at}>{el.at}</div>;
+          return <div key={index}>{el.at}</div>;
         })}
       </div>
     </div>
