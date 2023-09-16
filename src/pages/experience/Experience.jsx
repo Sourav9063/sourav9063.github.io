@@ -45,7 +45,7 @@ export default function Experience() {
               transform: `translateX(${
                 scrollPositionOfElement > 470
                   ? 20 * Math.max(500 - scrollPositionOfElement, 0)
-                  : 200
+                  : 20 * 35
               }px)`,
             }}
           >
@@ -57,7 +57,7 @@ export default function Experience() {
               transform: `translateX(${
                 scrollPositionOfElement > 470
                   ? 60 * Math.max(500 - scrollPositionOfElement, 0)
-                  : 600
+                  : 60 * 35
               }px)`,
             }}
           >
@@ -69,7 +69,7 @@ export default function Experience() {
               transform: `translateX(${
                 scrollPositionOfElement > 470
                   ? 40 * Math.max(500 - scrollPositionOfElement, 0)
-                  : 400
+                  : 40 * 35
               }px)`,
             }}
           >
@@ -81,7 +81,7 @@ export default function Experience() {
               transform: `translateX(${
                 scrollPositionOfElement > 470
                   ? 80 * Math.max(500 - scrollPositionOfElement, 0)
-                  : 800
+                  : 80 * 35
               }px)`,
             }}
           >
