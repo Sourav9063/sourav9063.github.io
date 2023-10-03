@@ -266,7 +266,7 @@ export default function Links() {
           }}
         >
           <a
-            href="https://www.instagram.com/souravahmed9861"
+            href="https://www.instagram.com/__sourav_ahmed__/"
             aria-label="Instagram"
             target="_blank"
             rel="noreferrer"
