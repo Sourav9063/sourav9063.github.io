@@ -20,7 +20,13 @@ In package.json
 npm run deploy
 ```
 
+Reset back
+
 ```
  git remote remove origin
  git remote add origin https://github.com/Sourav9063/my_portfolio
+```
+
+```
+ "homepage": "https://sourav9063.github.io/my_portfolio",
 ```
