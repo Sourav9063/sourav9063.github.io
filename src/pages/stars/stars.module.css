@@ -138,7 +138,7 @@
     left: 0;
     /* background-color: blue; */
     z-index: 19;
-    background: radial-gradient(circle at var(--x) var(--y), rgba(0, 0, 0, .1) 10%, rgba(0, 0, 0, .5) 12%, rgba(0, 0, 0, .96) 25%);
+    background: radial-gradient(circle at var(--x) var(--y), rgba(0, 0, 0, .1) 10%, rgba(0, 0, 0, .5) 12%, rgba(0, 0, 0, .93) 25%);
 }
 
 @keyframes starAni {

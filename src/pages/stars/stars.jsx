@@ -54,6 +54,11 @@ const listOfWords = [
   "I'm Eager to Learn",
   "I'm Adaptive",
   "I'm a Quick Learner",
+  "I'm a Problem Solver",
+  "I'm a Hard Worker",
+  "I'm a Self-Starter",
+  "I'm Passionate",
+  "I'm a Critical Thinker",
 ];
 let change = true;
 export default function Stars() {
