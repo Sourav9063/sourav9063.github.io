@@ -3,7 +3,7 @@ import style from "./Landing.module.css";
 
 import headR from "./headRS1.webp";
 import headL from "./headLS1.webp";
-import code from "./codemin.jpg";
+import code from "./code-min.png";
 import design from "./design.webp";
 export default function Landing() {
   const left = useRef();
@@ -53,7 +53,7 @@ export default function Landing() {
                     {quotes[1].normal}
                 </h2> */}
         <span className={`${style.title} ${style.fancy}`} ref={fancy}>
-          {"{Coder}"}
+          {"{Backend}"}
         </span>
         <div className={`${style.middle}`}>I enjoy programming a lot!</div>
         {/* <img className={`${style.headL}`} src={"https://user-images.githubusercontent.com/53114581/211598847-c8db40bb-b1d9-4da7-b234-4fe4b7fa89a2.png"} alt="headL" /> */}
@@ -68,7 +68,7 @@ export default function Landing() {
                 <span className={`${style.fancy}`}>{quotes[1].fancy} </span>
                     {quotes[1].normal}
                 </h2> */}
-        <span className={`${style.title} ${style.fancy}`}>{"<Designer>"} </span>
+        <span className={`${style.title} ${style.fancy}`}>{"<Frontend>"} </span>
         <div className={`${style.middle}`}>I'm obsessed with designs!</div>
         {/* <img className={`${style.headR}`} src={"https://user-images.githubusercontent.com/53114581/211598601-821b4a48-0539-4a16-a884-23f052f7ad43.png"} alt="headR" /> */}
         <img className={`${style.headR}`} src={headR} alt="headR" />
