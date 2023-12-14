@@ -168,6 +168,9 @@ const projectsData = {
       "https://user-images.githubusercontent.com/53114581/118114615-a91eb780-b409-11eb-8f46-851c73e3d8fd.png",
       "https://user-images.githubusercontent.com/53114581/118113292-ebdf9000-b407-11eb-9a5d-d1db4f23ce4d.png",
     ],
+    videos: [
+      "https://user-images.githubusercontent.com/53114581/208036045-c13bdbf0-aacb-4b09-af9b-c8f61685230a.mp4",
+    ],
     links: [
       "https://github.com/Sourav9063/uBookSharing",
       "https://github.com/Sourav9063/uBookSharing/tags",
@@ -213,6 +216,24 @@ const projectsData = {
     //     window.open("https://github.com/Sourav9063/Blog-CRUD-by-NodeJS", '_blank')
     // ]
   },
+  "Sync Play": {
+    title: "Sync Play",
+    images: [
+      "https://user-images.githubusercontent.com/53114581/290510162-609cdec5-ed48-40bc-a13b-8618ffabaa50.png",
+      "https://user-images.githubusercontent.com/53114581/290508959-6b5fdfd0-b8ad-4af5-b699-6dd2ef777f9d.png",
+      "https://user-images.githubusercontent.com/53114581/268676290-e001ce11-948d-40e0-9c54-9f3bca1bf32f.png",
+    ],
+    videos: [
+      "https://user-images.githubusercontent.com/53114581/266378331-4827debc-3649-44fa-a8bf-4c4c5af3abd1.mp4",
+    ],
+    links: [
+      "https://github.com/Sourav9063/watchtogether",
+      "https://syncplay.vercel.app/",
+    ],
+    description:
+      "A hobby project made using NextJs and Socket.io where Multiple people can join your room via an invitation link and watch videos together with shared controls like Play, Pause, Seek, Source change, etc. Both local videos and cloud-stored videos are supported",
+    tech: ["NodeJS", "ExpressJS", "MySQL", "JWT token", "React"],
+  },
   "Touch The Ball": {
     title: "Touch The Ball",
     images: [
@@ -254,7 +275,8 @@ const projectsData = {
       "https://github.com/Sourav9063/obstacles_detection",
       "https://youtu.be/YIr5vqj7AQA",
     ],
-    description: "",
+    description:
+      "Obstacles detection for blind person.\nUsing tensor flow we map the world in 3d. Then taking the center pixels value(near of far) we map it with device's Vibrator. This allows a blind person to find his/her way. When device detects objects near the camera, it vibrates for 200ms and warns the user about the position on obstacle. Other wise it vibrates for 50ms.",
     tech: ["Android Studio", "Java", "Tensorflow"],
 
     // onClicks: [

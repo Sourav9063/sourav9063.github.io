@@ -340,24 +340,40 @@ export default function Projects() {
           className={`${style.tile} ${style.blog}`}
           onClick={() => {
             // window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
-            setSelectedProject(projectsData["News Blog"]);
+            setSelectedProject(projectsData["Sync Play"]);
             setShowModal(true);
           }}
           style={{
             transform: `translateY(${1.2 * scrollPosition}px) rotate(-10deg)`,
           }}
         >
-          <div className={style.title}>News Blog</div>
-          <img
-            alt="News Blogs"
-            src="https://user-images.githubusercontent.com/53114581/202858064-3a594637-0e01-4142-a17b-211b5866d448.jpg"
-          />
+          <div className={style.title}>Sync Play</div>
+          <video
+            muted
+            onMouseOver={(event) => {
+              event.target.play();
+            }}
+            onMouseOut={(event) => event.target.pause()}
+            onPointerUp={(event) => event.target.pause()}
+            onPointerEnter={(event) => event.target.play()}
+            onPointerLeave={(event) => event.target.pause()}
+            poster="https://user-images.githubusercontent.com/53114581/268676290-e001ce11-948d-40e0-9c54-9f3bca1bf32f.png"
+            autoPlay
+            loop
+          >
+            <source
+              src={
+                "https://user-images.githubusercontent.com/53114581/266378331-4827debc-3649-44fa-a8bf-4c4c5af3abd1.mp4"
+              }
+              type="video/mp4"
+            />
+          </video>
         </div>
         <div
           className={`${style.tile} ${style.blog1}`}
           onClick={() => {
             // window.open("https://github.com/Sourav9063/Blog-CRUD-by-Nodejs", '_blank')
-            setSelectedProject(projectsData["News Blog"]);
+            setSelectedProject(projectsData["Sync Play"]);
             setShowModal(true);
           }}
           style={{
@@ -368,7 +384,7 @@ export default function Projects() {
         >
           <img
             alt="News Blogs"
-            src="https://user-images.githubusercontent.com/53114581/202858172-af9b10d7-1c8f-4e56-857b-86be59085c47.jpg"
+            src="https://user-images.githubusercontent.com/53114581/290510162-609cdec5-ed48-40bc-a13b-8618ffabaa50.png"
           />
         </div>
 

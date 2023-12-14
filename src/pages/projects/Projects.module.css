@@ -229,17 +229,28 @@
 
 .blog {
     z-index: 2;
-    background-color: rgb(104, 107, 127);
-    height: 16%;
+    background-color: rgb(61, 21, 180);
+    height: 12.5%;
     width: 23%;
     left: 50%;
     top: 70%;
 }
 
+.blog video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 800ms ease,
+        transform 800ms ease-out;
+    pointer-events: none;
+}
+
 .blog1 {
     z-index: 1;
     background-color: rgb(159, 173, 248);
-    height: 16%;
+    height: 12.5%;
     width: 23%;
     left: 55%;
     top: 71%;
