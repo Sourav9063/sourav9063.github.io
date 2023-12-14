@@ -71,6 +71,9 @@ export default function ProjectModal({ setShowModal, selectedProject }) {
           <div className={`${style.hr}`} />
           <section className={style.right}>
             <div className={`${style.imgContainer}`}>
+              {selectedProject.videos?.length > 0 && (
+                <video src={selectedProject.videos[0]} controls />
+              )}
               {selectedProject.images.map((img, index) => (
                 <img src={img} alt={selectedProject.title} key={index} />
               ))}

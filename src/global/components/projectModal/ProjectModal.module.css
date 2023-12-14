@@ -16,7 +16,7 @@
 .inner.inner {
 
     width: 80%;
-    height: 80%;
+    height: 78%;
     border-radius: 10px;
     overflow: auto;
     border: 0px;
@@ -142,8 +142,8 @@ section section {
 }
 
 .main .hr {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     color: rgba(255, 255, 255, 0.4);
     background-color: rgba(255, 255, 255, 0.4);
     width: 1px;
@@ -171,7 +171,8 @@ section section {
     overflow-x: scroll;
 }
 
-.imgContainer>img {
+.imgContainer>img,
+.imgContainer>video {
     width: 95%;
     height: 100%;
     object-fit: contain;
