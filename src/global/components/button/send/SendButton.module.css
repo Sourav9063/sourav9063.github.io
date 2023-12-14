@@ -95,10 +95,10 @@ strong {
   content: "";
   position: absolute;
   top: -10rem;
-  left: -100rem;
+  right: 10rem;
   width: 100%;
   height: 100%;
-  animation: animStarRotate 90s linear infinite;
+  animation: animStarRotate 80s linear infinite;
 }
 
 .stars::after {
@@ -109,11 +109,11 @@ strong {
 .stars::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 10rem;
   left: -50%;
-  width: 170%;
-  height: 500%;
-  animation: animStar 60s linear infinite;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 50s linear infinite;
 }
 
 .stars::before {
