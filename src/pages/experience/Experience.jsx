@@ -146,7 +146,11 @@ function EducationHome() {
   return (
     <div className={styles["education-home"]}>
       <div className={styles["back-text-white"]}>Educations</div>
-      <div></div>
+      <div>
+        {data.Educations.map((el, index) => {
+          return <div key={index}>{el.at}</div>;
+        })}
+      </div>
     </div>
   );
 }
@@ -170,12 +174,39 @@ const data = {
       logo: "",
     },
   ],
-  //   SJ Innovation Hackathon
-  // - Got Innovative Idea prize in Medical Category. 7 Oct’ 21
-  // BdApps National Hackathon 2022
-  // - 1st place Regional Round 3: Sylhet out of 100+ teams. Aug’ 22
-  // Hack NSU 2022
-  // - 5th place in NSU ACM Student Chapter Hackathon. Nov’ 21
+  //   Shahjalal University of Science and Technology (SUST)
+  //   Institute of Information and Communication Technology (IICT)
+  // CGPA: 3.61 (till 3rd year 2nd semester)
+
+  // Notre Dame College, Dhaka, Bangladesh.
+  // HSC GPA: 5
+
+  // Manikganj Government High School, Manikganj
+  // SSC GPA: 5
+
+  Educations: [
+    {
+      at: "Shahjalal University of Science and Technology (SUST)",
+      from: "2018",
+      to: "2023",
+      pos: "B.Sc. in Software Engineering",
+      images: [],
+    },
+    {
+      at: "Notre Dame College, Dhaka, Bangladesh.",
+      from: "2018",
+      to: "2019",
+      pos: "Higher Secondary Certificate (HSC)",
+      images: [],
+    },
+    {
+      at: "Manikganj Government High School, Manikganj",
+      from: "2012",
+      to: "2018",
+      pos: "Secondary School Certificate (SSC)",
+      images: [],
+    },
+  ],
   Achievements: [
     {
       at: "SJ Innovation Hackathon",
@@ -200,11 +231,6 @@ const data = {
     },
   ],
 
-  // Creative Executive at SUST ACM Student Chapter Jul’ 22 - present
-  // Assistant Treasurer at Maavoi Abritti Samsad, SUST Jan’ 20 - Jul’ 20
-  // Organizing Committee SUST SWE Technovent 2023, IICT Jan’ 23
-  // Volunteer at LICT Techfest, IICT, SUST Mar’ 19
-  // Assistant Office Secretary at Manikganj Shamprity, SUST Jan’ 22- present
   CoCurriculars: [
     {
       at: "Assistant Treasurer at Maavoi Abritti Samsad, SUST",
