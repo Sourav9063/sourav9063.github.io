@@ -67,7 +67,7 @@ export default function Links() {
   }, []);
 
   useEffect(() => {
-    if (scrollPositionOfElement > 0 && scrollPositionOfElement < 310) {
+    if (scrollPositionOfElement >= 0 && scrollPositionOfElement < 310) {
       if (scrollPositionOfElement > 30 && scrollPositionOfElement < 199) {
         linkDiv.current.style.display = "block";
 

@@ -53,7 +53,7 @@ export default function About() {
 
   useEffect(() => {
     if (scrollPositionOfElement > 50 && scrollPositionOfElement < 144) {
-      if (hello != 1) {
+      if (hello !== 1) {
         setHello(1);
       }
 
