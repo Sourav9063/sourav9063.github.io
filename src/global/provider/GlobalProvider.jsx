@@ -29,7 +29,6 @@ export default function GlobalProvider({ children }) {
       }
       if (rounded !== temp.current) {
         setScrollPositionOfElement(rounded);
-        console.log(rounded);
       }
       temp.current = rounded;
     }
