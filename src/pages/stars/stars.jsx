@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import style from "./stars.module.css";
-
-let ratio = window.innerHeight / window.innerWidth;
 
 const getRandomStarPlacement = (starsCount) => {
   const stars = [];
@@ -37,13 +35,6 @@ const move = (x1, y1, x2, y2, r) => {
   };
 };
 
-let stars = [];
-stars = getRandomStarPlacement(ratio > 1 ? 300 : 375);
-// let ratio = window.innerHeight / window.innerWidth;
-// let ratio = 1;
-const percent = ratio > 1 ? 12 : 15;
-const distConst = Math.max(percent * ratio * (percent * ratio), 255);
-
 const listOfWords = [
   "I've a Great Attention Span",
   "I'm Attentive To Detail",
@@ -68,9 +59,19 @@ export default function Stars() {
 
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
-  const interval = useRef(null);
-  useEffect(() => {
+  const ratio = useRef();
+  const distConst = useRef();
+  const stars = useRef([]);
+  useLayoutEffect(() => {
     setWord(listOfWords[Math.floor(Math.random() * listOfWords.length)]);
+    ratio.current = window.innerHeight / window.innerWidth;
+    stars.current = getRandomStarPlacement(ratio.current > 1 ? 300 : 375);
+    const percent = ratio.current > 1 ? 12 : 15;
+    distConst.current = Math.max(
+      percent * ratio.current * (percent * ratio.current),
+      255
+    );
+
     return () => {};
   }, []);
   // useEffect(() => {
@@ -168,7 +169,7 @@ export default function Stars() {
                         <p>y={y}</p>
                         <p>ratio:{change ? "t" : "f"}</p>
                     </div> */}
-        {stars.map((star, index) => {
+        {stars.current.map((star, index) => {
           return (
             <div
               key={index}
@@ -180,40 +181,48 @@ export default function Stars() {
                 // left: star.left + '%',
                 left:
                   distance(x, y, star.left, star.top) <
-                  (ratio <= 1 ? distConst * ratio : distConst)
+                  (ratio.current <= 1
+                    ? distConst.current * ratio.current
+                    : distConst.current)
                     ? move(
                         x,
                         y,
                         star.left,
                         star.top,
-                        ratio <= 1
-                          ? Math.sqrt(distConst) * ratio
-                          : Math.sqrt(distConst)
+                        ratio.current <= 1
+                          ? Math.sqrt(distConst.current) * ratio.current
+                          : Math.sqrt(distConst.current)
                       ).newX + "%"
                     : star.left + "%",
                 top:
                   distance(x, y, star.left, star.top) <
-                  (ratio >= 1 ? distConst / ratio : distConst)
+                  (ratio.current >= 1
+                    ? distConst.current / ratio.current
+                    : distConst.current)
                     ? move(
                         x,
                         y,
                         star.left,
                         star.top,
-                        ratio >= 1
-                          ? Math.sqrt(distConst) / ratio
-                          : Math.sqrt(distConst)
+                        ratio.current >= 1
+                          ? Math.sqrt(distConst.current) / ratio.current
+                          : Math.sqrt(distConst.current)
                       ).newY + "%"
                     : star.top + "%",
                 // boxShadow: `0px 0px 5px ${star.backgroundColor}`,
                 // opacity: 0,
                 opacity:
                   distance(x, y, star.left, star.top) <
-                  (ratio >= 1 ? distConst / ratio : distConst * ratio)
+                  (ratio.current >= 1
+                    ? distConst.current * ratio.current
+                    : distConst.current * ratio.current)
                     ? 1
                     : star.opacity,
                 animation:
                   distance(x, y, star.left, star.top) <
-                  (ratio >= 1 ? distConst / ratio : distConst)
+                  (ratio.current >= 1
+                    ? distConst.current / ratio.current
+                    : distConst.current)
                     ? "none"
                     : `${style.starAni} ${star.animationDuration} ease ${star.animationDelay} infinite alternate`,
                 // top: (star.top - y) * (star.top - y) + (star.left - x) * (star.left - x) < 100 ? x + "%" : star.top + '%',
