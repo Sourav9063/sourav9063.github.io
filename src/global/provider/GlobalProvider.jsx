@@ -2,7 +2,6 @@ import React, {
   useState,
   createContext,
   useContext,
-  useEffect,
   useCallback,
   useRef,
   useLayoutEffect,
@@ -39,7 +38,11 @@ export default function GlobalProvider({ children }) {
       .querySelector("." + styles.container)
       ?.addEventListener("scroll", handleScroll);
 
-    return () => {};
+    return () => {
+      document
+        .querySelector("." + styles.container)
+        ?.removeEventListener("scroll", handleScroll);
+    };
   }, [handleScroll]);
   return (
     <GlobalContext.Provider
