@@ -10,11 +10,11 @@ import Contacts from "../contacts/Contacts";
 import Stars from "../stars/stars";
 import Experience from "../experience/Experience";
 import Links from "../../global/components/links/Links";
-import GlobalProvider from "../../global/provider/GlobalProvider";
+import ProviderWrapper from "../../global/provider/ProviderWrapper";
 
 export default function Home() {
   return (
-    <GlobalProvider>
+    <ProviderWrapper>
       <div className={style.container}>
         <section id="landing">
           <Landing />
@@ -39,6 +39,6 @@ export default function Home() {
         </section>
         <Links />
       </div>
-    </GlobalProvider>
+    </ProviderWrapper>
   );
 }
