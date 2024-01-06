@@ -1,56 +1,55 @@
 .body {
-    width: 100%;
-    height: calc(100vh - 10px);
-    height: calc(100dvh - 10px);
+  width: 100%;
+  height: calc(100vh - 10px);
+  height: calc(100dvh - 10px);
 
-    background-color: rgb(0, 0, 0);
-    /* background-image: linear-gradient(38.73deg, rgba(204, 0, 187, 0.35) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.35) 100%); */
-    background-image: linear-gradient(38.73deg, var(--left-color) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, var(--right-color) 100%);
-    transition: background-image 0.5s ease;
-    position: relative;
-    overflow: hidden;
-    font-size: 2vw;
-    /* background-image: linear-gradient(#0f0b10, #382f32); */
+  background-color: rgb(0, 0, 0);
+  /* background-image: linear-gradient(38.73deg, rgba(204, 0, 187, 0.35) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.35) 100%); */
+  background-image: linear-gradient(
+      38.73deg,
+      var(--left-color) 0%,
+      rgba(201, 32, 184, 0) 50%
+    ),
+    linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, var(--right-color) 100%);
+  transition: background-image 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 2vw;
+  /* background-image: linear-gradient(#0f0b10, #382f32); */
 }
 
-
 .about_header {
+  font-size: 200px;
 
-
-    font-size: 200px;
-
-    color: rgba(255, 255, 255, 0.119);
+  color: rgba(255, 255, 255, 0.119);
 }
 
 @media screen and (max-width: 750px) {
-    .about_header {
-        font-size: 100px;
-    }
+  .about_header {
+    font-size: 100px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .about_header {
-        font-size: 50px;
-    }
+  .about_header {
+    font-size: 50px;
+  }
 }
 
 .svg_name {
-    position: absolute;
-    bottom: 0;
-    right: 00%;
-    /* transform: translate(-50%, -50%); */
-    /* width: 40%;
+  position: absolute;
+  bottom: 0;
+  right: 00%;
+  /* transform: translate(-50%, -50%); */
+  /* width: 40%;
     height: 100%; */
-    stroke-width: 300px;
+  stroke-width: 300px;
 
-    max-width: 700px;
-    width: 100%;
-    z-index: 1;
-    stroke-width: 10px;
-
-
+  max-width: 700px;
+  width: 100%;
+  z-index: 1;
+  stroke-width: 10px;
 }
-
 
 /* 
 .svg_name>path:nth-child(2) {
@@ -119,66 +118,60 @@
 } */
 
 .profPic {
-    /* width: 60vw; */
-    /* height: 60vh; */
-    max-width: 618px;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: transform 1s ease;
-
-
+  /* width: 60vw; */
+  /* height: 60vh; */
+  max-width: 618px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: transform 1s ease;
 }
 
 .hello {
+  /* width: 5em; */
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.583);
+  font-size: 20.1em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
 
-    /* width: 5em; */
-    font-weight: bolder;
-    color: rgba(255, 255, 255, 0.583);
-    font-size: 20.1em;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
+  transition: transform 1s;
 
-    transition: transform 1s;
-
-    background: linear-gradient(#ffffff94 0%, #ffffff00 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-
-
+  background: linear-gradient(#ffffff94 0%, #ffffff00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .im {
-    /* width: 5em; */
-    /* font-family: ""; */
-    font-family: 'Pacifico';
-    /* font-weight: bold; */
-    color: white;
-    font-size: 6.1em;
-    position: absolute;
-    top: 58%;
-    left: 34%;
-    /* transform: translate(0, -50%); */
+  /* width: 5em; */
+  /* font-family: ""; */
+  font-family: "Pacifico";
+  /* font-weight: bold; */
+  color: white;
+  font-size: 6.5em;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  /* transform: translate(0, -50%); */
 }
 
 @media screen and (max-width: 1500px) {
-    .im {
-        font-size: 6.1em;
-        left: auto;
-        right: 0%;
-    }
+  .im {
+    font-size: 6.1em;
+    left: auto;
+    right: 0%;
+  }
 }
 
 @media screen and (max-width: 750px) {
-    .im {
-        font-size: 10.1em;
-        left: 0%;
-    }
+  .im {
+    font-size: 10.1em;
+    left: 0%;
+  }
 }
