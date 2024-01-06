@@ -1,83 +1,78 @@
 .body {
-    height: 100vh;
-    height: 100dvh;
-    background-color: #970000;
-    background-image: repeating-linear-gradient(45deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(90deg, hsla(253, 0%, 98%, 0.03) 0px, hsla(253, 0%, 98%, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(20, 3, 37), rgb(83, 16, 61));
-    color: white;
-    width: 100vw;
-    overflow: auto;
-    position: relative;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #970000;
+  color: white;
+  width: 100vw;
+  overflow: auto;
+  position: relative;
 }
 
 .rive {
-    width: min(80vh, 80vw);
-    height: min(80vh, 80vw);
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    text-align: end;
-
+  width: min(80vh, 80vw);
+  height: min(80vh, 80vw);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  text-align: end;
 }
 
 .sust {
-    font-family: 'Pacifico';
-    font-size: 4em;
-    font-weight: 400;
-    color: white;
-    background-size: 0 5px;
+  font-family: "Pacifico";
+  font-size: 4em;
+  font-weight: 400;
+  color: white;
+  background-size: 0 5px;
 }
 
 .sust:hover {
-    background-size: 100% 5px;
+  background-size: 100% 5px;
 }
 
 .email h1 {
-    display: inline-block;
+  display: inline-block;
 }
 
 .glassDiv {
-    display: grid;
-    align-items: center;
-    width: calc(90vw - 20px);
-    margin-top: 10vh;
+  display: grid;
+  align-items: center;
+  width: calc(90vw - 20px);
+  margin-top: 10vh;
 }
 
 .glassDivTop {
-    margin: auto;
-    margin-top: 10vh;
+  margin: auto;
+  margin-top: 10vh;
 }
 
-.glassDivTop+div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-inline: 5vw;
+.glassDivTop + div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-inline: 5vw;
 }
 
 .glassDiv h2,
 .glassDiv a {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
-
 @media screen and (max-width: 750px) {
-    .glassDiv h2 {
-        font-size: 1.1rem;
-    }
+  .glassDiv h2 {
+    font-size: 1.1rem;
+  }
 
-    .glassDivTop {
-        background-color: rgba(0, 0, 0, 0.27);
-    }
+  .glassDivTop {
+    background-color: rgba(0, 0, 0, 0.27);
+  }
 
-    .sust {
-        font-size: 1.5rem;
-    }
+  .sust {
+    font-size: 1.5rem;
+  }
 
-    .rive {
-        top: 0px;
-        bottom: auto;
-
-    }
-
+  .rive {
+    top: 0px;
+    bottom: auto;
+  }
 }
