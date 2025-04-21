@@ -8,6 +8,10 @@ git remote remove origin
 
 ```
 git remote add origin https://github.com/Sourav9063/sourav9063.github.io.git
+
+git pull
+
+git branch --set-upstream-to=origin/master master
 ```
 
 In package.json
@@ -25,6 +29,10 @@ Reset back
 ```
  git remote remove origin
  git remote add origin https://github.com/Sourav9063/my_portfolio
+
+git pull
+
+git branch --set-upstream-to=origin/master master
 ```
 
 ```
