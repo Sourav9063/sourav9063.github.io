@@ -29,7 +29,7 @@ export default function About() {
   const [pic, setPic] = useState(0);
   const main = useRef();
   React.useEffect(() => {
-    main.current = document.querySelector("." + style.body);
+    main.current = document.getElementById('about');
     main.current.style.setProperty("--left-color", randomRGBA());
     main.current.style.setProperty("--right-color", randomRGBA());
     const nameAnimInit = () => {
@@ -75,7 +75,7 @@ export default function About() {
   }, [scrollPositionOfElement]);
 
   return (
-    <div className={`${style.body}`}>
+    <div className={`${style.body}`} id="about">
       {/* <div className={`${style.about_header}`}>{about}</div> */}
       {/* <div style={{ position: "fixed", top: "0px", left: "0px", color: "white", zIndex: "100" }}>{scrollPosition}</div> */}
       <div>

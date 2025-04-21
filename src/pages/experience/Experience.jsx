@@ -111,7 +111,7 @@ function ExperienceHome() {
       <div className={styles["back-text-white"]}>Experiences</div>
       <div>
         {data.Experiences.map((el, index) => {
-          return <div key={index}>{el.at}</div>;
+          return <div key={index}>{el.at+", "+el.pos}</div>;
         })}
       </div>
     </div>
@@ -169,6 +169,14 @@ const data = {
       at: "ShellBeeHaken Ltd.",
       pos: "Associate Software Engineer",
       from: "July 2023",
+      to: "December 2024",
+      images: [""],
+      logo: "",
+    },
+    {
+      at: "Pathao Ltd.",
+      pos: "Software Engineer L1",
+      from: "December 2024",
       to: "Current",
       images: [""],
       logo: "",
