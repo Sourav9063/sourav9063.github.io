@@ -4,10 +4,8 @@ import style from "./Cv.module.css";
 export default function Cv() {
   return (
     <div className={`${style.body}`}>
-      {/* <embed src="assets/pdf/RESUME.pdf" width="70%" height="110%"
-
-            /> */}
-
+      <audio controls autoPlay src="/assets/audio/RESUME.mp3">
+      </audio>
       <iframe
         className={`${style.cv}`}
         src="assets/pdf/RESUME.pdf"
