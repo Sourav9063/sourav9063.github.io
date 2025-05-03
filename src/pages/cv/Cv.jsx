@@ -4,8 +4,9 @@ import style from "./Cv.module.css";
 export default function Cv() {
   return (
     <div className={`${style.body}`}>
-      <audio controls autoPlay src="/assets/audio/RESUME.mp3">
-      </audio>
+      <div>
+        <audio className={`${style.audio}`} controls autoPlay src="assets/audio/RESUME.mp3" />
+      </div>
       <iframe
         className={`${style.cv}`}
         src="assets/pdf/RESUME.pdf"
